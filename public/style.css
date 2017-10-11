@@ -51,10 +51,11 @@ header {
     border-bottom: 0.2em inset rgba(255, 255, 255, 1);
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
     display: block;
-    position: fixed;
+    position: relative;
     width: 100%;
     z-index: 1000;
     top: 0em;
+    margin-bottom: 1rem;
 }
 
 nav {

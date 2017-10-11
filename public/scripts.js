@@ -1,3 +1,28 @@
+// Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCvV09DtCgNoshpAXot5V0dMLeD-Dfhwp8",
+    authDomain: "collabarray-953db.firebaseapp.com",
+    databaseURL: "https://collabarray-953db.firebaseio.com",
+    projectId: "collabarray-953db",
+    storageBucket: "collabarray-953db.appspot.com",
+    messagingSenderId: "978577647128"
+  };
+  firebase.initializeApp(config);
+
+  // document.addEventListener("DOMContentLoaded", function(event){
+  //
+  //   var b = document.getElementById('js-form');
+  //       b.addEventListener('js-submit', sublmitForm);
+  //
+  //   function sublmitForm(e){
+  //     e.preventDefault();
+  //     console.log(123);
+  //   }
+  // });
+
+
+
+
 function CreateUser(email, password) {
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
@@ -78,7 +103,8 @@ firebase.auth().onAuthStateChanged(function(user) {
         uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
         // this value to authenticate with your backend server, if
         // you have one. Use User.getToken() instead.
+        console.log('Signed in');
     } else {
-        // No user is signed in.
+        console.log('Signed out');
     }
 });
