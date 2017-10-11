@@ -1,0 +1,26 @@
+{
+  "name": "collabarray",
+  "version": "1.0.0",
+  "description": "networking web application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"hello world\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiddleZwei/Collabarray.git"
+  },
+  "keywords": [
+    "networking",
+    "collabarray",
+    "collaborate",
+    "platform",
+    "web"
+  ],
+  "author": "Collabarray",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MiddleZwei/Collabarray/issues"
+  },
+  "homepage": "https://github.com/MiddleZwei/Collabarray#readme"
+}
