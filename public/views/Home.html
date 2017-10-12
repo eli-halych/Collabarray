@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/home.css" />
 <div id="content">
   <header>
     <nav>
@@ -31,24 +32,22 @@
         <form id="js-form">
 
           <div class="form-group">
-            <label for="js-email">Email</label>
-            <input type="email" id="js-email" class="form-control">
+            <label for="email">Email</label>
+            <input type="email" id="txtEmail" class="form-control">
           </div>
 
           <div class="form-group">
-            <label for="js-password">Password</label>
-            <input type="password" id="js-password" class="form-control">
+            <label for="password">Password</label>
+            <input type="password" id="txtPassword" class="form-control">
           </div>
 
-          <div class="form-group">
-            <label for="js-message">Message</label>
-            <input type="text" id="js-message" class="form-control">
-          </div>
-
-          <button type="submit" id="js-submit" class="btn btn-primary">Submit</button>
+          <button type="submit" id="btnLogIn" class="btn btn-primary">Log in</button>
+          <button type="submit" id="btnSignUp" class="btn btn-secondary">Sign Up</button>
+          <button type="submit" id="btnLogOut" class="btn btn-light hide">Log Out</button>
 
         </form>
       </div>
     </div>
   </div>
 </div>
+<script src="js/home.js"></script>

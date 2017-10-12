@@ -1,0 +1,49 @@
+[debug] [2017-10-12T10:37:56.768Z] ----------------------------------------------------------------------
+[debug] [2017-10-12T10:37:56.771Z] Command:       /usr/bin/node /bin/firebase login:ci
+[debug] [2017-10-12T10:37:56.771Z] CLI Version:   3.13.1
+[debug] [2017-10-12T10:37:56.771Z] Platform:      linux
+[debug] [2017-10-12T10:37:56.772Z] Node Version:  v6.11.3
+[debug] [2017-10-12T10:37:56.772Z] Time:          Thu Oct 12 2017 11:37:56 GMT+0100 (WEST)
+[debug] [2017-10-12T10:37:56.772Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+[info] Visit this URL on any device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=856959653&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2017-10-12T10:38:10.757Z] ----------------------------------------------------------------------
+[debug] [2017-10-12T10:38:10.761Z] Command:       /usr/bin/node /bin/firebase serve
+[debug] [2017-10-12T10:38:10.761Z] CLI Version:   3.13.1
+[debug] [2017-10-12T10:38:10.761Z] Platform:      linux
+[debug] [2017-10-12T10:38:10.761Z] Node Version:  v6.11.3
+[debug] [2017-10-12T10:38:10.761Z] Time:          Thu Oct 12 2017 11:38:10 GMT+0100 (WEST)
+[debug] [2017-10-12T10:38:10.761Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-12T10:38:10.775Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-12T10:38:10.776Z] > authorizing via signed-in user
+[debug] [2017-10-12T10:38:10.779Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-10-12T10:38:10.779Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/9TV5j1Q2JFFJ0nFxr-_O8nHALd5PlW_8V0dYWkUym-3bAdElxixAXuSHB1qXJ3WV',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Oct 12 2017 11:38:10 GMT+0100 (WEST)
+[debug] [2017-10-12T10:38:12.910Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-12T10:38:12.957Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/collabarray-953db  
+ Thu Oct 12 2017 11:38:12 GMT+0100 (WEST)
+[debug] [2017-10-12T10:38:14.630Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-12T10:38:14.632Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/collabarray-953db/tokens  
+ Thu Oct 12 2017 11:38:14 GMT+0100 (WEST)
+[debug] [2017-10-12T10:38:16.699Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/ihalych/Collabarray'...
+[info] 
+[debug] [2017-10-12T10:38:16.708Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/collabarray-953db  
+ Thu Oct 12 2017 11:38:16 GMT+0100 (WEST)
+[debug] [2017-10-12T10:38:20.565Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-12T10:38:20.566Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/978577647128/clients/_:getWebAppConfig  
+ Thu Oct 12 2017 11:38:20 GMT+0100 (WEST)
+[debug] [2017-10-12T10:38:22.428Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
