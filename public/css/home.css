@@ -2,3 +2,8 @@
   display: none;
   visibility: hidden;
 }
+
+#btnSignInGithub, #btnSignInGoogle {
+    margin: 0 auto;
+    width: 25%;
+}
