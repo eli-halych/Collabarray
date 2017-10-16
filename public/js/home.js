@@ -86,11 +86,19 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         photoUrl = firebaseUser.photoURL;
         emailVerified = firebaseUser.emailVerified;
         uid = firebaseUser.uid; // The user's unique ID to the Firebase project
-        console.log(firebaseUser);
+        console.log(firebaseUser + "logged in");
         btnLogOut.classList.remove('hide');
+        btnLogIn.classList.add('hide');
+        btnSignUp.classList.add('hide');
+        btnSignInGithub.classList.add('hide');
+        btnSignInGoogle.classList.add('hide');
     } else {
         // No user is signed in
         console.log('Not logged in');
         btnLogOut.classList.add('hide');
+        btnLogIn.classList.remove('hide');
+        btnSignUp.classList.remove('hide');
+        btnSignInGithub.classList.remove('hide');
+        btnSignInGoogle.classList.remove('hide');
     }
 });
