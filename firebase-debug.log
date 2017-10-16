@@ -47,3 +47,118 @@
 [info] i  hosting: Serving hosting files from: public
 [info] ✔  hosting: Local server: http://localhost:5000
 
+[debug] [2017-10-14T18:25:56.879Z] ----------------------------------------------------------------------
+[debug] [2017-10-14T18:25:56.885Z] Command:       /usr/bin/node /bin/firebase serve
+[debug] [2017-10-14T18:25:56.886Z] CLI Version:   3.13.1
+[debug] [2017-10-14T18:25:56.886Z] Platform:      linux
+[debug] [2017-10-14T18:25:56.886Z] Node Version:  v6.11.3
+[debug] [2017-10-14T18:25:56.887Z] Time:          Sat Oct 14 2017 19:25:56 GMT+0100 (WEST)
+[debug] [2017-10-14T18:25:56.887Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-14T18:25:56.972Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-14T18:25:56.972Z] > authorizing via signed-in user
+[debug] [2017-10-14T18:25:56.975Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-10-14T18:25:56.975Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/9TV5j1Q2JFFJ0nFxr-_O8nHALd5PlW_8V0dYWkUym-3bAdElxixAXuSHB1qXJ3WV',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Oct 14 2017 19:25:56 GMT+0100 (WEST)
+[debug] [2017-10-14T18:25:57.318Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-14T18:25:57.360Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/collabarray-953db  
+ Sat Oct 14 2017 19:25:57 GMT+0100 (WEST)
+[debug] [2017-10-14T18:25:58.317Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-14T18:25:58.318Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/collabarray-953db/tokens  
+ Sat Oct 14 2017 19:25:58 GMT+0100 (WEST)
+[debug] [2017-10-14T18:25:59.228Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/ihalych/Collabarray'...
+[info] 
+[debug] [2017-10-14T18:25:59.236Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/collabarray-953db  
+ Sat Oct 14 2017 19:25:59 GMT+0100 (WEST)
+[debug] [2017-10-14T18:26:00.160Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-14T18:26:00.161Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/978577647128/clients/_:getWebAppConfig  
+ Sat Oct 14 2017 19:26:00 GMT+0100 (WEST)
+[debug] [2017-10-14T18:26:00.774Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2017-10-15T11:29:39.899Z] ----------------------------------------------------------------------
+[debug] [2017-10-15T11:29:39.902Z] Command:       /usr/bin/node /bin/firebase serve
+[debug] [2017-10-15T11:29:39.903Z] CLI Version:   3.13.1
+[debug] [2017-10-15T11:29:39.903Z] Platform:      linux
+[debug] [2017-10-15T11:29:39.903Z] Node Version:  v6.11.3
+[debug] [2017-10-15T11:29:39.903Z] Time:          Sun Oct 15 2017 12:29:39 GMT+0100 (WEST)
+[debug] [2017-10-15T11:29:39.903Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-15T11:29:40.043Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-15T11:29:40.043Z] > authorizing via signed-in user
+[debug] [2017-10-15T11:29:40.046Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-10-15T11:29:40.046Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/9TV5j1Q2JFFJ0nFxr-_O8nHALd5PlW_8V0dYWkUym-3bAdElxixAXuSHB1qXJ3WV',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Oct 15 2017 12:29:40 GMT+0100 (WEST)
+[debug] [2017-10-15T11:29:40.276Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-15T11:29:40.317Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/collabarray-953db  
+ Sun Oct 15 2017 12:29:40 GMT+0100 (WEST)
+[debug] [2017-10-15T11:29:41.239Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-15T11:29:41.240Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/collabarray-953db/tokens  
+ Sun Oct 15 2017 12:29:41 GMT+0100 (WEST)
+[debug] [2017-10-15T11:29:42.149Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/ihalych/Collabarray'...
+[info] 
+[debug] [2017-10-15T11:29:42.156Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/collabarray-953db  
+ Sun Oct 15 2017 12:29:42 GMT+0100 (WEST)
+[debug] [2017-10-15T11:29:48.035Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-15T11:29:48.036Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/978577647128/clients/_:getWebAppConfig  
+ Sun Oct 15 2017 12:29:48 GMT+0100 (WEST)
+[debug] [2017-10-15T11:29:49.271Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2017-10-16T14:00:06.101Z] ----------------------------------------------------------------------
+[debug] [2017-10-16T14:00:06.108Z] Command:       /usr/bin/node /bin/firebase serve
+[debug] [2017-10-16T14:00:06.108Z] CLI Version:   3.13.1
+[debug] [2017-10-16T14:00:06.108Z] Platform:      linux
+[debug] [2017-10-16T14:00:06.108Z] Node Version:  v6.11.3
+[debug] [2017-10-16T14:00:06.108Z] Time:          Mon Oct 16 2017 15:00:06 GMT+0100 (WEST)
+[debug] [2017-10-16T14:00:06.109Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-16T14:00:06.173Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-16T14:00:06.173Z] > authorizing via signed-in user
+[debug] [2017-10-16T14:00:06.176Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-10-16T14:00:06.176Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/9TV5j1Q2JFFJ0nFxr-_O8nHALd5PlW_8V0dYWkUym-3bAdElxixAXuSHB1qXJ3WV',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Oct 16 2017 15:00:06 GMT+0100 (WEST)
+[debug] [2017-10-16T14:00:06.425Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-16T14:00:06.470Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/collabarray-953db  
+ Mon Oct 16 2017 15:00:06 GMT+0100 (WEST)
+[debug] [2017-10-16T14:00:07.461Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-16T14:00:07.464Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/collabarray-953db/tokens  
+ Mon Oct 16 2017 15:00:07 GMT+0100 (WEST)
+[debug] [2017-10-16T14:00:08.207Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/ihalych/Collabarray'...
+[info] 
+[debug] [2017-10-16T14:00:08.214Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/collabarray-953db  
+ Mon Oct 16 2017 15:00:08 GMT+0100 (WEST)
+[debug] [2017-10-16T14:00:09.058Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-16T14:00:09.059Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/978577647128/clients/_:getWebAppConfig  
+ Mon Oct 16 2017 15:00:09 GMT+0100 (WEST)
+[debug] [2017-10-16T14:00:09.568Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[debug] [2017-10-16T14:00:09.708Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/collabarray-953db  
+ Mon Oct 16 2017 15:00:09 GMT+0100 (WEST)
+[debug] [2017-10-16T14:00:10.592Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-16T14:00:10.593Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/978577647128/clients/_:getWebAppConfig  
+ Mon Oct 16 2017 15:00:10 GMT+0100 (WEST)
+[debug] [2017-10-16T14:00:11.140Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5004
+
