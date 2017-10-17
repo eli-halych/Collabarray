@@ -1,0 +1,1056 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install', 'firebase' ]
+2 info using npm@1.3.10
+3 info using node@v0.10.25
+4 warn package.json collabarray@1.0.0 No README data
+5 warn package.json firebase-app@0.0.1 No repository field.
+6 verbose readDependencies using package.json deps
+7 verbose cache add [ 'firebase', null ]
+8 verbose cache add name=undefined spec="firebase" args=["firebase",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'firebase',
+9 verbose parsed url   path: 'firebase',
+9 verbose parsed url   href: 'firebase' }
+10 silly lockFile 92f5e8df-firebase firebase
+11 verbose lock firebase /home/gozi/.npm/92f5e8df-firebase.lock
+12 silly lockFile 92f5e8df-firebase firebase
+13 silly lockFile 92f5e8df-firebase firebase
+14 verbose addNamed [ 'firebase', '' ]
+15 verbose addNamed [ null, '*' ]
+16 silly lockFile 2bddc103-firebase firebase@
+17 verbose lock firebase@ /home/gozi/.npm/2bddc103-firebase.lock
+18 silly addNameRange { name: 'firebase', range: '*', hasData: false }
+19 verbose url raw firebase
+20 verbose url resolving [ 'https://registry.npmjs.org/', './firebase' ]
+21 verbose url resolved https://registry.npmjs.org/firebase
+22 info trying registry request attempt 1 at 07:55:00
+23 http GET https://registry.npmjs.org/firebase
+24 http 200 https://registry.npmjs.org/firebase
+25 silly registry.get cb [ 200,
+25 silly registry.get   { server: 'nginx/1.10.1',
+25 silly registry.get     'content-type': 'application/json',
+25 silly registry.get     'last-modified': 'Mon, 16 Oct 2017 15:21:15 GMT',
+25 silly registry.get     etag: '"59e4ce6b-262ed"',
+25 silly registry.get     'cache-control': 'max-age=300',
+25 silly registry.get     'content-length': '156397',
+25 silly registry.get     'accept-ranges': 'bytes',
+25 silly registry.get     date: 'Tue, 17 Oct 2017 06:55:06 GMT',
+25 silly registry.get     via: '1.1 varnish',
+25 silly registry.get     age: '0',
+25 silly registry.get     connection: 'keep-alive',
+25 silly registry.get     'x-served-by': 'cache-lcy1138-LCY',
+25 silly registry.get     'x-cache': 'MISS',
+25 silly registry.get     'x-cache-hits': '0',
+25 silly registry.get     'x-timer': 'S1508223306.747501,VS0,VE324',
+25 silly registry.get     vary: 'Accept-Encoding, Accept' } ]
+26 silly addNameRange number 2 { name: 'firebase', range: '*', hasData: true }
+27 silly addNameRange versions [ 'firebase',
+27 silly addNameRange   [ '0.0.0',
+27 silly addNameRange     '0.5.0',
+27 silly addNameRange     '0.5.1',
+27 silly addNameRange     '0.5.2',
+27 silly addNameRange     '0.5.3',
+27 silly addNameRange     '0.5.4',
+27 silly addNameRange     '0.6.0',
+27 silly addNameRange     '0.6.1',
+27 silly addNameRange     '0.6.2',
+27 silly addNameRange     '0.6.3',
+27 silly addNameRange     '0.6.4',
+27 silly addNameRange     '0.6.5',
+27 silly addNameRange     '0.6.6',
+27 silly addNameRange     '0.6.7',
+27 silly addNameRange     '0.6.8',
+27 silly addNameRange     '0.6.9',
+27 silly addNameRange     '0.6.10',
+27 silly addNameRange     '0.6.11',
+27 silly addNameRange     '0.6.14',
+27 silly addNameRange     '0.6.15',
+27 silly addNameRange     '0.6.16',
+27 silly addNameRange     '0.6.17',
+27 silly addNameRange     '0.6.19',
+27 silly addNameRange     '0.6.21',
+27 silly addNameRange     '0.6.22',
+27 silly addNameRange     '1.0.1',
+27 silly addNameRange     '1.0.1-npm',
+27 silly addNameRange     '1.0.2',
+27 silly addNameRange     '1.0.3',
+27 silly addNameRange     '1.0.4',
+27 silly addNameRange     '1.0.5',
+27 silly addNameRange     '1.0.10',
+27 silly addNameRange     '1.0.10-2',
+27 silly addNameRange     '1.0.11',
+27 silly addNameRange     '1.0.12',
+27 silly addNameRange     '1.0.13',
+27 silly addNameRange     '1.0.14',
+27 silly addNameRange     '1.0.15',
+27 silly addNameRange     '1.0.15-2',
+27 silly addNameRange     '1.0.15-3',
+27 silly addNameRange     '1.0.17',
+27 silly addNameRange     '1.0.18',
+27 silly addNameRange     '1.0.19',
+27 silly addNameRange     '1.0.20',
+27 silly addNameRange     '1.0.21',
+27 silly addNameRange     '1.0.23',
+27 silly addNameRange     '1.0.24',
+27 silly addNameRange     '1.1.0',
+27 silly addNameRange     '1.1.1',
+27 silly addNameRange     '1.1.2',
+27 silly addNameRange     '1.2.0-beta.1-0',
+27 silly addNameRange     '1.2.0-beta.2',
+27 silly addNameRange     '1.1.3',
+27 silly addNameRange     '1.2.0-beta.3',
+27 silly addNameRange     '2.0.0',
+27 silly addNameRange     '2.0.1',
+27 silly addNameRange     '2.0.2',
+27 silly addNameRange     '2.0.3',
+27 silly addNameRange     '2.0.4',
+27 silly addNameRange     '2.0.5',
+27 silly addNameRange     '2.0.6',
+27 silly addNameRange     '2.1.0',
+27 silly addNameRange     '2.1.1',
+27 silly addNameRange     '2.1.2',
+27 silly addNameRange     '1.2.0',
+27 silly addNameRange     '2.2.0',
+27 silly addNameRange     '2.2.1',
+27 silly addNameRange     '2.2.2',
+27 silly addNameRange     '2.2.3',
+27 silly addNameRange     '2.2.4',
+27 silly addNameRange     '2.2.5',
+27 silly addNameRange     '2.2.6',
+27 silly addNameRange     '2.2.7',
+27 silly addNameRange     '2.2.8',
+27 silly addNameRange     '2.2.9',
+27 silly addNameRange     '2.3.0',
+27 silly addNameRange     '2.3.1',
+27 silly addNameRange     '2.3.2',
+27 silly addNameRange     '2.4.0',
+27 silly addNameRange     '2.4.1',
+27 silly addNameRange     '2.4.2',
+27 silly addNameRange     '3.0.0',
+27 silly addNameRange     '3.0.1',
+27 silly addNameRange     '3.0.2',
+27 silly addNameRange     '3.0.3',
+27 silly addNameRange     '3.0.4',
+27 silly addNameRange     '3.0.5',
+27 silly addNameRange     '3.1.0',
+27 silly addNameRange     '3.2.0',
+27 silly addNameRange     '3.2.1',
+27 silly addNameRange     '3.3.0',
+27 silly addNameRange     '3.3.1',
+27 silly addNameRange     '3.3.2',
+27 silly addNameRange     '3.4.0',
+27 silly addNameRange     '3.4.1',
+27 silly addNameRange     '3.5.0',
+27 silly addNameRange     '3.5.1',
+27 silly addNameRange     '3.5.2',
+27 silly addNameRange     '3.5.3',
+27 silly addNameRange     '3.6.0',
+27 silly addNameRange     '3.6.1',
+27 silly addNameRange     '3.6.2',
+27 silly addNameRange     '3.6.3',
+27 silly addNameRange     '3.6.4',
+27 silly addNameRange     '3.6.5',
+27 silly addNameRange     '3.6.6',
+27 silly addNameRange     '3.6.7',
+27 silly addNameRange     '3.6.8',
+27 silly addNameRange     '3.6.9',
+27 silly addNameRange     '3.6.10',
+27 silly addNameRange     '3.7.0',
+27 silly addNameRange     '3.7.1',
+27 silly addNameRange     '3.7.2',
+27 silly addNameRange     '3.7.3',
+27 silly addNameRange     '3.7.4',
+27 silly addNameRange     '3.7.5',
+27 silly addNameRange     '3.7.6',
+27 silly addNameRange     '3.7.7',
+27 silly addNameRange     '3.7.8',
+27 silly addNameRange     '3.8.0',
+27 silly addNameRange     '3.9.0',
+27 silly addNameRange     '4.0.0',
+27 silly addNameRange     '4.1.0',
+27 silly addNameRange     '4.1.1',
+27 silly addNameRange     '4.1.2',
+27 silly addNameRange     '4.1.3',
+27 silly addNameRange     '4.1.4',
+27 silly addNameRange     '4.1.5',
+27 silly addNameRange     '4.2.0',
+27 silly addNameRange     '4.3.0',
+27 silly addNameRange     '4.3.1',
+27 silly addNameRange     '4.4.0',
+27 silly addNameRange     '4.5.0',
+27 silly addNameRange     '4.5.1',
+27 silly addNameRange     '4.5.2' ] ]
+28 verbose addNamed [ 'firebase', '4.5.2' ]
+29 verbose addNamed [ '4.5.2', '4.5.2' ]
+30 silly lockFile c8604a0e-firebase-4-5-2 firebase@4.5.2
+31 verbose lock firebase@4.5.2 /home/gozi/.npm/c8604a0e-firebase-4-5-2.lock
+32 silly lockFile 2206cec2--org-firebase-firebase-4-5-2-tgz https://registry.npmjs.org/firebase/-/firebase-4.5.2.tgz
+33 verbose lock https://registry.npmjs.org/firebase/-/firebase-4.5.2.tgz /home/gozi/.npm/2206cec2--org-firebase-firebase-4-5-2-tgz.lock
+34 verbose addRemoteTarball [ 'https://registry.npmjs.org/firebase/-/firebase-4.5.2.tgz',
+34 verbose addRemoteTarball   'a0856ab37d2ba52d853f6d9ac683b98ab1f8812b' ]
+35 info retry fetch attempt 1 at 07:55:00
+36 verbose fetch to= /home/gozi/tmp/npm-243-sc0hkuVl/1508223300918-0.24286614684388041/tmp.tgz
+37 http GET https://registry.npmjs.org/firebase/-/firebase-4.5.2.tgz
+38 http 200 https://registry.npmjs.org/firebase/-/firebase-4.5.2.tgz
+39 verbose tar unpack /home/gozi/tmp/npm-243-sc0hkuVl/1508223300918-0.24286614684388041/tmp.tgz
+40 silly lockFile c7a903a6-0918-0-24286614684388041-package tar:///home/gozi/tmp/npm-243-sc0hkuVl/1508223300918-0.24286614684388041/package
+41 verbose lock tar:///home/gozi/tmp/npm-243-sc0hkuVl/1508223300918-0.24286614684388041/package /home/gozi/.npm/c7a903a6-0918-0-24286614684388041-package.lock
+42 silly lockFile 27881374-0918-0-24286614684388041-tmp-tgz tar:///home/gozi/tmp/npm-243-sc0hkuVl/1508223300918-0.24286614684388041/tmp.tgz
+43 verbose lock tar:///home/gozi/tmp/npm-243-sc0hkuVl/1508223300918-0.24286614684388041/tmp.tgz /home/gozi/.npm/27881374-0918-0-24286614684388041-tmp-tgz.lock
+44 silly gunzTarPerm modes [ '755', '644' ]
+45 silly gunzTarPerm extractEntry package.json
+46 silly gunzTarPerm extractEntry firebase-app.js
+47 silly gunzTarPerm extractEntry firebase-app.js.map
+48 silly gunzTarPerm extractEntry firebase-auth.js
+49 silly gunzTarPerm extractEntry firebase-auth.js.map
+50 silly gunzTarPerm extractEntry firebase-database.js
+51 silly gunzTarPerm extractEntry firebase-database.js.map
+52 silly gunzTarPerm extractEntry firebase-firestore.js
+53 silly gunzTarPerm extractEntry firebase-firestore.js.map
+54 silly gunzTarPerm extractEntry firebase-messaging.js
+55 silly gunzTarPerm extractEntry firebase-messaging.js.map
+56 silly gunzTarPerm extractEntry firebase-storage.js
+57 silly gunzTarPerm extractEntry firebase-storage.js.map
+58 silly gunzTarPerm extractEntry firebase.js
+59 silly gunzTarPerm extractEntry firebase.js.map
+60 silly gunzTarPerm extractEntry index.d.ts
+61 silly gunzTarPerm extractEntry index.js
+62 silly gunzTarPerm extractEntry index.node.js
+63 silly gunzTarPerm extractEntry index.react-native.js
+64 silly gunzTarPerm extractEntry README.md
+65 silly gunzTarPerm extractEntry app/index.d.ts
+66 silly gunzTarPerm extractEntry app/index.js
+67 silly gunzTarPerm extractEntry auth/index.js
+68 silly gunzTarPerm extractEntry database/index.js
+69 silly gunzTarPerm extractEntry externs/firebase-app-externs.js
+70 silly gunzTarPerm extractEntry externs/firebase-app-internal-externs.js
+71 silly gunzTarPerm extractEntry externs/firebase-auth-externs.js
+72 silly gunzTarPerm extractEntry externs/firebase-client-auth-externs.js
+73 silly gunzTarPerm extractEntry externs/firebase-database-externs.js
+74 silly gunzTarPerm extractEntry externs/firebase-database-internal-externs.js
+75 silly gunzTarPerm extractEntry externs/firebase-error-externs.js
+76 silly gunzTarPerm extractEntry externs/firebase-externs.js
+77 silly gunzTarPerm extractEntry externs/firebase-messaging-externs.js
+78 silly gunzTarPerm extractEntry externs/firebase-storage-externs.js
+79 silly gunzTarPerm extractEntry firestore/index.js
+80 silly gunzTarPerm extractEntry messaging/index.js
+81 silly gunzTarPerm extractEntry storage/index.js
+82 silly lockFile c7a903a6-0918-0-24286614684388041-package tar:///home/gozi/tmp/npm-243-sc0hkuVl/1508223300918-0.24286614684388041/package
+83 silly lockFile c7a903a6-0918-0-24286614684388041-package tar:///home/gozi/tmp/npm-243-sc0hkuVl/1508223300918-0.24286614684388041/package
+84 silly lockFile 27881374-0918-0-24286614684388041-tmp-tgz tar:///home/gozi/tmp/npm-243-sc0hkuVl/1508223300918-0.24286614684388041/tmp.tgz
+85 silly lockFile 27881374-0918-0-24286614684388041-tmp-tgz tar:///home/gozi/tmp/npm-243-sc0hkuVl/1508223300918-0.24286614684388041/tmp.tgz
+86 verbose tar pack [ '/home/gozi/.npm/firebase/4.5.2/package.tgz',
+86 verbose tar pack   '/home/gozi/tmp/npm-243-sc0hkuVl/1508223300918-0.24286614684388041/package' ]
+87 verbose tarball /home/gozi/.npm/firebase/4.5.2/package.tgz
+88 verbose folder /home/gozi/tmp/npm-243-sc0hkuVl/1508223300918-0.24286614684388041/package
+89 silly lockFile c7a903a6-0918-0-24286614684388041-package tar:///home/gozi/tmp/npm-243-sc0hkuVl/1508223300918-0.24286614684388041/package
+90 verbose lock tar:///home/gozi/tmp/npm-243-sc0hkuVl/1508223300918-0.24286614684388041/package /home/gozi/.npm/c7a903a6-0918-0-24286614684388041-package.lock
+91 silly lockFile bdb59472-i-npm-firebase-4-5-2-package-tgz tar:///home/gozi/.npm/firebase/4.5.2/package.tgz
+92 verbose lock tar:///home/gozi/.npm/firebase/4.5.2/package.tgz /home/gozi/.npm/bdb59472-i-npm-firebase-4-5-2-package-tgz.lock
+93 silly lockFile c7a903a6-0918-0-24286614684388041-package tar:///home/gozi/tmp/npm-243-sc0hkuVl/1508223300918-0.24286614684388041/package
+94 silly lockFile c7a903a6-0918-0-24286614684388041-package tar:///home/gozi/tmp/npm-243-sc0hkuVl/1508223300918-0.24286614684388041/package
+95 silly lockFile bdb59472-i-npm-firebase-4-5-2-package-tgz tar:///home/gozi/.npm/firebase/4.5.2/package.tgz
+96 silly lockFile bdb59472-i-npm-firebase-4-5-2-package-tgz tar:///home/gozi/.npm/firebase/4.5.2/package.tgz
+97 silly lockFile eb15aae3--gozi-npm-firebase-4-5-2-package /home/gozi/.npm/firebase/4.5.2/package
+98 verbose lock /home/gozi/.npm/firebase/4.5.2/package /home/gozi/.npm/eb15aae3--gozi-npm-firebase-4-5-2-package.lock
+99 silly lockFile eb15aae3--gozi-npm-firebase-4-5-2-package /home/gozi/.npm/firebase/4.5.2/package
+100 silly lockFile eb15aae3--gozi-npm-firebase-4-5-2-package /home/gozi/.npm/firebase/4.5.2/package
+101 verbose tar unpack /home/gozi/.npm/firebase/4.5.2/package.tgz
+102 silly lockFile 8933bcef--gozi-npm-firebase-4-5-2-package tar:///home/gozi/.npm/firebase/4.5.2/package
+103 verbose lock tar:///home/gozi/.npm/firebase/4.5.2/package /home/gozi/.npm/8933bcef--gozi-npm-firebase-4-5-2-package.lock
+104 silly lockFile bdb59472-i-npm-firebase-4-5-2-package-tgz tar:///home/gozi/.npm/firebase/4.5.2/package.tgz
+105 verbose lock tar:///home/gozi/.npm/firebase/4.5.2/package.tgz /home/gozi/.npm/bdb59472-i-npm-firebase-4-5-2-package-tgz.lock
+106 silly gunzTarPerm modes [ '755', '644' ]
+107 silly gunzTarPerm extractEntry package.json
+108 silly gunzTarPerm extractEntry README.md
+109 silly gunzTarPerm extractEntry index.react-native.js
+110 silly gunzTarPerm extractEntry index.node.js
+111 silly gunzTarPerm extractEntry firebase-app.js
+112 silly gunzTarPerm extractEntry firebase-auth.js
+113 silly gunzTarPerm extractEntry firebase.js
+114 silly gunzTarPerm extractEntry firebase-database.js
+115 silly gunzTarPerm extractEntry firebase-storage.js
+116 silly gunzTarPerm extractEntry firebase-firestore.js
+117 silly gunzTarPerm extractEntry index.js
+118 silly gunzTarPerm extractEntry firebase-messaging.js
+119 silly gunzTarPerm extractEntry firestore/index.js
+120 silly gunzTarPerm extractEntry firebase-firestore.js.map
+121 silly gunzTarPerm extractEntry firebase-messaging.js.map
+122 silly gunzTarPerm extractEntry firebase-database.js.map
+123 silly gunzTarPerm extractEntry firebase-storage.js.map
+124 silly gunzTarPerm extractEntry firebase-auth.js.map
+125 silly gunzTarPerm extractEntry firebase.js.map
+126 silly gunzTarPerm extractEntry app/index.js
+127 silly gunzTarPerm extractEntry app/index.d.ts
+128 silly gunzTarPerm extractEntry index.d.ts
+129 silly gunzTarPerm extractEntry firebase-app.js.map
+130 silly gunzTarPerm extractEntry externs/firebase-app-externs.js
+131 silly gunzTarPerm extractEntry externs/firebase-app-internal-externs.js
+132 silly gunzTarPerm extractEntry externs/firebase-auth-externs.js
+133 silly gunzTarPerm extractEntry externs/firebase-client-auth-externs.js
+134 silly gunzTarPerm extractEntry externs/firebase-database-externs.js
+135 silly gunzTarPerm extractEntry externs/firebase-database-internal-externs.js
+136 silly gunzTarPerm extractEntry externs/firebase-error-externs.js
+137 silly gunzTarPerm extractEntry externs/firebase-externs.js
+138 silly gunzTarPerm extractEntry externs/firebase-messaging-externs.js
+139 silly gunzTarPerm extractEntry externs/firebase-storage-externs.js
+140 silly gunzTarPerm extractEntry database/index.js
+141 silly gunzTarPerm extractEntry messaging/index.js
+142 silly gunzTarPerm extractEntry auth/index.js
+143 silly gunzTarPerm extractEntry storage/index.js
+144 silly lockFile 8933bcef--gozi-npm-firebase-4-5-2-package tar:///home/gozi/.npm/firebase/4.5.2/package
+145 silly lockFile 8933bcef--gozi-npm-firebase-4-5-2-package tar:///home/gozi/.npm/firebase/4.5.2/package
+146 silly lockFile bdb59472-i-npm-firebase-4-5-2-package-tgz tar:///home/gozi/.npm/firebase/4.5.2/package.tgz
+147 silly lockFile bdb59472-i-npm-firebase-4-5-2-package-tgz tar:///home/gozi/.npm/firebase/4.5.2/package.tgz
+148 verbose chmod /home/gozi/.npm/firebase/4.5.2/package.tgz 644
+149 verbose chown /home/gozi/.npm/firebase/4.5.2/package.tgz [ 1000, 1000 ]
+150 silly lockFile 2206cec2--org-firebase-firebase-4-5-2-tgz https://registry.npmjs.org/firebase/-/firebase-4.5.2.tgz
+151 silly lockFile 2206cec2--org-firebase-firebase-4-5-2-tgz https://registry.npmjs.org/firebase/-/firebase-4.5.2.tgz
+152 silly lockFile c8604a0e-firebase-4-5-2 firebase@4.5.2
+153 silly lockFile c8604a0e-firebase-4-5-2 firebase@4.5.2
+154 silly lockFile 2bddc103-firebase firebase@
+155 silly lockFile 2bddc103-firebase firebase@
+156 silly resolved [ { name: 'firebase',
+156 silly resolved     version: '4.5.2',
+156 silly resolved     description: 'Firebase JavaScript library for web and Node.js',
+156 silly resolved     author:
+156 silly resolved      { name: 'Firebase',
+156 silly resolved        email: 'firebase-support@google.com',
+156 silly resolved        url: 'https://firebase.google.com/' },
+156 silly resolved     license: 'Apache-2.0',
+156 silly resolved     homepage: 'https://firebase.google.com/',
+156 silly resolved     keywords:
+156 silly resolved      [ 'authentication',
+156 silly resolved        'database',
+156 silly resolved        'Firebase',
+156 silly resolved        'firebase',
+156 silly resolved        'realtime',
+156 silly resolved        'storage' ],
+156 silly resolved     repository:
+156 silly resolved      { type: 'git',
+156 silly resolved        url: 'https://github.com/firebase/firebase-js-sdk.git' },
+156 silly resolved     scripts:
+156 silly resolved      { dev: 'run-p watch:compiler watch:server',
+156 silly resolved        'watch:compiler': 'gulp watch',
+156 silly resolved        'watch:server': 'webpack-dev-server --config webpack.dev.js --colors',
+156 silly resolved        prepare: 'gulp build' },
+156 silly resolved     main: 'index.node.js',
+156 silly resolved     browser: 'index.js',
+156 silly resolved     'react-native': 'index.react-native.js',
+156 silly resolved     dependencies:
+156 silly resolved      { '@firebase/app': '^0.1.1',
+156 silly resolved        '@firebase/auth': '^0.1.1',
+156 silly resolved        '@firebase/database': '^0.1.1',
+156 silly resolved        '@firebase/firestore': '^0.1.1',
+156 silly resolved        '@firebase/messaging': '^0.1.1',
+156 silly resolved        '@firebase/polyfill': '^0.1.1',
+156 silly resolved        '@firebase/storage': '^0.1.1',
+156 silly resolved        'dom-storage': '^2.0.2',
+156 silly resolved        xmlhttprequest: '^1.8.0' },
+156 silly resolved     devDependencies:
+156 silly resolved      { 'compression-webpack-plugin': '^1.0.0',
+156 silly resolved        'git-rev-sync': '^1.9.1',
+156 silly resolved        gulp: 'gulpjs/gulp#4.0',
+156 silly resolved        'gulp-concat': '^2.6.1',
+156 silly resolved        'gulp-sourcemaps': '^2.6.1',
+156 silly resolved        'npm-run-all': '^4.1.1',
+156 silly resolved        webpack: '^3.5.6',
+156 silly resolved        'webpack-dev-server': '^2.8.1',
+156 silly resolved        'webpack-stream': '^4.0.0',
+156 silly resolved        'wrapper-webpack-plugin': '^1.0.0' },
+156 silly resolved     typings: 'index.d.ts',
+156 silly resolved     readme: '[![Build Status](https://travis-ci.org/firebase/firebase-js-sdk.svg?branch=master)](https://travis-ci.org/firebase/firebase-js-sdk)\n\n# Firebase - App success made simple\n\n## Overview\n\n[Firebase](https://firebase.google.com) provides the tools and infrastructure\nyou need to develop, grow, and earn money from your app. This package supports\nweb (browser), mobile-web, and server (Node.js) clients.\n\nFor more information, visit:\n\n- [Firebase Realtime Database](https://firebase.google.com/docs/database/web/start) -\n  The Firebase Realtime Database lets you store and query user data, and makes\n  it available between users in realtime.\n- [Firebase Storage](https://firebase.google.com/docs/storage/web/start) -\n  Firebase Storage lets you upload and store user generated content, such as\n  files, and images.\n- [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/js/client) -\n  Firebase Cloud Messaging is a cross-platform messaging solution that lets you\n  reliably deliver messages at no cost.\n- [Firebase Authentication](https://firebase.google.com/docs/auth/web/manage-users) -\n  Firebase helps you authenticate and manage users who access your application.\n- [Create and setup your account](https://firebase.google.com/docs/web/setup) -\n  Get started using Firebase for free.\n\nThis SDK is intended for end-user client access from environments such as the\nWeb, mobile Web (e.g. React Native, Ionic), Node.js desktop (e.g. Electron), or\nIoT devices running Node.js. If you are instead interested in using a Node.js\nSDK which grants you admin access from a privileged environment (like a server),\nyou should use the\n[Firebase Admin Node.js SDK](https://firebase.google.com/docs/admin/setup/).\n\n## Get the code (browser)\n\n### Script include\n\nInclude Firebase in your web application via a `<script>` tag:\n\n```\n<script src="https://www.gstatic.com/firebasejs/${JSCORE_VERSION}/firebase.js"></script>\n\n<script>\n  var app = firebase.initializeApp({\n    apiKey: \'<your-api-key>\',\n    authDomain: \'<your-auth-domain>\',\n    databaseURL: \'<your-database-url>\',\n    storageBucket: \'<your-storage-bucket>\',\n    messagingSenderId: \'<your-sender-id>\'\n  });\n  // ...\n</script>\n```\n\n*Note: To get a filled in version of the above code snippet, go to the\n[Firebase console](https://console.firebase.google.com/) for your app and click on "Add\nFirebase to your web app".*\n\n### npm bundler (Browserify, Webpack, etc.)\n\nThe Firebase JavaScript npm package contains code that can be run in the browser\nafter combining the modules you use with a package bundler (e.g.,\n[Browserify](http://browserify.org/), [Webpack](https://webpack.github.io/)).\n\nInstall the Firebase npm module:\n\n```\n$ npm init\n$ npm install --save firebase\n```\n\nIn your code, you can access Firebase using:\n\n```\nvar firebase = require(\'firebase\');\nvar app = firebase.initializeApp({ ... });\n```\n\nIf you are using ES6 imports or TypeScript:\n\n```\nimport * as firebase from \'firebase\';\nvar app = firebase.initializeApp({ ... });\n```\n\n### Include only the features you need\n\nThe full Firebase JavaScript client includes support for Firebase Authentication, the\nFirebase Realtime Database, Firebase Storage, and Firebase Cloud Messaging. Including\ncode via the above snippets will pull in all of these features.\n\nYou can reduce the amount of code your app uses by just including the features\nyou need. The individually installable services are:\n\n- `firebase-app` - The core `firebase` client (required).\n- `firebase-auth` - Firebase Authentication (optional).\n- `firebase-database` - The Firebase Realtime Database (optional).\n- `firebase-storage` - Firebase Storage (optional).\n- `firebase-messaging` - Firebase Cloud Messaging (optional).\n\nFrom the CDN, include the individual services you use (include `firebase-app`\nfirst):\n\n```\n<script src="https://www.gstatic.com/firebasejs/${JSCORE_VERSION}/firebase-app.js"></script>\n<script src="https://www.gstatic.com/firebasejs/${JSCORE_VERSION}/firebase-auth.js"></script>\n<script src="https://www.gstatic.com/firebasejs/${JSCORE_VERSION}/firebase-database.js"></script>\n<script src="https://www.gstatic.com/firebasejs/${JSCORE_VERSION}/firebase-storage.js"></script>\n<script src="https://www.gstatic.com/firebasejs/${JSCORE_VERSION}/firebase-messaging.js"></script>\n\n<script>\n  var app = firebase.initializeApp({ ... });\n  // ...\n</script>\n```\n\nWhen using the firebase npm package, you can `require()` just the services that\nyou use:\n\n```\nvar firebase = require(\'firebase/app\');\nrequire(\'firebase/auth\');\nrequire(\'firebase/database\');\n\nvar app = firebase.initializeApp({ ... });\n```\n\nIf you are using TypeScript with the npm package, you can import just the\nservices you use:\n\n```\n// This import loads the firebase namespace along with all its type information.\nimport * as firebase from \'firebase/app\';\n\n// These imports load individual services into the firebase namespace.\nimport \'firebase/auth\';\nimport \'firebase/database\';\n```\n\n_The type information from the import statement will include all of the SDKs,\nnot just the ones you have `required`, so you could get a runtime error if you\nreference a non-required service._\n\n## Get the code (Node.js - server and command line)\n\n### NPM\n\nWhile you can write entire Firebase applications without any backend code, many\ndevelopers want to write server applications or command-line utilities using the\nNode.js JavaScript runtime.\n\nYou can use the same npm module to use Firebase in the Node.js runtime (on a\nserver or running from the command line):\n\n```\n$ npm init\n$ npm install --save firebase\n```\n\nIn your code, you can access Firebase using:\n\n```\nvar firebase = require(\'firebase\');\nvar app = firebase.initializeApp({ ... });\n// ...\n```\n\nFirebase Storage is not included in the server side Firebase npm module.\nInstead, you can use the\n[`gcloud` Node.js client](https://googlecloudplatform.github.io/gcloud-node).\n\n```\n$ npm install --save gcloud\n```\n\nIn your code, you can access your Storage bucket using:\n\n```\nvar gcloud = require(\'gcloud\')({ ... });\nvar gcs = gcloud.storage();\nvar bucket = gcs.bucket(\'<your-firebase-storage-bucket>\');\n...\n```\n\nFirebase Cloud Messaging is not included in the server side Firebase npm module.\nInstead, you can use the\n[Firebase Cloud Messaging Rest API](https://firebase.google.com/docs/cloud-messaging/send-message).\n\n## API definition\n\nIf you use the\n[Closure Compiler](https://developers.google.com/closure/compiler/) or\ncompatible IDE, you can find API definitions for all the Firebase JavaScript API\nin the included `/externs` directory in this package:\n\n```\nexterns/\n  firebase-app-externs.js\n  firebase-auth-externs.js\n  firebase-database-externs.js\n  firebase-storage-externs.js\n  firebase-messaging-externs.js\n```\n\n## Changelog\n\nThe Firebase changelog can be found at\n[firebase.google.com](https://firebase.google.com/support/release-notes/js).\n\n## Browser/environment compatibility\n\nSee [ENVIRONMENTS.md](ENVIRONMENTS.md) to see which browsers/environments are\nsupported for each feature.',
+156 silly resolved     readmeFilename: 'README.md',
+156 silly resolved     bugs: { url: 'https://github.com/firebase/firebase-js-sdk/issues' },
+156 silly resolved     _id: 'firebase@4.5.2',
+156 silly resolved     dist: { shasum: '88f0b9a901f096e6d525a09ef19cbd5fceeaa449' },
+156 silly resolved     _from: 'firebase@',
+156 silly resolved     _resolved: 'https://registry.npmjs.org/firebase/-/firebase-4.5.2.tgz' } ]
+157 info install firebase@4.5.2 into /mnt/f/Collabarray
+158 info installOne firebase@4.5.2
+159 info /mnt/f/Collabarray/node_modules/firebase unbuild
+160 info preuninstall firebase@4.5.0
+161 info uninstall firebase@4.5.0
+162 verbose true,/mnt/f/Collabarray/node_modules,/mnt/f/Collabarray/node_modules unbuild firebase@4.5.0
+163 info postuninstall firebase@4.5.0
+164 verbose tar unpack /home/gozi/.npm/firebase/4.5.2/package.tgz
+165 silly lockFile d34d496c-ollabarray-node-modules-firebase tar:///mnt/f/Collabarray/node_modules/firebase
+166 verbose lock tar:///mnt/f/Collabarray/node_modules/firebase /home/gozi/.npm/d34d496c-ollabarray-node-modules-firebase.lock
+167 silly lockFile bdb59472-i-npm-firebase-4-5-2-package-tgz tar:///home/gozi/.npm/firebase/4.5.2/package.tgz
+168 verbose lock tar:///home/gozi/.npm/firebase/4.5.2/package.tgz /home/gozi/.npm/bdb59472-i-npm-firebase-4-5-2-package-tgz.lock
+169 silly gunzTarPerm modes [ '755', '644' ]
+170 silly gunzTarPerm extractEntry package.json
+171 silly gunzTarPerm extractEntry README.md
+172 silly gunzTarPerm extractEntry index.react-native.js
+173 silly gunzTarPerm extractEntry index.node.js
+174 silly gunzTarPerm extractEntry firebase-app.js
+175 silly gunzTarPerm extractEntry firebase-auth.js
+176 silly gunzTarPerm extractEntry firebase.js
+177 silly gunzTarPerm extractEntry firebase-database.js
+178 silly gunzTarPerm extractEntry firebase-storage.js
+179 silly gunzTarPerm extractEntry firebase-firestore.js
+180 silly gunzTarPerm extractEntry index.js
+181 silly gunzTarPerm extractEntry firebase-messaging.js
+182 silly gunzTarPerm extractEntry firestore/index.js
+183 silly gunzTarPerm extractEntry firebase-firestore.js.map
+184 silly gunzTarPerm extractEntry firebase-messaging.js.map
+185 silly gunzTarPerm extractEntry firebase-database.js.map
+186 silly gunzTarPerm extractEntry firebase-storage.js.map
+187 silly gunzTarPerm extractEntry firebase-auth.js.map
+188 silly gunzTarPerm extractEntry firebase.js.map
+189 silly gunzTarPerm extractEntry app/index.js
+190 silly gunzTarPerm extractEntry app/index.d.ts
+191 silly gunzTarPerm extractEntry index.d.ts
+192 silly gunzTarPerm extractEntry firebase-app.js.map
+193 silly gunzTarPerm extractEntry externs/firebase-app-externs.js
+194 silly gunzTarPerm extractEntry externs/firebase-app-internal-externs.js
+195 silly gunzTarPerm extractEntry externs/firebase-auth-externs.js
+196 silly gunzTarPerm extractEntry externs/firebase-client-auth-externs.js
+197 silly gunzTarPerm extractEntry externs/firebase-database-externs.js
+198 silly gunzTarPerm extractEntry externs/firebase-database-internal-externs.js
+199 silly gunzTarPerm extractEntry externs/firebase-error-externs.js
+200 silly gunzTarPerm extractEntry externs/firebase-externs.js
+201 silly gunzTarPerm extractEntry externs/firebase-messaging-externs.js
+202 silly gunzTarPerm extractEntry externs/firebase-storage-externs.js
+203 silly gunzTarPerm extractEntry database/index.js
+204 silly gunzTarPerm extractEntry messaging/index.js
+205 silly gunzTarPerm extractEntry auth/index.js
+206 silly gunzTarPerm extractEntry storage/index.js
+207 silly lockFile d34d496c-ollabarray-node-modules-firebase tar:///mnt/f/Collabarray/node_modules/firebase
+208 silly lockFile d34d496c-ollabarray-node-modules-firebase tar:///mnt/f/Collabarray/node_modules/firebase
+209 silly lockFile bdb59472-i-npm-firebase-4-5-2-package-tgz tar:///home/gozi/.npm/firebase/4.5.2/package.tgz
+210 silly lockFile bdb59472-i-npm-firebase-4-5-2-package-tgz tar:///home/gozi/.npm/firebase/4.5.2/package.tgz
+211 info preinstall firebase@4.5.2
+212 verbose readDependencies using package.json deps
+213 verbose readDependencies using package.json deps
+214 verbose cache add [ '@firebase/firestore@^0.1.1', null ]
+215 verbose cache add name=undefined spec="@firebase/firestore@^0.1.1" args=["@firebase/firestore@^0.1.1",null]
+216 verbose parsed url { protocol: null,
+216 verbose parsed url   slashes: null,
+216 verbose parsed url   auth: null,
+216 verbose parsed url   host: null,
+216 verbose parsed url   port: null,
+216 verbose parsed url   hostname: null,
+216 verbose parsed url   hash: null,
+216 verbose parsed url   search: null,
+216 verbose parsed url   query: null,
+216 verbose parsed url   pathname: '@firebase/firestore@^0.1.1',
+216 verbose parsed url   path: '@firebase/firestore@^0.1.1',
+216 verbose parsed url   href: '@firebase/firestore@^0.1.1' }
+217 verbose cache add name="" spec="firebase/firestore@^0.1.1" args=["","firebase/firestore@^0.1.1"]
+218 verbose parsed url { protocol: null,
+218 verbose parsed url   slashes: null,
+218 verbose parsed url   auth: null,
+218 verbose parsed url   host: null,
+218 verbose parsed url   port: null,
+218 verbose parsed url   hostname: null,
+218 verbose parsed url   hash: null,
+218 verbose parsed url   search: null,
+218 verbose parsed url   query: null,
+218 verbose parsed url   pathname: 'firebase/firestore@^0.1.1',
+218 verbose parsed url   path: 'firebase/firestore@^0.1.1',
+218 verbose parsed url   href: 'firebase/firestore@^0.1.1' }
+219 verbose cache add name="firebase/firestore" spec="^0.1.1" args=["firebase/firestore","^0.1.1"]
+220 verbose parsed url { protocol: null,
+220 verbose parsed url   slashes: null,
+220 verbose parsed url   auth: null,
+220 verbose parsed url   host: null,
+220 verbose parsed url   port: null,
+220 verbose parsed url   hostname: null,
+220 verbose parsed url   hash: null,
+220 verbose parsed url   search: null,
+220 verbose parsed url   query: null,
+220 verbose parsed url   pathname: '^0.1.1',
+220 verbose parsed url   path: '^0.1.1',
+220 verbose parsed url   href: '^0.1.1' }
+221 verbose addNamed [ 'firebase/firestore', '^0.1.1' ]
+222 verbose addNamed [ null, '>=0.1.1-0 <0.2.0-0' ]
+223 silly lockFile e36b7471-firebase-firestore-0-1-1 firebase/firestore@^0.1.1
+224 verbose lock firebase/firestore@^0.1.1 /home/gozi/.npm/e36b7471-firebase-firestore-0-1-1.lock
+225 verbose cache add [ '@firebase/storage@^0.1.1', null ]
+226 verbose cache add name=undefined spec="@firebase/storage@^0.1.1" args=["@firebase/storage@^0.1.1",null]
+227 verbose parsed url { protocol: null,
+227 verbose parsed url   slashes: null,
+227 verbose parsed url   auth: null,
+227 verbose parsed url   host: null,
+227 verbose parsed url   port: null,
+227 verbose parsed url   hostname: null,
+227 verbose parsed url   hash: null,
+227 verbose parsed url   search: null,
+227 verbose parsed url   query: null,
+227 verbose parsed url   pathname: '@firebase/storage@^0.1.1',
+227 verbose parsed url   path: '@firebase/storage@^0.1.1',
+227 verbose parsed url   href: '@firebase/storage@^0.1.1' }
+228 verbose cache add name="" spec="firebase/storage@^0.1.1" args=["","firebase/storage@^0.1.1"]
+229 verbose parsed url { protocol: null,
+229 verbose parsed url   slashes: null,
+229 verbose parsed url   auth: null,
+229 verbose parsed url   host: null,
+229 verbose parsed url   port: null,
+229 verbose parsed url   hostname: null,
+229 verbose parsed url   hash: null,
+229 verbose parsed url   search: null,
+229 verbose parsed url   query: null,
+229 verbose parsed url   pathname: 'firebase/storage@^0.1.1',
+229 verbose parsed url   path: 'firebase/storage@^0.1.1',
+229 verbose parsed url   href: 'firebase/storage@^0.1.1' }
+230 verbose cache add name="firebase/storage" spec="^0.1.1" args=["firebase/storage","^0.1.1"]
+231 verbose parsed url { protocol: null,
+231 verbose parsed url   slashes: null,
+231 verbose parsed url   auth: null,
+231 verbose parsed url   host: null,
+231 verbose parsed url   port: null,
+231 verbose parsed url   hostname: null,
+231 verbose parsed url   hash: null,
+231 verbose parsed url   search: null,
+231 verbose parsed url   query: null,
+231 verbose parsed url   pathname: '^0.1.1',
+231 verbose parsed url   path: '^0.1.1',
+231 verbose parsed url   href: '^0.1.1' }
+232 verbose addNamed [ 'firebase/storage', '^0.1.1' ]
+233 verbose addNamed [ null, '>=0.1.1-0 <0.2.0-0' ]
+234 silly lockFile 4742a7ce-firebase-storage-0-1-1 firebase/storage@^0.1.1
+235 verbose lock firebase/storage@^0.1.1 /home/gozi/.npm/4742a7ce-firebase-storage-0-1-1.lock
+236 verbose cache add [ '@firebase/messaging@^0.1.1', null ]
+237 verbose cache add name=undefined spec="@firebase/messaging@^0.1.1" args=["@firebase/messaging@^0.1.1",null]
+238 verbose parsed url { protocol: null,
+238 verbose parsed url   slashes: null,
+238 verbose parsed url   auth: null,
+238 verbose parsed url   host: null,
+238 verbose parsed url   port: null,
+238 verbose parsed url   hostname: null,
+238 verbose parsed url   hash: null,
+238 verbose parsed url   search: null,
+238 verbose parsed url   query: null,
+238 verbose parsed url   pathname: '@firebase/messaging@^0.1.1',
+238 verbose parsed url   path: '@firebase/messaging@^0.1.1',
+238 verbose parsed url   href: '@firebase/messaging@^0.1.1' }
+239 verbose cache add name="" spec="firebase/messaging@^0.1.1" args=["","firebase/messaging@^0.1.1"]
+240 verbose parsed url { protocol: null,
+240 verbose parsed url   slashes: null,
+240 verbose parsed url   auth: null,
+240 verbose parsed url   host: null,
+240 verbose parsed url   port: null,
+240 verbose parsed url   hostname: null,
+240 verbose parsed url   hash: null,
+240 verbose parsed url   search: null,
+240 verbose parsed url   query: null,
+240 verbose parsed url   pathname: 'firebase/messaging@^0.1.1',
+240 verbose parsed url   path: 'firebase/messaging@^0.1.1',
+240 verbose parsed url   href: 'firebase/messaging@^0.1.1' }
+241 verbose cache add name="firebase/messaging" spec="^0.1.1" args=["firebase/messaging","^0.1.1"]
+242 verbose parsed url { protocol: null,
+242 verbose parsed url   slashes: null,
+242 verbose parsed url   auth: null,
+242 verbose parsed url   host: null,
+242 verbose parsed url   port: null,
+242 verbose parsed url   hostname: null,
+242 verbose parsed url   hash: null,
+242 verbose parsed url   search: null,
+242 verbose parsed url   query: null,
+242 verbose parsed url   pathname: '^0.1.1',
+242 verbose parsed url   path: '^0.1.1',
+242 verbose parsed url   href: '^0.1.1' }
+243 verbose addNamed [ 'firebase/messaging', '^0.1.1' ]
+244 verbose addNamed [ null, '>=0.1.1-0 <0.2.0-0' ]
+245 silly lockFile 342ae477-firebase-messaging-0-1-1 firebase/messaging@^0.1.1
+246 verbose lock firebase/messaging@^0.1.1 /home/gozi/.npm/342ae477-firebase-messaging-0-1-1.lock
+247 verbose cache add [ 'dom-storage@^2.0.2', null ]
+248 verbose cache add name=undefined spec="dom-storage@^2.0.2" args=["dom-storage@^2.0.2",null]
+249 verbose parsed url { protocol: null,
+249 verbose parsed url   slashes: null,
+249 verbose parsed url   auth: null,
+249 verbose parsed url   host: null,
+249 verbose parsed url   port: null,
+249 verbose parsed url   hostname: null,
+249 verbose parsed url   hash: null,
+249 verbose parsed url   search: null,
+249 verbose parsed url   query: null,
+249 verbose parsed url   pathname: 'dom-storage@^2.0.2',
+249 verbose parsed url   path: 'dom-storage@^2.0.2',
+249 verbose parsed url   href: 'dom-storage@^2.0.2' }
+250 verbose cache add name="dom-storage" spec="^2.0.2" args=["dom-storage","^2.0.2"]
+251 verbose parsed url { protocol: null,
+251 verbose parsed url   slashes: null,
+251 verbose parsed url   auth: null,
+251 verbose parsed url   host: null,
+251 verbose parsed url   port: null,
+251 verbose parsed url   hostname: null,
+251 verbose parsed url   hash: null,
+251 verbose parsed url   search: null,
+251 verbose parsed url   query: null,
+251 verbose parsed url   pathname: '^2.0.2',
+251 verbose parsed url   path: '^2.0.2',
+251 verbose parsed url   href: '^2.0.2' }
+252 verbose addNamed [ 'dom-storage', '^2.0.2' ]
+253 verbose addNamed [ null, '>=2.0.2-0 <3.0.0-0' ]
+254 silly lockFile 6cf5a125-dom-storage-2-0-2 dom-storage@^2.0.2
+255 verbose lock dom-storage@^2.0.2 /home/gozi/.npm/6cf5a125-dom-storage-2-0-2.lock
+256 verbose cache add [ '@firebase/polyfill@^0.1.1', null ]
+257 verbose cache add name=undefined spec="@firebase/polyfill@^0.1.1" args=["@firebase/polyfill@^0.1.1",null]
+258 verbose parsed url { protocol: null,
+258 verbose parsed url   slashes: null,
+258 verbose parsed url   auth: null,
+258 verbose parsed url   host: null,
+258 verbose parsed url   port: null,
+258 verbose parsed url   hostname: null,
+258 verbose parsed url   hash: null,
+258 verbose parsed url   search: null,
+258 verbose parsed url   query: null,
+258 verbose parsed url   pathname: '@firebase/polyfill@^0.1.1',
+258 verbose parsed url   path: '@firebase/polyfill@^0.1.1',
+258 verbose parsed url   href: '@firebase/polyfill@^0.1.1' }
+259 verbose cache add name="" spec="firebase/polyfill@^0.1.1" args=["","firebase/polyfill@^0.1.1"]
+260 verbose parsed url { protocol: null,
+260 verbose parsed url   slashes: null,
+260 verbose parsed url   auth: null,
+260 verbose parsed url   host: null,
+260 verbose parsed url   port: null,
+260 verbose parsed url   hostname: null,
+260 verbose parsed url   hash: null,
+260 verbose parsed url   search: null,
+260 verbose parsed url   query: null,
+260 verbose parsed url   pathname: 'firebase/polyfill@^0.1.1',
+260 verbose parsed url   path: 'firebase/polyfill@^0.1.1',
+260 verbose parsed url   href: 'firebase/polyfill@^0.1.1' }
+261 verbose cache add name="firebase/polyfill" spec="^0.1.1" args=["firebase/polyfill","^0.1.1"]
+262 verbose parsed url { protocol: null,
+262 verbose parsed url   slashes: null,
+262 verbose parsed url   auth: null,
+262 verbose parsed url   host: null,
+262 verbose parsed url   port: null,
+262 verbose parsed url   hostname: null,
+262 verbose parsed url   hash: null,
+262 verbose parsed url   search: null,
+262 verbose parsed url   query: null,
+262 verbose parsed url   pathname: '^0.1.1',
+262 verbose parsed url   path: '^0.1.1',
+262 verbose parsed url   href: '^0.1.1' }
+263 verbose addNamed [ 'firebase/polyfill', '^0.1.1' ]
+264 verbose addNamed [ null, '>=0.1.1-0 <0.2.0-0' ]
+265 silly lockFile 1ea9426b-firebase-polyfill-0-1-1 firebase/polyfill@^0.1.1
+266 verbose lock firebase/polyfill@^0.1.1 /home/gozi/.npm/1ea9426b-firebase-polyfill-0-1-1.lock
+267 verbose cache add [ 'xmlhttprequest@^1.8.0', null ]
+268 verbose cache add name=undefined spec="xmlhttprequest@^1.8.0" args=["xmlhttprequest@^1.8.0",null]
+269 verbose parsed url { protocol: null,
+269 verbose parsed url   slashes: null,
+269 verbose parsed url   auth: null,
+269 verbose parsed url   host: null,
+269 verbose parsed url   port: null,
+269 verbose parsed url   hostname: null,
+269 verbose parsed url   hash: null,
+269 verbose parsed url   search: null,
+269 verbose parsed url   query: null,
+269 verbose parsed url   pathname: 'xmlhttprequest@^1.8.0',
+269 verbose parsed url   path: 'xmlhttprequest@^1.8.0',
+269 verbose parsed url   href: 'xmlhttprequest@^1.8.0' }
+270 verbose cache add name="xmlhttprequest" spec="^1.8.0" args=["xmlhttprequest","^1.8.0"]
+271 verbose parsed url { protocol: null,
+271 verbose parsed url   slashes: null,
+271 verbose parsed url   auth: null,
+271 verbose parsed url   host: null,
+271 verbose parsed url   port: null,
+271 verbose parsed url   hostname: null,
+271 verbose parsed url   hash: null,
+271 verbose parsed url   search: null,
+271 verbose parsed url   query: null,
+271 verbose parsed url   pathname: '^1.8.0',
+271 verbose parsed url   path: '^1.8.0',
+271 verbose parsed url   href: '^1.8.0' }
+272 verbose addNamed [ 'xmlhttprequest', '^1.8.0' ]
+273 verbose addNamed [ null, '>=1.8.0-0 <2.0.0-0' ]
+274 silly lockFile 30009bea-xmlhttprequest-1-8-0 xmlhttprequest@^1.8.0
+275 verbose lock xmlhttprequest@^1.8.0 /home/gozi/.npm/30009bea-xmlhttprequest-1-8-0.lock
+276 verbose cache add [ '@firebase/app@^0.1.1', null ]
+277 verbose cache add name=undefined spec="@firebase/app@^0.1.1" args=["@firebase/app@^0.1.1",null]
+278 verbose parsed url { protocol: null,
+278 verbose parsed url   slashes: null,
+278 verbose parsed url   auth: null,
+278 verbose parsed url   host: null,
+278 verbose parsed url   port: null,
+278 verbose parsed url   hostname: null,
+278 verbose parsed url   hash: null,
+278 verbose parsed url   search: null,
+278 verbose parsed url   query: null,
+278 verbose parsed url   pathname: '@firebase/app@^0.1.1',
+278 verbose parsed url   path: '@firebase/app@^0.1.1',
+278 verbose parsed url   href: '@firebase/app@^0.1.1' }
+279 verbose cache add name="" spec="firebase/app@^0.1.1" args=["","firebase/app@^0.1.1"]
+280 verbose parsed url { protocol: null,
+280 verbose parsed url   slashes: null,
+280 verbose parsed url   auth: null,
+280 verbose parsed url   host: null,
+280 verbose parsed url   port: null,
+280 verbose parsed url   hostname: null,
+280 verbose parsed url   hash: null,
+280 verbose parsed url   search: null,
+280 verbose parsed url   query: null,
+280 verbose parsed url   pathname: 'firebase/app@^0.1.1',
+280 verbose parsed url   path: 'firebase/app@^0.1.1',
+280 verbose parsed url   href: 'firebase/app@^0.1.1' }
+281 verbose cache add name="firebase/app" spec="^0.1.1" args=["firebase/app","^0.1.1"]
+282 verbose parsed url { protocol: null,
+282 verbose parsed url   slashes: null,
+282 verbose parsed url   auth: null,
+282 verbose parsed url   host: null,
+282 verbose parsed url   port: null,
+282 verbose parsed url   hostname: null,
+282 verbose parsed url   hash: null,
+282 verbose parsed url   search: null,
+282 verbose parsed url   query: null,
+282 verbose parsed url   pathname: '^0.1.1',
+282 verbose parsed url   path: '^0.1.1',
+282 verbose parsed url   href: '^0.1.1' }
+283 verbose addNamed [ 'firebase/app', '^0.1.1' ]
+284 verbose addNamed [ null, '>=0.1.1-0 <0.2.0-0' ]
+285 silly lockFile 927c99f1-firebase-app-0-1-1 firebase/app@^0.1.1
+286 verbose lock firebase/app@^0.1.1 /home/gozi/.npm/927c99f1-firebase-app-0-1-1.lock
+287 verbose cache add [ '@firebase/auth@^0.1.1', null ]
+288 verbose cache add name=undefined spec="@firebase/auth@^0.1.1" args=["@firebase/auth@^0.1.1",null]
+289 verbose parsed url { protocol: null,
+289 verbose parsed url   slashes: null,
+289 verbose parsed url   auth: null,
+289 verbose parsed url   host: null,
+289 verbose parsed url   port: null,
+289 verbose parsed url   hostname: null,
+289 verbose parsed url   hash: null,
+289 verbose parsed url   search: null,
+289 verbose parsed url   query: null,
+289 verbose parsed url   pathname: '@firebase/auth@^0.1.1',
+289 verbose parsed url   path: '@firebase/auth@^0.1.1',
+289 verbose parsed url   href: '@firebase/auth@^0.1.1' }
+290 verbose cache add name="" spec="firebase/auth@^0.1.1" args=["","firebase/auth@^0.1.1"]
+291 verbose parsed url { protocol: null,
+291 verbose parsed url   slashes: null,
+291 verbose parsed url   auth: null,
+291 verbose parsed url   host: null,
+291 verbose parsed url   port: null,
+291 verbose parsed url   hostname: null,
+291 verbose parsed url   hash: null,
+291 verbose parsed url   search: null,
+291 verbose parsed url   query: null,
+291 verbose parsed url   pathname: 'firebase/auth@^0.1.1',
+291 verbose parsed url   path: 'firebase/auth@^0.1.1',
+291 verbose parsed url   href: 'firebase/auth@^0.1.1' }
+292 verbose cache add name="firebase/auth" spec="^0.1.1" args=["firebase/auth","^0.1.1"]
+293 verbose parsed url { protocol: null,
+293 verbose parsed url   slashes: null,
+293 verbose parsed url   auth: null,
+293 verbose parsed url   host: null,
+293 verbose parsed url   port: null,
+293 verbose parsed url   hostname: null,
+293 verbose parsed url   hash: null,
+293 verbose parsed url   search: null,
+293 verbose parsed url   query: null,
+293 verbose parsed url   pathname: '^0.1.1',
+293 verbose parsed url   path: '^0.1.1',
+293 verbose parsed url   href: '^0.1.1' }
+294 verbose addNamed [ 'firebase/auth', '^0.1.1' ]
+295 verbose addNamed [ null, '>=0.1.1-0 <0.2.0-0' ]
+296 silly lockFile 1925547b-firebase-auth-0-1-1 firebase/auth@^0.1.1
+297 verbose lock firebase/auth@^0.1.1 /home/gozi/.npm/1925547b-firebase-auth-0-1-1.lock
+298 verbose cache add [ '@firebase/database@^0.1.1', null ]
+299 verbose cache add name=undefined spec="@firebase/database@^0.1.1" args=["@firebase/database@^0.1.1",null]
+300 verbose parsed url { protocol: null,
+300 verbose parsed url   slashes: null,
+300 verbose parsed url   auth: null,
+300 verbose parsed url   host: null,
+300 verbose parsed url   port: null,
+300 verbose parsed url   hostname: null,
+300 verbose parsed url   hash: null,
+300 verbose parsed url   search: null,
+300 verbose parsed url   query: null,
+300 verbose parsed url   pathname: '@firebase/database@^0.1.1',
+300 verbose parsed url   path: '@firebase/database@^0.1.1',
+300 verbose parsed url   href: '@firebase/database@^0.1.1' }
+301 verbose cache add name="" spec="firebase/database@^0.1.1" args=["","firebase/database@^0.1.1"]
+302 verbose parsed url { protocol: null,
+302 verbose parsed url   slashes: null,
+302 verbose parsed url   auth: null,
+302 verbose parsed url   host: null,
+302 verbose parsed url   port: null,
+302 verbose parsed url   hostname: null,
+302 verbose parsed url   hash: null,
+302 verbose parsed url   search: null,
+302 verbose parsed url   query: null,
+302 verbose parsed url   pathname: 'firebase/database@^0.1.1',
+302 verbose parsed url   path: 'firebase/database@^0.1.1',
+302 verbose parsed url   href: 'firebase/database@^0.1.1' }
+303 verbose cache add name="firebase/database" spec="^0.1.1" args=["firebase/database","^0.1.1"]
+304 verbose parsed url { protocol: null,
+304 verbose parsed url   slashes: null,
+304 verbose parsed url   auth: null,
+304 verbose parsed url   host: null,
+304 verbose parsed url   port: null,
+304 verbose parsed url   hostname: null,
+304 verbose parsed url   hash: null,
+304 verbose parsed url   search: null,
+304 verbose parsed url   query: null,
+304 verbose parsed url   pathname: '^0.1.1',
+304 verbose parsed url   path: '^0.1.1',
+304 verbose parsed url   href: '^0.1.1' }
+305 verbose addNamed [ 'firebase/database', '^0.1.1' ]
+306 verbose addNamed [ null, '>=0.1.1-0 <0.2.0-0' ]
+307 silly lockFile 856ab92e-firebase-database-0-1-1 firebase/database@^0.1.1
+308 verbose lock firebase/database@^0.1.1 /home/gozi/.npm/856ab92e-firebase-database-0-1-1.lock
+309 silly addNameRange { name: 'firebase/firestore',
+309 silly addNameRange   range: '>=0.1.1-0 <0.2.0-0',
+309 silly addNameRange   hasData: false }
+310 silly addNameRange { name: 'firebase/storage',
+310 silly addNameRange   range: '>=0.1.1-0 <0.2.0-0',
+310 silly addNameRange   hasData: false }
+311 silly addNameRange { name: 'firebase/messaging',
+311 silly addNameRange   range: '>=0.1.1-0 <0.2.0-0',
+311 silly addNameRange   hasData: false }
+312 verbose url raw firebase/firestore
+313 verbose url resolving [ 'https://registry.npmjs.org/', './firebase/firestore' ]
+314 verbose url resolved https://registry.npmjs.org/firebase/firestore
+315 info trying registry request attempt 1 at 07:55:55
+316 http GET https://registry.npmjs.org/firebase/firestore
+317 verbose url raw firebase/storage
+318 verbose url resolving [ 'https://registry.npmjs.org/', './firebase/storage' ]
+319 verbose url resolved https://registry.npmjs.org/firebase/storage
+320 info trying registry request attempt 1 at 07:55:55
+321 http GET https://registry.npmjs.org/firebase/storage
+322 silly addNameRange { name: 'dom-storage',
+322 silly addNameRange   range: '>=2.0.2-0 <3.0.0-0',
+322 silly addNameRange   hasData: false }
+323 silly addNameRange { name: 'firebase/polyfill',
+323 silly addNameRange   range: '>=0.1.1-0 <0.2.0-0',
+323 silly addNameRange   hasData: false }
+324 silly addNameRange { name: 'xmlhttprequest',
+324 silly addNameRange   range: '>=1.8.0-0 <2.0.0-0',
+324 silly addNameRange   hasData: false }
+325 silly addNameRange { name: 'firebase/app',
+325 silly addNameRange   range: '>=0.1.1-0 <0.2.0-0',
+325 silly addNameRange   hasData: false }
+326 silly addNameRange { name: 'firebase/auth',
+326 silly addNameRange   range: '>=0.1.1-0 <0.2.0-0',
+326 silly addNameRange   hasData: false }
+327 silly addNameRange { name: 'firebase/database',
+327 silly addNameRange   range: '>=0.1.1-0 <0.2.0-0',
+327 silly addNameRange   hasData: false }
+328 verbose url raw firebase/messaging
+329 verbose url resolving [ 'https://registry.npmjs.org/', './firebase/messaging' ]
+330 verbose url resolved https://registry.npmjs.org/firebase/messaging
+331 info trying registry request attempt 1 at 07:55:55
+332 http GET https://registry.npmjs.org/firebase/messaging
+333 verbose url raw dom-storage
+334 verbose url resolving [ 'https://registry.npmjs.org/', './dom-storage' ]
+335 verbose url resolved https://registry.npmjs.org/dom-storage
+336 info trying registry request attempt 1 at 07:55:55
+337 http GET https://registry.npmjs.org/dom-storage
+338 verbose url raw firebase/polyfill
+339 verbose url resolving [ 'https://registry.npmjs.org/', './firebase/polyfill' ]
+340 verbose url resolved https://registry.npmjs.org/firebase/polyfill
+341 info trying registry request attempt 1 at 07:55:55
+342 http GET https://registry.npmjs.org/firebase/polyfill
+343 verbose url raw xmlhttprequest
+344 verbose url resolving [ 'https://registry.npmjs.org/', './xmlhttprequest' ]
+345 verbose url resolved https://registry.npmjs.org/xmlhttprequest
+346 info trying registry request attempt 1 at 07:55:55
+347 http GET https://registry.npmjs.org/xmlhttprequest
+348 verbose url raw firebase/app
+349 verbose url resolving [ 'https://registry.npmjs.org/', './firebase/app' ]
+350 verbose url resolved https://registry.npmjs.org/firebase/app
+351 info trying registry request attempt 1 at 07:55:55
+352 http GET https://registry.npmjs.org/firebase/app
+353 verbose url raw firebase/auth
+354 verbose url resolving [ 'https://registry.npmjs.org/', './firebase/auth' ]
+355 verbose url resolved https://registry.npmjs.org/firebase/auth
+356 info trying registry request attempt 1 at 07:55:55
+357 http GET https://registry.npmjs.org/firebase/auth
+358 verbose url raw firebase/database
+359 verbose url resolving [ 'https://registry.npmjs.org/', './firebase/database' ]
+360 verbose url resolved https://registry.npmjs.org/firebase/database
+361 info trying registry request attempt 1 at 07:55:55
+362 http GET https://registry.npmjs.org/firebase/database
+363 http 200 https://registry.npmjs.org/dom-storage
+364 silly registry.get cb [ 200,
+364 silly registry.get   { server: 'nginx/1.10.1',
+364 silly registry.get     'content-type': 'application/json',
+364 silly registry.get     'last-modified': 'Tue, 29 Aug 2017 21:12:46 GMT',
+364 silly registry.get     etag: '"59a5d8ce-1be4"',
+364 silly registry.get     'cache-control': 'max-age=300',
+364 silly registry.get     'content-length': '7140',
+364 silly registry.get     'accept-ranges': 'bytes',
+364 silly registry.get     date: 'Tue, 17 Oct 2017 06:56:01 GMT',
+364 silly registry.get     via: '1.1 varnish',
+364 silly registry.get     age: '0',
+364 silly registry.get     connection: 'keep-alive',
+364 silly registry.get     'x-served-by': 'cache-lhr6324-LHR',
+364 silly registry.get     'x-cache': 'MISS',
+364 silly registry.get     'x-cache-hits': '0',
+364 silly registry.get     'x-timer': 'S1508223362.554016,VS0,VE40',
+364 silly registry.get     vary: 'Accept-Encoding, Accept' } ]
+365 silly addNameRange number 2 { name: 'dom-storage',
+365 silly addNameRange   range: '>=2.0.2-0 <3.0.0-0',
+365 silly addNameRange   hasData: true }
+366 silly addNameRange versions [ 'dom-storage',
+366 silly addNameRange   [ '1.0.0', '1.0.2', '2.0.0', '2.0.1', '2.0.2' ] ]
+367 verbose addNamed [ 'dom-storage', '2.0.2' ]
+368 verbose addNamed [ '2.0.2', '2.0.2' ]
+369 silly lockFile bd065ec9-dom-storage-2-0-2 dom-storage@2.0.2
+370 verbose lock dom-storage@2.0.2 /home/gozi/.npm/bd065ec9-dom-storage-2-0-2.lock
+371 http 200 https://registry.npmjs.org/xmlhttprequest
+372 silly registry.get cb [ 200,
+372 silly registry.get   { server: 'nginx/1.10.1',
+372 silly registry.get     'content-type': 'application/json',
+372 silly registry.get     'last-modified': 'Wed, 11 Oct 2017 00:29:47 GMT',
+372 silly registry.get     etag: '"59dd65fb-30c7"',
+372 silly registry.get     'cache-control': 'max-age=300',
+372 silly registry.get     'content-length': '12487',
+372 silly registry.get     'accept-ranges': 'bytes',
+372 silly registry.get     date: 'Tue, 17 Oct 2017 06:56:01 GMT',
+372 silly registry.get     via: '1.1 varnish',
+372 silly registry.get     age: '0',
+372 silly registry.get     connection: 'keep-alive',
+372 silly registry.get     'x-served-by': 'cache-lhr6324-LHR',
+372 silly registry.get     'x-cache': 'MISS',
+372 silly registry.get     'x-cache-hits': '0',
+372 silly registry.get     'x-timer': 'S1508223362.683756,VS0,VE21',
+372 silly registry.get     vary: 'Accept-Encoding, Accept' } ]
+373 silly lockFile 1718b932-om-storage-dom-storage-2-0-2-tgz https://registry.npmjs.org/dom-storage/-/dom-storage-2.0.2.tgz
+374 verbose lock https://registry.npmjs.org/dom-storage/-/dom-storage-2.0.2.tgz /home/gozi/.npm/1718b932-om-storage-dom-storage-2-0-2-tgz.lock
+375 verbose addRemoteTarball [ 'https://registry.npmjs.org/dom-storage/-/dom-storage-2.0.2.tgz',
+375 verbose addRemoteTarball   'ed17cbf68abd10e0aef8182713e297c5e4b500b0' ]
+376 info retry fetch attempt 1 at 07:55:56
+377 verbose fetch to= /home/gozi/tmp/npm-243-sc0hkuVl/1508223356350-0.9663217100314796/tmp.tgz
+378 http GET https://registry.npmjs.org/dom-storage/-/dom-storage-2.0.2.tgz
+379 silly addNameRange number 2 { name: 'xmlhttprequest',
+379 silly addNameRange   range: '>=1.8.0-0 <2.0.0-0',
+379 silly addNameRange   hasData: true }
+380 silly addNameRange versions [ 'xmlhttprequest',
+380 silly addNameRange   [ '1.0.0',
+380 silly addNameRange     '1.2.0',
+380 silly addNameRange     '1.2.1',
+380 silly addNameRange     '1.2.2',
+380 silly addNameRange     '1.3.0',
+380 silly addNameRange     '1.4.0',
+380 silly addNameRange     '1.4.2',
+380 silly addNameRange     '1.5.0',
+380 silly addNameRange     '1.6.0',
+380 silly addNameRange     '1.7.0',
+380 silly addNameRange     '1.8.0' ] ]
+381 verbose addNamed [ 'xmlhttprequest', '1.8.0' ]
+382 verbose addNamed [ '1.8.0', '1.8.0' ]
+383 silly lockFile 794fd46f-xmlhttprequest-1-8-0 xmlhttprequest@1.8.0
+384 verbose lock xmlhttprequest@1.8.0 /home/gozi/.npm/794fd46f-xmlhttprequest-1-8-0.lock
+385 silly lockFile 0dc0e7c5-request-xmlhttprequest-1-8-0-tgz https://registry.npmjs.org/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz
+386 verbose lock https://registry.npmjs.org/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz /home/gozi/.npm/0dc0e7c5-request-xmlhttprequest-1-8-0-tgz.lock
+387 verbose addRemoteTarball [ 'https://registry.npmjs.org/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz',
+387 verbose addRemoteTarball   '67fe075c5c24fef39f9d65f5f7b7fe75171968fc' ]
+388 info retry fetch attempt 1 at 07:55:56
+389 verbose fetch to= /home/gozi/tmp/npm-243-sc0hkuVl/1508223356447-0.4878102408256382/tmp.tgz
+390 http GET https://registry.npmjs.org/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz
+391 http 404 https://registry.npmjs.org/firebase/firestore
+392 silly registry.get cb [ 404,
+392 silly registry.get   { 'content-type': 'application/json',
+392 silly registry.get     'cache-control': 'max-age=0',
+392 silly registry.get     'content-length': '2',
+392 silly registry.get     'accept-ranges': 'bytes',
+392 silly registry.get     date: 'Tue, 17 Oct 2017 06:56:01 GMT',
+392 silly registry.get     via: '1.1 varnish',
+392 silly registry.get     age: '0',
+392 silly registry.get     connection: 'keep-alive',
+392 silly registry.get     'x-served-by': 'cache-lhr6328-LHR',
+392 silly registry.get     'x-cache': 'MISS',
+392 silly registry.get     'x-cache-hits': '0',
+392 silly registry.get     'x-timer': 'S1508223362.540963,VS0,VE332',
+392 silly registry.get     vary: 'Accept-Encoding' } ]
+393 http 404 https://registry.npmjs.org/firebase/polyfill
+394 silly registry.get cb [ 404,
+394 silly registry.get   { 'content-type': 'application/json',
+394 silly registry.get     'cache-control': 'max-age=0',
+394 silly registry.get     'content-length': '2',
+394 silly registry.get     'accept-ranges': 'bytes',
+394 silly registry.get     date: 'Tue, 17 Oct 2017 06:56:01 GMT',
+394 silly registry.get     via: '1.1 varnish',
+394 silly registry.get     age: '0',
+394 silly registry.get     connection: 'keep-alive',
+394 silly registry.get     'x-served-by': 'cache-lcy1133-LCY',
+394 silly registry.get     'x-cache': 'MISS',
+394 silly registry.get     'x-cache-hits': '0',
+394 silly registry.get     'x-timer': 'S1508223362.571450,VS0,VE326',
+394 silly registry.get     vary: 'Accept-Encoding' } ]
+395 http 404 https://registry.npmjs.org/firebase/storage
+396 silly registry.get cb [ 404,
+396 silly registry.get   { 'content-type': 'application/json',
+396 silly registry.get     'cache-control': 'max-age=0',
+396 silly registry.get     'content-length': '2',
+396 silly registry.get     'accept-ranges': 'bytes',
+396 silly registry.get     date: 'Tue, 17 Oct 2017 06:56:01 GMT',
+396 silly registry.get     via: '1.1 varnish',
+396 silly registry.get     age: '0',
+396 silly registry.get     connection: 'keep-alive',
+396 silly registry.get     'x-served-by': 'cache-lhr6346-LHR',
+396 silly registry.get     'x-cache': 'MISS',
+396 silly registry.get     'x-cache-hits': '0',
+396 silly registry.get     'x-timer': 'S1508223362.579620,VS0,VE344',
+396 silly registry.get     vary: 'Accept-Encoding' } ]
+397 http 404 https://registry.npmjs.org/firebase/messaging
+398 silly registry.get cb [ 404,
+398 silly registry.get   { 'content-type': 'application/json',
+398 silly registry.get     'cache-control': 'max-age=0',
+398 silly registry.get     'content-length': '2',
+398 silly registry.get     'accept-ranges': 'bytes',
+398 silly registry.get     date: 'Tue, 17 Oct 2017 06:56:02 GMT',
+398 silly registry.get     via: '1.1 varnish',
+398 silly registry.get     age: '0',
+398 silly registry.get     connection: 'keep-alive',
+398 silly registry.get     'x-served-by': 'cache-lhr6332-LHR',
+398 silly registry.get     'x-cache': 'MISS',
+398 silly registry.get     'x-cache-hits': '0',
+398 silly registry.get     'x-timer': 'S1508223362.584070,VS0,VE427',
+398 silly registry.get     vary: 'Accept-Encoding' } ]
+399 http 200 https://registry.npmjs.org/dom-storage/-/dom-storage-2.0.2.tgz
+400 http 404 https://registry.npmjs.org/firebase/app
+401 silly registry.get cb [ 404,
+401 silly registry.get   { 'content-type': 'application/json',
+401 silly registry.get     'cache-control': 'max-age=0',
+401 silly registry.get     'content-length': '2',
+401 silly registry.get     'accept-ranges': 'bytes',
+401 silly registry.get     date: 'Tue, 17 Oct 2017 06:56:02 GMT',
+401 silly registry.get     via: '1.1 varnish',
+401 silly registry.get     age: '0',
+401 silly registry.get     connection: 'keep-alive',
+401 silly registry.get     'x-served-by': 'cache-lhr6324-LHR',
+401 silly registry.get     'x-cache': 'MISS',
+401 silly registry.get     'x-cache-hits': '0',
+401 silly registry.get     'x-timer': 'S1508223362.743497,VS0,VE418',
+401 silly registry.get     vary: 'Accept-Encoding' } ]
+402 http 200 https://registry.npmjs.org/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz
+403 verbose tar unpack /home/gozi/tmp/npm-243-sc0hkuVl/1508223356350-0.9663217100314796/tmp.tgz
+404 silly lockFile 84d3982f-56350-0-9663217100314796-package tar:///home/gozi/tmp/npm-243-sc0hkuVl/1508223356350-0.9663217100314796/package
+405 verbose lock tar:///home/gozi/tmp/npm-243-sc0hkuVl/1508223356350-0.9663217100314796/package /home/gozi/.npm/84d3982f-56350-0-9663217100314796-package.lock
+406 silly lockFile d51dfe49-56350-0-9663217100314796-tmp-tgz tar:///home/gozi/tmp/npm-243-sc0hkuVl/1508223356350-0.9663217100314796/tmp.tgz
+407 verbose lock tar:///home/gozi/tmp/npm-243-sc0hkuVl/1508223356350-0.9663217100314796/tmp.tgz /home/gozi/.npm/d51dfe49-56350-0-9663217100314796-tmp-tgz.lock
+408 silly addNameRange number 2 { name: 'firebase/firestore',
+408 silly addNameRange   range: '>=0.1.1-0 <0.2.0-0',
+408 silly addNameRange   hasData: true }
+409 silly addNameRange versions [ undefined, [] ]
+410 error TypeError: Cannot read property 'latest' of undefined
+410 error     at next (/usr/share/npm/lib/cache.js:687:35)
+410 error     at /usr/share/npm/lib/cache.js:675:5
+410 error     at saved (/usr/share/npm/node_modules/npm-registry-client/lib/get.js:142:7)
+410 error     at /usr/lib/nodejs/graceful-fs/polyfills.js:133:7
+410 error     at Object.oncomplete (fs.js:107:15)
+411 error If you need help, you may report this log at:
+411 error     <http://github.com/isaacs/npm/issues>
+411 error or email it to:
+411 error     <npm-@googlegroups.com>
+412 error System Linux 3.4.0+
+413 error command "/usr/bin/nodejs" "/usr/bin/npm" "install" "firebase"
+414 error cwd /mnt/f/Collabarray
+415 error node -v v0.10.25
+416 error npm -v 1.3.10
+417 error type non_object_property_load
+418 verbose exit [ 1, true ]
