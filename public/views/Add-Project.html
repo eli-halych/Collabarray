@@ -6,20 +6,21 @@
    <h1>Add Project</h1>
    <form id="js-form" style="border:1px solid #999">
       <div class="container">
-      	<label for="projectTitle"><b>Enter your project's title:</b></label>
+         <label for="projectTitle"><b>Enter your project's title:</b></label>
          <input type="text" id="projectTitle" placeholder="Enter your project Title" class="form-control" required/>
          <br>
          <label for="projectDescription"><b>Enter your project's description:</b></label>
-         <input type="text" id="projectDescription" style="height:100px; width:500px;" placeholder="Enter Your project Description" required/>
+         <input type="text" id="projectDescription" placeholder="Enter Your project Description" class="form-control" required/>
          <br>
          <label for="projectTags"><b> Enter your project tags separated by a comma:</b></label>
-         <input type="text" id="projectTags" placeholder="Enter Your Project Tags" required/>
+         <input type="text" id="projectTags" placeholder="Enter Your Project Tags" class="form-control" required/>
          <br>
          <label for="helpNeeded"><b> Enter the type of help you need separated by a comma:</b></label>
-         <input type="text" id="helpNeeded" placeholder="e.g. Video Editor, Web Developer, Music Producer" required/>
+         <input type="text" id="helpNeeded" placeholder="e.g. Video Editor, Web Developer, Music Producer" class="form-control" required/>
          <br>
          <div class="clearfix">
-            <button type="submit" id="addProjectBtn" class="btn btn-primary">Upload Project</button> <!--Add onclick for javascript, separate tags and helpNeeded, and send to db-->
+            <button type="submit" id="addProjectBtn" class="btn btn-primary">Upload Project</button> 
+            <!--Add onclick for javascript, separate tags and helpNeeded, and send to db-->
          </div>
       </div>
    </form>
