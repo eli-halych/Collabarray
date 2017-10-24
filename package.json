@@ -24,7 +24,10 @@
   },
   "homepage": "https://github.com/MiddleZwei/Collabarray#readme",
   "dependencies": {
-    "react": "~16.0.0",
-    "react-dom": "~16.0.0"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^3.8.1"
   }
 }
