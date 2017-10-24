@@ -11,8 +11,8 @@ $('#addProjectBtn').on('click', e => { //Callback function
     // Get email and password
     var title = $('#projectTitle').value;
     var description = $('#projectDescription').value;
-    var tags= $('#projectTags').value;
-    var help = $('#helpNeeded').value;
+    var tags= ($('#projectTags').value).split(",");
+    var help = ($('#helpNeeded').value).split(",");
     var auth = firebase.auth();
 	console.log("Yay! It works :D");
     // Add project Stuff??????
