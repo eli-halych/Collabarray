@@ -40,8 +40,12 @@ body {
 
 
 /*------------nav bar styles------------*/
-
 a {
+	text-decoration: none;
+    color: white;
+}
+
+a:hover {
     text-decoration: none;
     color: white;
 }
@@ -226,108 +230,6 @@ ul>li>ul>.nav-items:hover {
     background-color: rgba(255, 255, 255, .25);
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.75);
 }
-
-/* centre the content in the parallax layers */
-
-.title {
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-
-
-/* style the groups
-  --------------------------------------------- */
-
-#group1 {
-    z-index: 5;
-    /* slide over group 2 */
-}
-
-#group1 .parallax__layer--base {
-    background-image: url("img/bg/Study.jpeg");
-    background-size: cover;
-    border-bottom: 1px outset black;
-}
-
-#group2 {
-    /* slide under groups 1 and 3 */
-    z-index: 3;
-}
-
-#group2 .parallax__layer--base {
-    color: white;
-}
-
-#group2 .parallax__layer--back {
-    left: -0.5em;
-    background-image: url("http://www.wallpapers-web.com/data/out/102/4642443-home-library-study-room-wallpapers.jpg");
-    background-size: cover;
-    background-position: bottom;
-}
-
-#group3 {
-    z-index: 4;
-    /* slide over group 2 and 4 */
-}
-
-#group3 .parallax__layer--base {
-    /*background: rgb(153, 216, 101);*/
-}
-
-#group4 {
-    left: -1.05em;
-    z-index: 2;
-    /* slide under group 3 and 5 */
-}
-
-#group4 .parallax__layer--deep {
-    /*background: rgb(184, 223, 101);*/
-    background-image: url("http://wallpapercave.com/wp/pEeUsp1.jpg");
-    background-size: cover;
-}
-
-#group4 .parallax__layer--back {
-    background-image: url("http://www.gravelstudios.com/parallax/stars.png");
-}
-
-#group4 .parallax__layer--base {
-    background-image: url("http://joejensen.info/solar_system/img/asteroids10.png");
-}
-
-#group5 {
-    z-index: 3;
-    /* slide over group 4 and 6 */
-}
-
-#group5 .parallax__layer--base {
-    /*background: rgb(214, 229, 100);*/
-}
-
-#group6 {
-    z-index: 2;
-    /* slide under group 5 and 7 */
-}
-
-#group6 .parallax__layer--back {
-    left: -0.5em;
-    /*background: rgb(245, 235, 100);*/
-    background-image: url("http://wallpapercave.com/wp/pEeUsp1.jpg");
-}
-
-#group7 {
-    z-index: 3;
-    /* slide over group 7 */
-}
-
-#group7 .parallax__layer--base {
-    /*background: rgb(255, 241, 100);*/
-    background-image: url("http://wallpapercave.com/wp/pEeUsp1.jpg");
-}
-
 
 /*
    * Footer

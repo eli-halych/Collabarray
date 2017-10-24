@@ -1,149 +1,163 @@
 <html ng-app="CA">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A networking web application
-  that gives people the ability to collaborate with anyone in the world and invest in projects.">
-        <meta name="author" content="Collabarray">
-        <!-- <link rel="icon" href="img/icon/icon.png"> -->
-        <title>Home | Collabarray</title>
-        <!-- Include Font Awesome -->
-        <script src="https://use.fontawesome.com/ad540306f3.js"></script>
-        <!-- Include Bootstrap Social -->
-        <link rel="stylesheet" href="bootstrap-social/bootstrap-social.css"/>
-        <!-- Include Bootstrap 4 -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <!-- Custom Stylesheet -->
-        <link rel="stylesheet" href="style.css" />
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="js/bootstrap/bootstrap.min.js"></script>
-        <script src="js/bootstrap/bootstrap.js"></script>
-        <!-- Include the core AngularJS library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-        <!-- Include the AngularJS routing library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
-        <!-- Include the Angular sanitizing library -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-sanitize.min.js"></script>
-
-        <!-- Firebase Stuff -->
-        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-database.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-messaging.js"></script>
-
-        <!-- Leave out Storage -->
-        <!-- <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-storage.js"></script> -->
-
-
-        <style media="screen">
-            #message {
-                background: white;
-                max-width: 360px;
-                margin: 100px auto 16px;
-                padding: 32px 24px;
-                border-radius: 3px;
-            }
-
-            #message h2 {
-                color: #ffa100;
-                font-weight: bold;
-                font-size: 16px;
-                margin: 0 0 8px;
-            }
-
-            #message h1 {
-                font-size: 22px;
-                font-weight: 300;
-                color: rgba(0, 0, 0, 0.6);
-                margin: 0 0 16px;
-            }
-
-            #message p {
-                line-height: 140%;
-                margin: 16px 0 24px;
-                font-size: 14px;
-            }
-
-            #message a {
-                display: block;
-                text-align: center;
-                background: #039be5;
-                text-transform: uppercase;
-                text-decoration: none;
-                color: white;
-                padding: 16px;
-                border-radius: 4px;
-            }
-
-            #message,
-            #message a {
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-            }
-
-            #load {
-                color: rgba(0, 0, 0, 0.4);
-                text-align: center;
-                font-size: 13px;
-            }
-
-            @media (max-width: 600px) {
-                body,
-                #message {
-                    margin-top: 0;
-                    background: white;
-                    box-shadow: none;
-                }
-                body {
-                    border-top: 16px solid #ffa100;
-                }
-            }
-        </style>
-</head>
-
-<body onload="" ng-init="" ng-cloak>
-
-    <div class="site-wrapper">
-        <div class="site-wrapper-inner" ng-view></div>
-        <div id="message">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="A networking web application
+         that gives people the ability to collaborate with anyone in the world and invest in projects.">
+      <meta name="author" content="Collabarray">
+      <!-- <link rel="icon" href="img/icon/icon.png"> -->
+      <title>Home | Collabarray</title>
+      <!-- Include Font Awesome -->
+      <script src="https://use.fontawesome.com/ad540306f3.js"></script>
+      <!-- Include Bootstrap Social -->
+      <link rel="stylesheet" href="bootstrap-social/bootstrap-social.css"/>
+      <!-- Include Bootstrap 4 -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+      <!-- Custom Stylesheet -->
+      <link rel="stylesheet" href="style.css" />
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      <script src="js/bootstrap/bootstrap.min.js"></script>
+      <script src="js/bootstrap/bootstrap.js"></script>
+      <!-- Include the core AngularJS library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+      <!-- Include the AngularJS routing library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+      <!-- Include the Angular sanitizing library -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-sanitize.min.js"></script>
+      <!-- Firebase Stuff -->
+      <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-database.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-messaging.js"></script>
+      <!-- Leave out Storage -->
+      <!-- <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-storage.js"></script> -->
+      <style media="screen">
+         #message {
+         background: white;
+         max-width: 360px;
+         margin: 100px auto 16px;
+         padding: 32px 24px;
+         border-radius: 3px;
+         }
+         #message h2 {
+         color: #ffa100;
+         font-weight: bold;
+         font-size: 16px;
+         margin: 0 0 8px;
+         }
+         #message h1 {
+         font-size: 22px;
+         font-weight: 300;
+         color: rgba(0, 0, 0, 0.6);
+         margin: 0 0 16px;
+         }
+         #message p {
+         line-height: 140%;
+         margin: 16px 0 24px;
+         font-size: 14px;
+         }
+         #message a {
+         display: block;
+         text-align: center;
+         background: #039be5;
+         text-transform: uppercase;
+         text-decoration: none;
+         color: white;
+         padding: 16px;
+         border-radius: 4px;
+         }
+         #message,
+         #message a {
+         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+         }
+         #load {
+         color: rgba(0, 0, 0, 0.4);
+         text-align: center;
+         font-size: 13px;
+         }
+         @media (max-width: 600px) {
+         body,
+         #message {
+         margin-top: 0;
+         background: white;
+         box-shadow: none;
+         }
+         body {
+         border-top: 16px solid #ffa100;
+         }
+         }
+      </style>
+   </head>
+   <body onload="" ng-init="" ng-cloak>
+      <div class="site-wrapper">
+         <div class="site-wrapper-inner">
+         <!-- navbar -->
+         <header ng-controller="CAController">
+		     <nav>
+		        <div class="logo">
+		           <h1 class="logo-item">&nbsp;Collabarray</h1>
+		        </div>
+		        <ul class="nav clearfix">
+		           <li class="nav-items " ng-class="{ active: isActive('#!Home')}"><a href="#!Home" >Home</a></li>
+		           <li class="nav-items dropdown " ng-class="{ active: (isActive('#!Mine') || isActive('#!Friends') || isActive('#!Discover')) }">
+		              <a href="">Notes<span style="color:white; font-size: .75em;">&nbsp; &nbsp; &#x25bc;</span></a>
+		              <ul class="sub-menu clearfix">
+		                 <li class="nav-items " ng-class="{ active: isActive('#!Mine')}"><a href="#!Mine" >Mine</a></li>
+		                 <li class="nav-items " ng-class="{ active: isActive('#!Friends')}"><a href="#!Friends" >Friends</a></li>
+		                 <li class="nav-items " ng-class="{ active: isActive('#!Discover')}"><a href="#!Discover" >Discover More</a></li>
+		              </ul>
+		           </li>
+		           <li class="nav-items " ng-class="{ active: isActive('#!Students')}"><a href="#!Add-Project" >Add Project</a></li>
+		           <li class="nav-items dropdown" ng-class="{ active: (isActive('#!Personal-Details') || isActive('#!Settings')) }">
+		              <a href="">My Account<span style="color:white; font-size: .75em;">&nbsp; &nbsp; &#x25bc;</span></a>
+		              <ul class="sub-menu clearfix">
+		                 <li class="nav-items " ng-class="{ active: isActive('#!Personal-Details')}"><a href="#!Personal-Details" >Personal Details</a></li>
+		                 <li class="nav-items " ng-class="{ active: isActive('#!Settings')}"><a href="#!Settings" >Settings</a></li>
+		              </ul>
+		           </li>
+		           <li class="nav-items " ng-class="{ active: isActive('#!About')}"><a href="#!About" >About</a></li>
+		        </ul>
+		     </nav>
+		 	</header>
+		 	<div id="angularView" ng-view></div>
+         </div>
+         <div id="message">
             <h2>Welcome</h2>
             <h1>Firebase Hosting Setup Complete</h1>
             <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
             <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-        </div>
-        <p id="load">Firebase SDK Loading&hellip;</p>
-    </div>
-    <!-- Modules -->
-    <script src="js/site.js"></script>
-    <!-- Controllers -->
-    <script src="js/controllers/CAController.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-            // // The Firebase SDK is initialized and available here!
-            //
-            // firebase.auth().onAuthStateChanged(user => { });
-            // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-            // firebase.messaging().requestPermission().then(() => { });
-            // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-            //
-            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-            try {
-                let app = firebase.app();
-                let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-                document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-            } catch (e) {
-                console.error(e);
-                document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-            }
-        });
-    </script>
-    <script src="scripts.js"></script>
-</body>
-
+         </div>
+         <p id="load">Firebase SDK Loading&hellip;</p>
+      </div>
+      <!-- Modules -->
+      <script src="js/site.js"></script>
+      <!-- Controllers -->
+      <script src="js/controllers/CAController.js"></script>
+      <script>
+         document.addEventListener('DOMContentLoaded', function() {
+             // // 
+             // // The Firebase SDK is initialized and available here!
+             //
+             // firebase.auth().onAuthStateChanged(user => { });
+             // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+             // firebase.messaging().requestPermission().then(() => { });
+             // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+             //
+             // // 
+         
+             try {
+                 let app = firebase.app();
+                 let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+                 document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+             } catch (e) {
+                 console.error(e);
+                 document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+             }
+         });
+      </script>
+      <script src="scripts.js"></script>
+   </body>
 </html>

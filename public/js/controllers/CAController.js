@@ -1,10 +1,7 @@
 site.controller('CAController', ['$scope', '$window', '$compile', '$sce', function($scope, $window, $compile, $sce) {
-    $(document).ready(function() {
-        $("nav ul li").hover(function() {
-            $(this).children('ul').stop(true, false, true).animate({
-                height: "toggle",
-                // opacity: "toggle"
-            }, "500");
-        });
-    });
+	$scope.isActive = (href) => { 
+		var url = location.hash;
+		url = url.substr(0,2) + url.substring(3,url.length);
+        return href === url;
+    };
 }]);

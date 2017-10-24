@@ -22,8 +22,8 @@ site.config(function($routeProvider) {
             templateUrl : "views/Discover.html",
             controller : "CAController"
         })
-        .when('/Students', {
-            templateUrl : "views/Students.html",
+        .when('/Add-Project', {
+            templateUrl : "views/Add-Project.html",
             controller : "CAController"
         })
         .when('/Personal-Details', {
