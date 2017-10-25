@@ -35,6 +35,13 @@
       <!-- Leave out Storage -->
       <!-- <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-storage.js"></script> -->
       <style media="screen">
+      body {
+        background: #01b0ec;
+        background: -moz-linear-gradient(-45deg, #01b0ec 0%, #00bfc5 56%, #15ce9f 99%);
+        background: -webkit-linear-gradient(-45deg, #01b0ec 0%,#00bfc5 56%,#15ce9f 99%);
+        background: linear-gradient(135deg, #01b0ec 0%,#00bfc5 56%,#15ce9f 99%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01b0ec', endColorstr='#15ce9f',GradientType=1 );
+      }
 		#message {
 			background: white;
 			max-width: 360px;
@@ -145,7 +152,7 @@
       <script src="js/controllers/CAController.js"></script>
       <script>
          document.addEventListener('DOMContentLoaded', function() {
-             // // 
+             // //
              // // The Firebase SDK is initialized and available here!
              //
              // firebase.auth().onAuthStateChanged(user => { });
@@ -153,8 +160,8 @@
              // firebase.messaging().requestPermission().then(() => { });
              // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
              //
-             // // 
-         
+             // //
+
              try {
                  let app = firebase.app();
                  let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
