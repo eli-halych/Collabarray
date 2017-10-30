@@ -1,33 +1,21 @@
 {
-  "name": "collabarray",
-  "version": "1.0.0",
-  "description": "networking web application",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"hello world\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MiddleZwei/Collabarray.git"
-  },
-  "keywords": [
-    "networking",
-    "collabarray",
-    "collaborate",
-    "platform",
-    "web"
-  ],
-  "author": "Collabarray",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MiddleZwei/Collabarray/issues"
-  },
-  "homepage": "https://github.com/MiddleZwei/Collabarray#readme",
+  "name": "app1",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
+    "@blueprintjs/core": "^1.32.0",
+    "firebase": "^4.6.0",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
-  },
-  "devDependencies": {
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-bootstrap": "^0.31.5",
+    "react-dom": "^16.0.0",
+    "react-scripts": "1.0.14",
     "webpack": "^3.8.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }

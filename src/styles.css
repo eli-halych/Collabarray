@@ -1,0 +1,244 @@
+* {
+    /*border: 1px solid red;*/
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+*:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-size: 16px;
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1em;
+    min-height: 100%;
+}
+
+#content {
+    width: 100% cursor: default;
+}
+
+
+/*------------nav bar styles------------*/
+a {
+	text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    background-color: black;
+    border-bottom: 0.2em inset rgba(255, 255, 255, 1);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+    display: block;
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+    top: 0em;
+    margin-bottom: 1rem;
+}
+
+nav {
+    position: relative;
+    height: 4em;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: auto;
+    width: auto;
+    flex-grow: 1;
+}
+
+.logo-item {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    letter-spacing: 0.2em;
+    -webkit-text-fill-color: rgba(0, 0, 0, .5);
+    -webkit-text-stroke-width: 0.15em;
+    -webkit-text-stroke-color: rgba(0, 0, 0, .5);
+}
+
+.logo-item:hover {
+    text-shadow: 0 0 0.15em rgba(0, 0, 0, .5);
+}
+
+
+.nav {
+    width: auto;
+    height: auto;
+    flex-grow: 4;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.nav a {
+    width: 99%;
+    height: 99%;
+    margin-top: 3em  ;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+nav>ul>li:after {
+    font-size: .5em;
+    display: inherit;
+    position: relative;
+    list-style-type: none;
+}
+
+.sub-menu {
+    top: 4.2em;
+    width: inherit;
+    position: absolute;
+    display: none;
+    background-color: black;
+    width: 100%;
+    font-size: 1em;
+    border-radius: 0 0 2px 2px;
+    box-shadow: 0 3px 1px rgba(0, 0, 0, .05);
+}
+
+.dropdown>ul {
+    display: none;
+    flex-direction: column;
+}
+
+.sub-menu>li>a {
+    color: white;
+    font-size: .75em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+ul>li>ul>li {
+    display: block;
+    border-style: solid;
+    border-color: white;
+    opacity: 0.5;
+    transition: all linear 0.05s;
+}
+
+ul>li>ul>li:first-child {
+    border-width: 0.1em 0.1em 0.05em 0.1em;
+}
+
+ul>li>ul>li:not(:first-child):not(:last-child) {
+    border-width: 0.05em 0.1em 0.05em 0.1em;
+}
+
+ul>li>ul>li:last-child {
+    border-width: 0.05em 0.1em 0.1em 0.1em;
+}
+
+ul>li>ul>li:hover {
+    opacity: 1;
+}
+
+ul>li>ul>.nav-items:hover {
+    background-color: rgba(255, 255, 255, .25);
+}
+
+.nav-items {
+    height: 4em;
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    transition: all linear 0.15s;
+}
+
+.nav-items:hover {
+    background-color: rgba(255, 255, 255, 0.65);
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.nav>.nav-items:first-child {
+    border-left: medium white hidden;
+    border-right: medium white hidden;
+}
+
+.nav>.nav-items:not(:first-child):not(:last-child) {
+    border-left: medium white hidden;
+    border-right: medium white hidden;
+}
+
+.nav>.nav-items:last-child {
+    border-left: medium white hidden;
+    border-right: thick white hidden;
+}
+
+.active, .active:active {
+    /*border: none;*/
+    background-color: rgba(255, 255, 255, .25);
+    color: white;
+}
+
+.active:hover {
+    background-color: rgba(255, 255, 255, .25);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.75);
+}
+
+/*
+   * Footer
+   */
+
+.mastfoot {
+    color: #999;
+    /* IE8 proofing */
+    color: rgba(255, 255, 255, .5);
+}
+
+footer {}
