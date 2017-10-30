@@ -1,0 +1,85 @@
+// Copyright 2016 Palantir Technologies, Inc. All rights reserved.
+// Licensed under the BSD-3 License as modified (the “License”); you may obtain a copy
+// of the license at https://github.com/palantir/blueprint/blob/master/LICENSE
+// and https://github.com/palantir/blueprint/blob/master/PATENTS
+
+@import "../tooltip/common";
+@import "./common";
+
+$handle-height: $pt-icon-size-standard !default;
+$track-height: $handle-height - $pt-grid-size !default;
+$label-top: $handle-height + 4px !default;
+
+.pt-slider {
+  @include slider($pt-input-height-large);
+  outline: none;
+  user-select: none;
+
+  &.pt-slider-unlabeled {
+    height: $handle-height;
+  }
+}
+
+.pt-slider-track,
+.pt-slider-progress {
+  @include slider-track($handle-height, $track-height);
+}
+
+.pt-slider-progress,
+.pt-dark .pt-slider-progress {
+  background: $pt-intent-primary;
+}
+
+.pt-slider-handle {
+  @include slider-handle($handle-height, $track-height);
+
+  .pt-slider-label {
+    transform: translate(-50%, $label-top);
+    margin-left: $handle-height / 2;
+    border-radius: $pt-border-radius;
+    box-shadow: $pt-tooltip-box-shadow;
+    background: $tooltip-background-color;
+    color: $tooltip-text-color;
+
+    .pt-dark & {
+      box-shadow: $pt-dark-tooltip-box-shadow;
+      background: $dark-tooltip-background-color;
+      color: $dark-tooltip-text-color;
+    }
+
+    .pt-disabled & {
+      box-shadow: none;
+    }
+  }
+}
+
+.pt-slider-label {
+  @include slider-label();
+  position: absolute;
+  transform: translate(-50%, $label-top);
+}
+
+.pt-range-slider {
+  .pt-slider-handle {
+    width: $handle-height / 2;
+
+    &:first-of-type {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:last-of-type {
+      margin-left: $handle-height / 2;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+
+      .pt-slider-label {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .pt-slider-progress {
+    border-radius: 0;
+  }
+}
