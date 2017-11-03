@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import './SignIn.css'
 import 'bootstrap-social';
-import firebase from 'firebase';
+// import firebase from 'firebase';
 import { app, facebookProvider, githubProvider, googleProvider } from './firebaseInitApp.js';
 import { Toaster, Intent } from '@blueprintjs/core';
 import { Redirect } from 'react-router-dom';
-import logo from './img/logo/Collabarray-Logo.png';
 import Background from './img/bg/bgSignIn.png'
 
 const pageStyle = {

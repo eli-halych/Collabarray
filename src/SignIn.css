@@ -1,79 +1,79 @@
 
 
 .hide {
-    display: none;
-    visibility: hidden;
+  display: none;
+  visibility: hidden;
 }
 
 /* Full-width input fields */
 
 input[type=text], input[type=email], input[type=password],
 #btnLogOut, #btnSignInGithub, #btnSignInGoogle, #btnSignInFacebook {
-    width: 90%;
-    padding: 12px 20px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    resize: horizontal;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  width: 90%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  resize: horizontal;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* Set a style for all buttons */
 
 button {
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
 }
 
 /* Float logIn and signUp buttons and add an equal width */
 
 #btnLogIn, #btnSignUp {
-    margin: 8px 5%;
-    float: left;
-    width: 40%;
+  margin: 8px 5%;
+  float: left;
+  width: 40%;
 }
 
 /* Float logIn and signUp buttons and add an equal width */
 
 /* #btnLogOut, #btnSignInGithub, #btnSignInGoogle, #btnSignInFacebook{
-    margin: 8px 30%;
-    float: left;
-    width: 40%;
+  margin: 8px 30%;
+  float: left;
+  width: 40%;
 } */
 
 /* Add padding to container elements */
 
 .container {
-    padding: 20px;
+  padding: 20px;
 }
 
 form {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 /* Clear floats */
 
 .clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+  content: "";
+  clear: both;
+  display: table;
 }
 
 /* Change styles for cancel button and signup button on extra small screens */
 
 @media screen and (max-width: 300px) {
-    #btnLogIn, #btnSignUp {
-        margin: 8px 0;
-        width: 100%;
-    }
+  #btnLogIn, #btnSignUp {
+      margin: 8px 0;
+      width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    #btnLogOut, #btnSignInGithub, #btnSignInGoogle {
-        margin: 8px 0;
-        width: 100%;
-    }
+  #btnLogOut, #btnSignInGithub, #btnSignInGoogle {
+      margin: 8px 0;
+      width: 100%;
+  }
 }

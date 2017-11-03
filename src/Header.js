@@ -14,13 +14,13 @@ class Header extends Component {
 
             <div className="container-fluid col-sm-6 col-md-6">
               <div className="navbar-header">
-                <a className="navbar-brand" href="#">Collabarray</a>
+                <a className="navbar-brand" >Collabarray</a>
               </div>
               <ul className="nav navbar-nav">
-                <li className="active"><a href="#">Home</a></li>
-                <li><a href="#">Page 1</a></li>
-                <li><a href="#">Page 2</a></li>
-                <li><a href="#">Page 3</a></li>
+                <li className="active"><a >Home</a></li>
+                <li><a >Page 1</a></li>
+                <li><a >Page 2</a></li>
+                <li><a >Page 3</a></li>
               </ul>
             </div>
 
@@ -29,10 +29,10 @@ class Header extends Component {
               ?
               (<div className="container-fluid col-sm-6 col-md-6">
               <ul className="nav navbar-nav">
-                <li className="active"><a href="#">Home</a></li>
-                <li><a href="#">Page 1</a></li>
-                <li><a href="#">Page 2</a></li>
-                <li><a href="#">Page 3</a></li>
+                <li className="active"><a >Home</a></li>
+                <li><a >Page 1</a></li>
+                <li><a >Page 2</a></li>
+                <li><a >Page 3</a></li>
               </ul>
               </div>)
               :
