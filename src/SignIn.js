@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import App from "./App.js";
 import "./SignIn.css";
 import "../node_modules/bootstrap-social/bootstrap-social.css";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
@@ -10,8 +11,17 @@ import {
 	googleProvider
 } from "./firebaseInitApp.js";
 import { Toaster, Intent } from "@blueprintjs/core";
-import { Redirect } from "react-router-dom";
+import "react-router-dom";
 import Background from "./img/bg/bgSignIn.png";
+import {
+	Redirect,
+	Router,
+	Route,
+	Link,
+	IndexRoute,
+	HashRouter,
+	BrowserRouter
+} from "react-router-dom";
 
 const pageStyle = {
 	backgroundImage: `url(${Background})`,
@@ -98,7 +108,14 @@ class SignIn extends Component {
 
 	render() {
 		if (this.state.redirect === true) {
-			return <Redirect to="/" />;
+			// return (
+			// 	<Router history={HashRouter}>
+			// 		<div>
+			// 			<Route path="/" component={App} />
+			// 			<Redirect from="/" to="/" />
+			// 		</div>
+			// 	</Router>
+			// );
 		}
 
 		return (
