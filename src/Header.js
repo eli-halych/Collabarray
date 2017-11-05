@@ -1,4 +1,14 @@
 import React, { Component } from "react";
+import {
+	//Redirect,
+	//Router,
+	//Route,
+	//Link,
+	NavLink
+	//HashRouter,
+	//BrowserRouter
+} from "react-router-dom";
+
 import "./Header.css";
 import "bootstrap-social";
 
@@ -11,16 +21,16 @@ class Header extends Component {
 						<div className="container-fluid col-sm-6 col-md-6">
 							<ul className="nav navbar-nav">
 								<li className="active">
-									<a>Home</a>
+									<NavLink to="/">Home</NavLink>
 								</li>
 								<li>
-									<a>Page 1</a>
+									<NavLink to="/">Page 1</NavLink>
 								</li>
 								<li>
-									<a>Page 2</a>
+									<NavLink to="/">Page 2</NavLink>
 								</li>
 								<li>
-									<a>Page 3</a>
+									<NavLink to="/">Page 3</NavLink>
 								</li>
 							</ul>
 						</div>
@@ -31,16 +41,16 @@ class Header extends Component {
 							</div>
 							<ul className="nav navbar-nav">
 								<li className="active">
-									<a>Home</a>
+									<NavLink to="/">Home</NavLink>
 								</li>
 								<li>
-									<a>Page 1</a>
+									<NavLink to="/">Page 1</NavLink>
 								</li>
 								<li>
-									<a>Page 2</a>
+									<NavLink to="/">Page 2</NavLink>
 								</li>
 								<li>
-									<a>Page 3</a>
+									<NavLink to="/">Page 3</NavLink>
 								</li>
 							</ul>
 						</div>

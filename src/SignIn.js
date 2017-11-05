@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import App from "./App.js";
 import "./SignIn.css";
 import "../node_modules/bootstrap-social/bootstrap-social.css";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
@@ -13,15 +12,6 @@ import {
 import { Toaster, Intent } from "@blueprintjs/core";
 import "react-router-dom";
 import Background from "./img/bg/bgSignIn.png";
-import {
-	Redirect,
-	Router,
-	Route,
-	Link,
-	IndexRoute,
-	HashRouter,
-	BrowserRouter
-} from "react-router-dom";
 
 const pageStyle = {
 	backgroundImage: `url(${Background})`,
