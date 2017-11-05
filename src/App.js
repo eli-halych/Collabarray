@@ -9,7 +9,7 @@ import {
 	NavLink,
 	Redirect,
 	//Router,
-	//Route,
+	Route,
 	Switch
 } from "react-router-dom";
 
