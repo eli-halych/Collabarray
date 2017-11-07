@@ -98,14 +98,7 @@ class SignIn extends Component {
 
 	render() {
 		if (this.state.redirect === true) {
-			// return (
-			// 	<Router history={HashRouter}>
-			// 		<div>
-			// 			<Route path="/" component={App} />
-			// 			<Redirect from="/" to="/" />
-			// 		</div>
-			// 	</Router>
-			// );
+			//return ();
 		}
 
 		return (

@@ -16,10 +16,24 @@ class Header extends Component {
 	render() {
 		return (
 			<div className="Header">
-				<nav className="navbar navbar-default">
+				<nav className="navbar navbar-inverse navbar-default">
 					{this.props.authenticated ? (
 						<div className="container-fluid col-sm-6 col-md-6">
-							<ul className="nav navbar-nav">
+							<ul className="nav navbar-nav navbar-left">
+								<li className="active">
+									<NavLink to="/">Home</NavLink>
+								</li>
+								<li>
+									<NavLink to="/">Page 1</NavLink>
+								</li>
+								<li>
+									<NavLink to="/">Page 2</NavLink>
+								</li>
+								<li>
+									<NavLink to="/">Page 3</NavLink>
+								</li>
+							</ul>
+							<ul className="nav navbar-nav navbar-right">
 								<li className="active">
 									<NavLink to="/">Home</NavLink>
 								</li>
