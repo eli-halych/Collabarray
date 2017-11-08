@@ -13,9 +13,17 @@ import { Toaster, Intent } from "@blueprintjs/core";
 import "react-router-dom";
 import Background from "./img/bg/bgSignIn.png";
 
+
+
+
+
+
+
+
+
 const pageStyle = {
-	backgroundImage: `url(${Background})`,
-	height: "100%"
+	background: `url(${Background}) no-repeat center center fixed`,
+	backgroundSize: "cover"
 };
 
 const loginStyles = {
@@ -27,6 +35,13 @@ const loginStyles = {
 	borderRadius: "5px",
 	padding: "10px"
 };
+
+
+
+
+
+
+
 
 class SignIn extends Component {
 	constructor(props) {

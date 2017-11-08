@@ -35,16 +35,10 @@ class Header extends Component {
 							</ul>
 							<ul className="nav navbar-nav navbar-right">
 								<li className="active">
-									<NavLink to="/">Home</NavLink>
+									<NavLink to="/">Profile</NavLink>
 								</li>
 								<li>
-									<NavLink to="/">Page 1</NavLink>
-								</li>
-								<li>
-									<NavLink to="/">Page 2</NavLink>
-								</li>
-								<li>
-									<NavLink to="/">Page 3</NavLink>
+									<NavLink to="/">Log out</NavLink>
 								</li>
 							</ul>
 						</div>
@@ -55,7 +49,7 @@ class Header extends Component {
 							</div>
 							<ul className="nav navbar-nav">
 								<li className="active">
-									<NavLink to="/">Home</NavLink>
+									<NavLink to="/">Profile</NavLink>
 								</li>
 								<li>
 									<NavLink to="/">Page 1</NavLink>

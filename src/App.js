@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
+import "./styles.css";
 // import firebase from 'firebase';
 import {
 	BrowserRouter,
 	//HashRouter,
 	//Link,
-	NavLink,
+	// NavLink,
 	Redirect,
 	//Router,
 	Route,
@@ -16,6 +17,7 @@ import {
 import SignIn from "./SignIn";
 import Header from "./Header";
 import Footer from "./Footer";
+import Main from "./Main";
 
 import { app } from "./firebaseInitApp.js";
 
@@ -53,8 +55,14 @@ class App extends Component {
 					<div className="content">
 						{/*where our content(views) will load into*/}
 						<Switch>
-							<Route exact path="/" component={SignIn} />
-							<Redirect path="*" to="/" />
+							<Route path="/main" component={Main} />
+							<Route exact path="/" render={() => (
+								this.state.authenticated ? (
+									<Redirect to="/main" />
+								) : (
+									<SignIn />
+								)
+							)} />
 						</Switch>
 					</div>
 					<Footer />
