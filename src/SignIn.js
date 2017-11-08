@@ -10,16 +10,17 @@ import {
 	googleProvider
 } from "./firebaseInitApp.js";
 import { Toaster, Intent } from "@blueprintjs/core";
-import "react-router-dom";
+import {
+	Redirect,
+	//Router,
+	//Route,
+	Link,
+	NavLink
+	//HashRouter,
+	//BrowserRouter,
+	//Switch
+} from "react-router-dom";
 import Background from "./img/bg/bgSignIn.png";
-
-
-
-
-
-
-
-
 
 const pageStyle = {
 	background: `url(${Background}) no-repeat center center fixed`,
@@ -36,13 +37,6 @@ const loginStyles = {
 	padding: "10px"
 };
 
-
-
-
-
-
-
-
 class SignIn extends Component {
 	constructor(props) {
 		super(props);
@@ -51,7 +45,7 @@ class SignIn extends Component {
 		this.authWithGoogle = this.authWithGoogle.bind(this);
 		this.authWithEmailAndPassword = this.authWithEmailAndPassword.bind(this);
 		this.state = {
-			redirect: false
+			authenticated: false
 		};
 	}
 
@@ -66,7 +60,8 @@ class SignIn extends Component {
 						message: "Unable to sign in with Facebook"
 					});
 				} else {
-					this.setState({ redirect: true });
+					console.log("Authorised with Facebook");
+					this.setState({ authenticated: true });
 				}
 			});
 	}
@@ -81,7 +76,8 @@ class SignIn extends Component {
 						message: "Unable to sign in with GitHub"
 					});
 				} else {
-					this.setState({ redirect: true });
+					console.log("Authorised with GitHub");
+					this.setState({ authenticated: true });
 				}
 			});
 	}
@@ -96,13 +92,15 @@ class SignIn extends Component {
 						message: "Unable to sign in with Google"
 					});
 				} else {
-					this.setState({ redirect: true });
+					console.log("Authorised with Google");
+
+					this.setState({ authenticated: true });
 				}
 			});
 	}
 	authWithEmailAndPassword(event) {
 		event.preventDefault();
-		console.log("authed with Email");
+		console.log("Authorised with Email & Password");
 		console.table([
 			{
 				email: this.emailInput.value,
@@ -112,8 +110,8 @@ class SignIn extends Component {
 	}
 
 	render() {
-		if (this.state.redirect === true) {
-			//return ();
+		if (this.state.authenticated === true) {
+			return <Redirect to="/Main" />;
 		}
 
 		return (
