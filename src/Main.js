@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Main.css";
 import {
-	// Redirect,
+	Redirect,
 	//Router,
 	Route,
 	Link,
@@ -16,6 +16,19 @@ import AddProject from "./AddProject";
 
 
 class Main extends Component {
+
+	constructor() {
+		super();
+		this.handleClick = this.handleClick.bind(this);
+		this.state = {
+			addPressed: false
+		};
+	}
+
+	handleClick() {
+		this.state.addPressed = true;
+	}
+
 	render() {
 		return (
 			<BrowserRouter>
@@ -31,8 +44,15 @@ class Main extends Component {
 						{/*where our content(views) will load into*/}
 						<Switch>
 							<Route exact path="/addproject" component={AddProject} />
-							{/* <a className="btn btn-primary btn-lg" onClick="" role="button">Add project</a> */}
-							<Link className="btn btn-primary btn-lg" to="/addproject" >Add project</Link>
+							<Link className="btn btn-primary btn-lg" to="/addproject" role="button">Add project</Link>
+							{/* <Link className="btn btn-primary btn-lg" to="/addproject" >Add project</Link> */}
+							{/* <Route exact path="/main" render={() => (
+								this.state.authenticated ? (
+									<Redirect to="/addproject" />
+								) : (
+									null
+								)
+							)} /> */}
 						</Switch>
 					
 				

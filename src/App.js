@@ -56,11 +56,12 @@ class App extends Component {
 						{/*where our content(views) will load into*/}
 						<Switch>
 							<Route path="/main" component={Main} />
+							<Route path="/signin" component={SignIn} />
 							<Route exact path="/" render={() => (
 								this.state.authenticated ? (
 									<Redirect to="/main" />
 								) : (
-									<SignIn />
+									<Redirect to="/signin" />
 								)
 							)} />
 						</Switch>
