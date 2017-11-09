@@ -18,6 +18,8 @@ import SignIn from "./SignIn";
 import Header from "./Header";
 import Footer from "./Footer";
 import Main from "./Main";
+import AddProject from "./AddProject";
+import OpenProject from "./OpenProject";
 
 import { app } from "./firebaseInitApp.js";
 
@@ -55,15 +57,20 @@ class App extends Component {
 					<div className="content">
 						{/*where our content(views) will load into*/}
 						<Switch>
+							<Route
+								exact
+								path="/"
+								render={() =>
+									this.state.authenticated ? (
+										<Redirect to="/main" />
+									) : (
+										<Redirect to="/signin" />
+									)}
+							/>
 							<Route path="/main" component={Main} />
 							<Route path="/signin" component={SignIn} />
-							<Route exact path="/" render={() => (
-								this.state.authenticated ? (
-									<Redirect to="/main" />
-								) : (
-									<Redirect to="/signin" />
-								)
-							)} />
+							<Route path="/addproject" component={AddProject} />
+							<Route path="/project" component={OpenProject} />
 						</Switch>
 					</div>
 					<Footer />

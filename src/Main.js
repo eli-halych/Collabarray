@@ -5,70 +5,49 @@ import {
 	//Router,
 	Route,
 	Link,
-	// NavLink
+	NavLink,
 	//HashRouter,
 	BrowserRouter,
 	Switch
 } from "react-router-dom";
 
-import AddProject from "./AddProject";
-
-
-
 class Main extends Component {
-
-	constructor() {
-		super();
-		this.handleClick = this.handleClick.bind(this);
-		this.state = {
-			addPressed: false
-		};
-	}
-
-	handleClick() {
-		this.state.addPressed = true;
-	}
-
 	render() {
 		return (
-			<BrowserRouter>
 			<div className="Main">
-				
 				<div className="border col-md-3">
 					Left panel with filters etc.
 					<hr />
-					
-				
-					
-					
-						{/*where our content(views) will load into*/}
-						<Switch>
-							<Route exact path="/addproject" component={AddProject} />
-							<Link className="btn btn-primary btn-lg" to="/addproject" role="button">Add project</Link>
-							{/* <Link className="btn btn-primary btn-lg" to="/addproject" >Add project</Link> */}
-							{/* <Route exact path="/main" render={() => (
-								this.state.authenticated ? (
-									<Redirect to="/addproject" />
-								) : (
-									null
-								)
-							)} /> */}
-						</Switch>
-					
-				
-			
-			
-
-
+					{/*where our content(views) will load into*/}
+					<NavLink className="btn btn-primary btn-lg" to="/addproject">
+						Add project
+					</NavLink>
 					<hr />
 				</div>
 
-				<div className="border col-md-9">
-					Right block aka Newsfeed
+				{/* The method pf adding Project in the feed should be changed, 
+				because when a project is created by a user and added to the database,
+				it should appear automatically(I think we should use class states, but I'm not quite sure)  */}
+				<div className="border col-md-9">Right block aka Newsfeed
+				<hr />
+				<NavLink className="btn btn-primary btn-lg" to="/project">
+						Open Project
+				</NavLink>
+				<hr />
+				<NavLink className="btn btn-primary btn-lg" to="/project">
+						Open Project
+				</NavLink>
+				<hr />
+				<NavLink className="btn btn-primary btn-lg" to="/project">
+						Open Project
+				</NavLink>
+				<hr />
+				<NavLink className="btn btn-primary btn-lg" to="/project">
+						Open Project
+				</NavLink>
+				<hr />
 				</div>
-
-      </div>
-			</BrowserRouter>
+			</div>
 		);
 	}
 }
