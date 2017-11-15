@@ -14,8 +14,8 @@ import {
 	Redirect,
 	//Router,
 	//Route,
-	Link,
-	NavLink
+	// Link,
+	// NavLink
 	//HashRouter,
 	//BrowserRouter,
 	//Switch
@@ -45,7 +45,7 @@ class SignIn extends Component {
 		this.authWithGoogle = this.authWithGoogle.bind(this);
 		this.authWithEmailAndPassword = this.authWithEmailAndPassword.bind(this);
 		this.state = {
-			authenticated: false
+			redirect: false
 		};
 	}
 
@@ -61,7 +61,7 @@ class SignIn extends Component {
 					});
 				} else {
 					console.log("Authorised with Facebook");
-					this.setState({ authenticated: true });
+					this.setState({ redirect: true });
 				}
 			});
 	}
@@ -77,7 +77,7 @@ class SignIn extends Component {
 					});
 				} else {
 					console.log("Authorised with GitHub");
-					this.setState({ authenticated: true });
+					this.setState({ redirect: true });
 				}
 			});
 	}
@@ -94,24 +94,46 @@ class SignIn extends Component {
 				} else {
 					console.log("Authorised with Google");
 
-					this.setState({ authenticated: true });
+					this.setState({ redirect: true });
 				}
 			});
 	}
 	authWithEmailAndPassword(event) {
 		event.preventDefault();
-		console.log("Authorised with Email & Password");
-		console.table([
-			{
-				email: this.emailInput.value,
-				password: this.passswordInput.value
+		const email = this.emailInput.value
+		const password = this.passswordInput.value
+
+		app.auth().fetchProvidersForEmail(email).then((providers) => {
+			if(providers.length === 0) {
+				// create account
+				// if does not have an account
+				return app.auth().createUserWithEmailAndPassword(email, password);
+			} 
+			else if (providers.indexOf("password") === -1) {
+				// they used facebook, google, github etc. to sign in
+				// did not sign up with email and password
+				this.loginForm.reset()
+				this.toaster.show({ intent: Intent.WARNING, message: "Try an alternative login." })
 			}
-		]);
-	}
+			else {
+				// sign the user in
+				return app.auth().signInWithEmailAndPassword(email, password)
+			}
+		})
+		.then((user) => {
+			if (user && user.email){
+				this.loginForm.reset()
+				this.setState({ redirect: true })
+			}
+		})
+		.catch((error) => {
+			this.toaster.show({ intent:  Intent.DANGER, message: error.message })
+		})
+}
 
 	render() {
-		if (this.state.authenticated === true) {
-			return <Redirect to="/Main" />;
+		if (this.state.redirect === true) {
+			return <Redirect to="/" />;
 		}
 
 		return (
@@ -136,6 +158,8 @@ class SignIn extends Component {
 						}}
 						id="js-form"
 					>
+
+
 						<label htmlFor="email">
 							<b>Email:</b>
 						</label>
@@ -149,7 +173,11 @@ class SignIn extends Component {
 							}}
 							placeholder="Email"
 						/>
+
+
 						<br />
+
+
 						<label htmlFor="password">
 							<b>Password:</b>
 						</label>
@@ -163,13 +191,17 @@ class SignIn extends Component {
 							}}
 							placeholder="Password"
 						/>
+
+
 						<div className="clearfix">
 							<button type="submit" id="btnLogIn" className="btn btn-primary">
 								Log in
 							</button>
-							{/* <button type="submit" id="btnLogOut" className="btn btn-light hide">Log Out</button> */}
+							{/* <NavLink to="/signup" id="btnSignUp" className="btn btn-primary">Sign Up</NavLink> */} {/* <--- Sign up page ill be completed a bit later */}
 							{/* <button type="submit" id="btnSignUp" className="btn btn-secondary">Sign Up</button> */}
 						</div>
+
+
 					</form>
 
 					<div className="clearfix">

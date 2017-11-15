@@ -18,13 +18,13 @@ class Header extends Component {
 			<div className="Header">
 				<nav className="navbar navbar-inverse navbar-default">
 					{this.props.authenticated ? (
-						<div className="container-fluid col-sm-6 col-md-6">
+						<div className="container-fluid col-sm-12 col-md-12">
 							<ul className="nav navbar-nav navbar-left">
 								<li className="active">
-									<NavLink to="/">Home</NavLink>
+									<NavLink to="/signin">Home</NavLink>
 								</li>
 								<li>
-									<NavLink to="/">Page 1</NavLink>
+									<NavLink to="/addproject">Add Project</NavLink>
 								</li>
 								<li>
 									<NavLink to="/">Page 2</NavLink>
@@ -38,29 +38,15 @@ class Header extends Component {
 									<NavLink to="/">Profile</NavLink>
 								</li>
 								<li>
-									<NavLink to="/">Log out</NavLink>
+									<NavLink to="/logout">Log out</NavLink>
 								</li>
 							</ul>
 						</div>
 					) : (
-						<div className="container-fluid col-sm-6 col-md-6">
+						<div className="container-fluid col-sm-12 col-md-12">
 							<div className="navbar-header">
 								<a className="navbar-brand">Collabarray</a>
 							</div>
-							<ul className="nav navbar-nav">
-								<li className="active">
-									<NavLink to="/">Profile</NavLink>
-								</li>
-								<li>
-									<NavLink to="/">Page 1</NavLink>
-								</li>
-								<li>
-									<NavLink to="/">Page 2</NavLink>
-								</li>
-								<li>
-									<NavLink to="/">Page 3</NavLink>
-								</li>
-							</ul>
 						</div>
 					)}
 				</nav>
