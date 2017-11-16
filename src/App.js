@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "./styles.css";
-import { Spinner } from "@blueprintjs/core"; 
+import { Spinner } from "@blueprintjs/core";
 // import firebase from 'firebase';
 import {
 	BrowserRouter,
@@ -23,13 +23,14 @@ import Main from "./Main";
 import AddProject from "./AddProject";
 import OpenProject from "./OpenProject";
 import Logout from "./Logout";
+import viewprojects from "./viewprojects";
 
 import { app } from "./firebaseInitApp.js";
 
-const Loading = { 
-	textAlign: "center", 
-	position: "absolute", 
-	top: "25%", 
+const Loading = {
+	textAlign: "center",
+	position: "absolute",
+	top: "25%",
 	left: "50%" };
 
 class App extends Component {
@@ -94,6 +95,7 @@ class App extends Component {
 							<Route path="/logout" component={Logout} />
 							<Route path="/addproject" component={AddProject} />
 							<Route path="/openproject" component={OpenProject} />
+							<Route path="/viewprojects" component={viewprojects} />
 						</Switch>
 					</div>
 					<Footer />

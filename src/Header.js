@@ -27,7 +27,7 @@ class Header extends Component {
 									<NavLink to="/addproject">Add Project</NavLink>
 								</li>
 								<li>
-									<NavLink to="/">Page 2</NavLink>
+									<NavLink to="/viewprojects">View Projects</NavLink>
 								</li>
 								<li>
 									<NavLink to="/">Page 3</NavLink>
