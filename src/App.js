@@ -23,7 +23,7 @@ import Main from "./Main";
 import AddProject from "./AddProject";
 import OpenProject from "./OpenProject";
 import Logout from "./Logout";
-import viewprojects from "./viewprojects";
+import viewProjects from "./viewProjects";
 
 import { app } from "./firebaseInitApp.js";
 
@@ -95,7 +95,7 @@ class App extends Component {
 							<Route path="/logout" component={Logout} />
 							<Route path="/addproject" component={AddProject} />
 							<Route path="/openproject" component={OpenProject} />
-							<Route path="/viewprojects" component={viewprojects} />
+							<Route path="/viewProjects" component={viewProjects} />
 						</Switch>
 					</div>
 					<Footer />
