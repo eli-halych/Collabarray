@@ -78,7 +78,7 @@ class Header extends Component {
 											</li>
 											<li role="separator" className="divider" />
 											<li>
-												<NavLink to="/">Separated link</NavLink>
+												<NavLink to="/viewprojects">View Projects</NavLink>
 											</li>
 										</ul>
 									</li>

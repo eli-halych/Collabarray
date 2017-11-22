@@ -22,6 +22,7 @@ import Footer from "./Footer";
 import Main from "./Main";
 import AddProject from "./AddProject";
 import OpenProject from "./OpenProject";
+import ViewProjects from "./viewProjects";
 import Logout from "./Logout";
 import Background from "./img/bg/bgSignIn.png";
 
@@ -97,7 +98,8 @@ class App extends Component {
 										<Redirect to="/main" />
 									) : (
 										<Redirect to="/signin" />
-									)}
+									)
+								}
 							/>
 							<Route path="/main" component={Main} />
 							<Route path="/signin" component={SignIn} />
@@ -105,6 +107,7 @@ class App extends Component {
 							<Route path="/logout" component={Logout} />
 							<Route path="/addproject" component={AddProject} />
 							<Route path="/openproject" component={OpenProject} />
+							<Route path="/viewprojects" component={ViewProjects} />
 						</Switch>
 					</div>
 					<Footer />
