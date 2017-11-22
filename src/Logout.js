@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Spinner } from "@blueprintjs/core"; 
+import { Spinner } from "@blueprintjs/core";
 import { app } from "./firebaseInitApp.js";
 import {
-	Redirect,
+	Redirect
 	//Router,
 	//Route,
 	//Link,
@@ -10,40 +10,39 @@ import {
 	//HashRouter,
 	//BrowserRouter
 } from "react-router-dom";
-
 import "./Logout.css";
 import "bootstrap-social";
 
-const Loading = { 
-	textAlign: "center", 
-	position: "absolute", 
-	top: "25%", 
-	left: "50%" };
+//makes bootstrap.js work since it needs jquery and imports have to go at the top
+window.jQuery = require("jquery");
+require("bootstrap");
 
 class Logout extends Component {
-  constructor(){
-    super()
-    this.state = {
-      redirect: false
-    }
-  }
+	constructor() {
+		super();
+		this.state = {
+			redirect: false
+		};
+	}
 
-  componentWillMount(){
-    app.auth().signOut().then((user) => {
-      this.setState({ redirect: true })
-    });
-  }
+	componentWillMount() {
+		app
+			.auth()
+			.signOut()
+			.then(user => {
+				this.setState({ redirect: true });
+				// this.setState({ authenticated: false });
+			});
+	}
 
 	render() {
-		return (
-        this.state.redirect === true 
-        ?
-           <Redirect to="/" />
-        :
-          <div style={Loading}>
-            <h3>Logging out</h3>
-            <Spinner />
-          </div>
+		return this.state.redirect === true ? (
+			<Redirect to="/signin" />
+		) : (
+			<div className="logout">
+				<h3>Logging out</h3>
+				<Spinner />
+			</div>
 		);
 	}
 }

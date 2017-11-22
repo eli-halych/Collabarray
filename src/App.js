@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
-import { Spinner } from "@blueprintjs/core"; 
+import { Spinner } from "@blueprintjs/core";
 // import firebase from 'firebase';
 import {
 	BrowserRouter,
@@ -23,14 +23,20 @@ import Main from "./Main";
 import AddProject from "./AddProject";
 import OpenProject from "./OpenProject";
 import Logout from "./Logout";
+import Background from "./img/bg/bgSignIn.png";
 
 import { app } from "./firebaseInitApp.js";
 
-const Loading = { 
-	textAlign: "center", 
-	position: "absolute", 
-	top: "25%", 
-	left: "50%" };
+//makes bootstrap.js work since it needs jquery and imports have to go at the top
+window.jQuery = require("jquery");
+require("bootstrap");
+
+const Loading = {
+	textAlign: "center",
+	position: "absolute",
+	top: "25%",
+	left: "50%"
+};
 
 class App extends Component {
 	constructor() {
@@ -42,7 +48,7 @@ class App extends Component {
 	}
 
 	componentWillMount() {
-		this.removeAuthListener = app.auth().onAuthStateChanged((user) => {
+		this.removeAuthListener = app.auth().onAuthStateChanged(user => {
 			if (user) {
 				this.setState({
 					authenticated: true,
@@ -62,20 +68,25 @@ class App extends Component {
 	}
 
 	render() {
-		if (this.state.loading === true){
+		if (this.state.loading === true) {
 			return (
 				<div style={Loading}>
 					<h3>Loading...</h3>
 					<Spinner />
 				</div>
-			)
+			);
+		}
+		// changes the background of signin to Background
+		if (window.location.pathname === "/signin") {
+			document.body.style.backgroundImage = "url(" + Background + ")";
+			document.body.style.backgroundSize = "cover";
 		}
 
 		return (
 			<BrowserRouter>
 				<div className="App">
 					<Header authenticated={this.state.authenticated} />
-					<div className="content">
+					<div className="content container-fluid">
 						{/*where our content(views) will load into*/}
 						<Switch>
 							<Route

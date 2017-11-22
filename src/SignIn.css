@@ -1,3 +1,7 @@
+* {
+    border: thin red solid;
+}
+
 .hide {
     display: none;
     visibility: hidden;
@@ -10,11 +14,9 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: 90%;
-    padding: 12px 20px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    /* resize: horizontal; */
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -22,12 +24,22 @@ input[type="password"] {
 
 /* Set a style for all buttons */
 
-button {
+.login>button {
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 100%;
+}
+
+.login {
+    background: white;
+    width: 90%;
+    max-width: 415px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 

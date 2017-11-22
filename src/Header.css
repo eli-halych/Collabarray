@@ -1,3 +1,46 @@
+.App-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.navbar-brand {
+    padding: 10px;
+}
+
+.nav-tabs li.active navlink {
+    border-radius: 0;
+    background-color: #222222;
+}
+
+.nav-tabs li.active navlink:hover {
+    border-radius: 0;
+    background-color: #222222;
+}
+
+.nav-tabs li.active navlink:focus {
+    border-radius: 0;
+    background-color: #222222;
+}
+
+.nav-tabs li.open navlink.dropdown-toggle {
+    border-radius: 0;
+    background-color: #222222;
+}
+
+.nav-tabs li.open ul {
+    background-color: #333333;
+}
+
+.nav-tabs li.open ul li navlink {
+    color: white !important;
+}
+
+.nav-tabs li.open ul li:hover navlink {
+    color: black;
+}
+
 .navbar {
-  margin-bottom: 0;
+    border-radius: 0;
 }

@@ -4,8 +4,10 @@
     "private": true,
     "dependencies": {
         "@blueprintjs/core": "^1.32.0",
+        "bootstrap": "^3.3.7",
         "bootstrap-social": "^5.1.1",
         "firebase": "^4.6.1",
+        "jquery": "^3.2.1",
         "react": "^16.0.0",
         "react-addons-css-transition-group": "^15.6.2",
         "react-dom": "^16.0.0",
