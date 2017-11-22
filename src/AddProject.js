@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./SignIn.css";
 import "../node_modules/bootstrap-social/bootstrap-social.css";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
+import SignIn from "./SignIn.js"
 // import firebase from 'firebase';
 import {
 	app
@@ -16,35 +17,50 @@ require("bootstrap");
 
 class AddProject extends Component {
 	constructor() {
-		super();
-		this.state = {
-			helpNeeded: "",
-			projectDescription: "",
-			projectTitle: ""
-		};
+    super();
+    this.state = {
+			helpNeeded: '',
+      projectDescription: '',
+      projectTitle: '',
+			username: ''
+    }
 		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-	}
-	handleSubmit(e) {
-		e.preventDefault();
-		const itemsRef = app.database().ref("Projects");
-		const item = {
+ 		this.handleSubmit = this.handleSubmit.bind(this);
+  }
+		handleSubmit(e) {
+	  e.preventDefault();
+
+	  const itemsRef = app.database().ref('Projects');
+		var user = app.auth().currentUser;
+		var email=user.email;
+		for(var i=0;i<100;i++)
+		{
+			if(email.charAt(i)=='@')
+			{
+				email=email.substring(0,i);
+			}
+		}
+	  const item = {
 			helpNeeded: this.state.helpNeeded,
-			projectDescription: this.state.projectDescription,
-			projectTitle: this.state.projectTitle
-		};
-		itemsRef.push(item);
-		this.setState({
-			helpNeeded: "",
-			projectDescription: "",
-			projectTitle: ""
-		});
+	    projectDescription: this.state.projectDescription,
+			projectTitle: this.state.projectTitle,
+			username: email
+	  }
+	  itemsRef.push(item);
+	  this.setState({
+			helpNeeded: '',
+	    projectDescription: '',
+	    projectTitle: '',
+			username: ''
+	  });
 	}
 	handleChange(e) {
-		this.setState({
-			[e.target.name]: e.target.value
-		});
-	}
+  this.setState({
+    [e.target.name]: e.target.value
+  });
+}
+
+
 
 	render() {
 		return (
@@ -78,6 +94,7 @@ class AddProject extends Component {
 								onChange={this.handleChange}
 								value={this.state.helpNeeded}
 							/>
+							<br />
 							<button>Add Project</button>
 						</form>
 					</section>

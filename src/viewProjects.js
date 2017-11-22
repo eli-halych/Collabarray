@@ -16,7 +16,8 @@ class viewprojects extends React.Component {
       helpNeeded: '',
 			projectDescription:'',
 			projectTitle:'',
-      Projects: []
+      Projects: [],
+			username: ''
     }
   }
 
@@ -26,6 +27,7 @@ class viewprojects extends React.Component {
     this.firebaseRef = app.database().ref("/Projects");
     this.firebaseRef.limitToLast(3).on('value', function(dataSnapshot) {
     var Projects = [];
+
 		  dataSnapshot.forEach(function(childSnapshot) {
         var item = childSnapshot.val();
         item['.key'] = childSnapshot.key;
@@ -45,8 +47,10 @@ class viewprojects extends React.Component {
   render() {
     const Projects = this.state.Projects;
 		//Mapping each project to a variable
-		const proj = Projects.map((Projects) =>
+
+		const proj = Projects.reverse().map((Projects) =>
 			<div>
+			<p key={Projects.key}>{Projects.username}</p>
       <p key={Projects.key}>{Projects.projectTitle}</p>
   		<p key={Projects.key}>{Projects.projectDescription}</p>
 			<p key={Projects.key}>{Projects.helpNeeded}</p>
@@ -55,7 +59,6 @@ class viewprojects extends React.Component {
     );
 
 		//We need to make a div thing to make some sort of pretty display here.
-		// Need to also sort them in order of newest first? Can't find how to do that anywhere.
 		return (
       <div>
 			<h1>Projects</h1>
