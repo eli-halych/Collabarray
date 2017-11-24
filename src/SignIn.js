@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./SignIn.css";
-import "bootstrap-social/bootstrap-social.css";
+import "materialize-css/dist/css/materialize.min.css";
 import "font-awesome/css/font-awesome.min.css";
+import "./SignIn.css";
 // import firebase from 'firebase';
 import {
 	app,
@@ -20,10 +20,12 @@ import {
 	//BrowserRouter,
 	//Switch
 } from "react-router-dom";
+import $ from "jquery";
+import "bootstrap-social";
 
-//makes bootstrap.js work since it needs jquery and imports have to go at the top
+//makes materialize-css work since it needs jquery and imports have to go at the top
 window.jQuery = require("jquery");
-require("bootstrap");
+require("materialize-css");
 
 class SignIn extends Component {
 	constructor(props) {

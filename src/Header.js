@@ -8,103 +8,124 @@ import {
 	//HashRouter,
 	//BrowserRouter
 } from "react-router-dom";
+import "materialize-css/dist/css/materialize.min.css";
 import "./Header.css";
 import $ from "jquery";
 import "bootstrap-social";
 
-//makes bootstrap.js work since it needs jquery and imports have to go at the top
+//makes materialize-css work since it needs jquery and imports have to go at the top
 window.jQuery = require("jquery");
-require("bootstrap");
+require("materialize-css");
 
 class Header extends Component {
+	constructor(props) {
+		super(props);
+		$(document).ready(function() {
+			$(".dropdown-button").dropdown({
+				inDuration: 300,
+				outDuration: 225,
+				constrainWidth: true, // Does not change width of dropdown to that of the activator
+				hover: true, // Activate on hover
+				gutter: 0, // Spacing from edge
+				belowOrigin: true, // Displays dropdown below the button
+				alignment: "left", // Displays dropdown with edge aligned to the left of button
+				stopPropagation: false // Stops event propagation
+			});
+			$(".collapsible").collapsible();
+		});
+	}
 	render() {
 		return (
 			<div className="Header">
 				{/* navigation bar - more responsive*/}
-				<nav className="navbar navbar-default navbar-inverse">
+				<nav className="z-depth-2">
 					{this.props.authenticated ? (
-						<div className="container-fluid">
-							{/* Brand and toggle get grouped for better mobile display */}
-							<div className="navbar-header">
-								<button
-									type="button"
-									className="navbar-toggle collapsed"
-									data-toggle="collapse"
-									data-target="#bs-example-navbar-collapse-1"
-									aria-expanded="false"
+						<div className="nav-wrapper grey darken-4">
+							<div className="padded hide-on-large-only">
+								<a
+									data-activates="slide-out"
+									className="valign-wrapper menu button-collapse"
 								>
-									<span className="sr-only" style={{ color: "white" }}>
-										Toggle navigation
-									</span>
-									<span className="icon-bar" style={{ color: "white" }} />
-									<span className="icon-bar" style={{ color: "white" }} />
-									<span className="icon-bar" style={{ color: "white" }} />
-								</button>
-								<NavLink to="/" className="navbar-brand">
-									<img
-										alt="Brand"
-										className="App-logo"
-										src="../../favicon.ico"
-									/>
-								</NavLink>
+									<i className="material-icons">menu</i>
+								</a>
 							</div>
-							{/* Collect the nav links, forms, and other content for toggling */}
-							<div
-								className="collapse navbar-collapse"
-								id="bs-example-navbar-collapse-1"
-							>
-								<ul className="nav navbar-nav nav-tabs">
-									<li>
-										<NavLink to="/main">Home</NavLink>
-									</li>
-									{/* dropdown menu */}
-									<li className="dropdown">
-										<NavLink
-											to=""
-											className="dropdown-toggle"
-											data-toggle="dropdown"
-											role="button"
-											aria-haspopup="true"
-											aria-expanded="false"
-										>
-											Projects <span className="caret" />
-										</NavLink>
-										<ul className="dropdown-menu">
-											<li>
-												<NavLink to="/addproject">Add Project</NavLink>
-											</li>
-											<li>
-												<NavLink to="/openproject">Open Project</NavLink>
-											</li>
-											<li role="separator" className="divider" />
-											<li>
-												<NavLink to="/viewprojects">View Projects</NavLink>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<NavLink to="/">About Me</NavLink>
-									</li>
-								</ul>
-								<ul className="nav navbar-nav navbar-right nav-tabs">
-									<li>
-										<NavLink to="/logout">Logout</NavLink>
-									</li>
-								</ul>
-							</div>
-							{/* /.navbar-collapse */}
+							<ul id="slide-out" className="side-nav z-depth-3">
+								<li>
+									<NavLink to="/main">Home</NavLink>
+								</li>
+								<li className="no-padding">
+									<ul className="collapsible" data-collapsible="accordian">
+										<li>
+											<a className="collapsible-header">
+												Media<i className="material-icons">arrow_drop_down</i>
+											</a>
+											<div className="collapsible-body">
+												<ul>
+													<li>
+														<NavLink to="/addproject">Add Project</NavLink>
+													</li>
+													<li>
+														<NavLink to="/openproject">Open Projects</NavLink>
+													</li>
+													<li className="divider" />
+													<li>
+														<NavLink to="/viewprojects">View Projects</NavLink>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li className="divider" />
+								<li>
+									<NavLink to="/">Profile</NavLink>
+								</li>
+								<li>
+									<NavLink to="/logout">Logout</NavLink>
+								</li>
+							</ul>
+							<NavLink to="/main" className="brand-logo center">
+								<img alt="Brand" className="App-logo" src="../../favicon.ico" />
+							</NavLink>
+							<ul className="left hide-on-med-and-down">
+								<li>
+									<NavLink to="/main">Home</NavLink>
+								</li>
+								<li>
+									<a className=" dropdown-button " data-activates="dropdown1 ">
+										Projects<i className="material-icons right">
+											arrow_drop_down
+										</i>
+									</a>
+									{/* Dropdown Structure */}
+									<ul id="dropdown1" className="dropdown-content">
+										<li>
+											<NavLink to="/viewprojects">View Projects</NavLink>
+										</li>
+										<li>
+											<NavLink to="/openproject">Open Projects</NavLink>
+										</li>
+										<li className="divider" />
+										<li>
+											<NavLink to="/addproject">Add Project</NavLink>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul className="right hide-on-med-and-down">
+								<li>
+									<NavLink to="/main">Profile</NavLink>
+								</li>
+								<li>
+									<NavLink to="/logout">Logout</NavLink>
+								</li>
+							</ul>
 						</div>
 					) : (
-						<div className="container-fluid">
-							<div className="navbar-header">
-								<NavLink to="/" className="navbar-brand">
-									<img
-										alt="Brand"
-										className="App-logo"
-										src="../../favicon.ico"
-									/>
-								</NavLink>
-							</div>
+						<div className="nav-wrapper grey darken-4">
+							<NavLink to="/main" className="brand-logo">
+								<img alt="Brand" className="App-logo" src="../../favicon.ico" />
+							</NavLink>
 						</div>
 					)}
 				</nav>

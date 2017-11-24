@@ -11,11 +11,12 @@ import {
 	//BrowserRouter
 } from "react-router-dom";
 import "./Logout.css";
+import $ from "jquery";
 import "bootstrap-social";
 
-//makes bootstrap.js work since it needs jquery and imports have to go at the top
+//makes materialize-css work since it needs jquery and imports have to go at the top
 window.jQuery = require("jquery");
-require("bootstrap");
+require("materialize-css");
 
 class Logout extends Component {
 	constructor() {

@@ -1,46 +1,90 @@
 .App-logo {
-    width: 32px;
-    height: 32px;
     border-radius: 50%;
-    margin: auto;
 }
 
-.navbar-brand {
+.brand-logo {
+    background-color: transparent !important;
+}
+
+.brand-logo img {
+    margin-top: 5px;
+    height: 52px;
+    width: 52px;
+}
+
+nav .material-icons {
+    color: #c0ae94;
+}
+
+nav div a {
+    color: #c0ae94;
+}
+
+nav .padded {
+    height: 100%;
     padding: 10px;
 }
 
-.nav-tabs li.active navlink {
-    border-radius: 0;
+nav .menu {
+    height: 100%;
+    padding: 0 12px;
+    font-size: 1.5em;
+    text-decoration: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    font-weight: 1000px;
+    background: rgba(1, 1, 1, 0.2);
+    text-shadow: 0px 1px 1px #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #c0ae94;
+    -webkit-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+nav .menu:hover {
+    text-decoration: none;
+    color: #d8cebe;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.7), 0px 0px 5px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.7), 0px 0px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.7), 0px 0px 5px rgba(0, 0, 0, 0.05);
+}
+
+nav .menu:active {
+    color: #f5f2ee;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 50ms ease-in-out;
+    -moz-transition: all 50ms ease-in-out;
+    -ms-transition: all 50ms ease-in-out;
+    -o-transition: all 50ms ease-in-out;
+    transition: all 50ms ease-in-out;
+    -webkit-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3), inset 0px 0px 15px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3), inset 0px 0px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3), inset 0px 0px 15px rgba(0, 0, 0, 0.05);
+}
+
+nav .active {
+    background-color: black;
+}
+
+nav ul {
     background-color: #222222;
 }
 
-.nav-tabs li.active navlink:hover {
-    border-radius: 0;
+nav ul .dropdown-content li a {
+    color: #b3a797;
+}
+
+nav ul li {
     background-color: #222222;
 }
 
-.nav-tabs li.active navlink:focus {
-    border-radius: 0;
-    background-color: #222222;
-}
-
-.nav-tabs li.open navlink.dropdown-toggle {
-    border-radius: 0;
-    background-color: #222222;
-}
-
-.nav-tabs li.open ul {
-    background-color: #333333;
-}
-
-.nav-tabs li.open ul li navlink {
-    color: white !important;
-}
-
-.nav-tabs li.open ul li:hover navlink {
-    color: black;
-}
-
-.navbar {
-    border-radius: 0;
+nav ul li:hover {
+    background-color: #1a1a1a;
 }

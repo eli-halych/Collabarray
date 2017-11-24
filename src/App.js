@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "materialize-css/dist/css/materialize.min.css";
 import "./styles.css";
 import { Spinner } from "@blueprintjs/core";
 // import firebase from 'firebase';
@@ -22,15 +22,18 @@ import Footer from "./Footer";
 import Main from "./Main";
 import AddProject from "./AddProject";
 import OpenProject from "./OpenProject";
-import ViewProjects from "./viewProjects";
+import ViewProjects from "./ViewProjects";
 import Logout from "./Logout";
 import Background from "./img/bg/bgSignIn.png";
 
 import { app } from "./firebaseInitApp.js";
 
-//makes bootstrap.js work since it needs jquery and imports have to go at the top
+import $ from "jquery";
+import "bootstrap-social";
+
+//makes materialize-css work since it needs jquery and imports have to go at the top
 window.jQuery = require("jquery");
-require("bootstrap");
+require("materialize-css");
 
 const Loading = {
 	textAlign: "center",
