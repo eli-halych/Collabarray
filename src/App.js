@@ -19,7 +19,7 @@ import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import Header from "./Header";
 import Footer from "./Footer";
-import Main from "./Main";
+import Home from "./Home";
 import AddProject from "./AddProject";
 import OpenProject from "./OpenProject";
 import ViewProjects from "./ViewProjects";
@@ -98,13 +98,13 @@ class App extends Component {
 								path="/"
 								render={() =>
 									this.state.authenticated ? (
-										<Redirect to="/main" />
+										<Redirect to="/home" />
 									) : (
 										<Redirect to="/signin" />
 									)
 								}
 							/>
-							<Route path="/main" component={Main} />
+							<Route path="/home" component={Home} />
 							<Route path="/signin" component={SignIn} />
 							<Route path="/signup" component={SignUp} />
 							<Route path="/logout" component={Logout} />
