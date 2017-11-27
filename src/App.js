@@ -109,7 +109,7 @@ class App extends Component {
 							<Route path="/signup" component={SignUp} />
 							<Route path="/logout" component={Logout} />
 							<Route path="/addproject" component={AddProject} />
-							<Route path="/openproject" component={OpenProject} />
+							<Route path="/openproject/:id" component={OpenProject} /> {/* <-- REF. from OpenProject.js */}
 							<Route path="/viewprojects" component={ViewProjects} />
 						</Switch>
 					</div>
