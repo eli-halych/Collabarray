@@ -34,7 +34,7 @@ class Header extends Component {
 			$(".collapsible").collapsible();
 		});
 	}
-
+	/*makes sure the dropdown works after teh user signs in */
 	componentDidUpdate() {
 		$(".dropdown-button").dropdown({
 			inDuration: 300,
