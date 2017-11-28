@@ -102,7 +102,13 @@ class Header extends Component {
 									<NavLink to="/logout">Logout</NavLink>
 								</li>
 							</ul>
+<<<<<<< HEAD
 
+=======
+							<NavLink to="/home" className="brand-logo center">
+								<img alt="Brand" className="App-logo" src="../../favicon.ico" />
+							</NavLink>
+>>>>>>> 13f0cd413471ed609413c56cae4ed34d2d335e83
 							<ul className="left hide-on-med-and-down">
 								<li>
 									<NavLink to="/home">Home</NavLink>
