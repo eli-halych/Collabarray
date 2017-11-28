@@ -83,11 +83,11 @@ class ViewProjects extends React.Component {
 		//We need to make a div thing to make some sort of pretty display here.
 		return (
 			<div>
-				<header>
-					<div className="title">
-						<h1>Project</h1>
+				<div class="header-back z-depth-1">
+					<div class="page-header">
+						<h1>Project Wall</h1>
 					</div>
-				</header>
+				</div>
 				{proj}
 			</div>
 		);

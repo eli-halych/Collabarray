@@ -27,7 +27,6 @@ window.jQuery = require("jquery");
 require("materialize-css");
 
 class Home extends Component {
-
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -74,19 +73,24 @@ class Home extends Component {
 		//Mapping each project to a variable
 
 		const proj = Projects.reverse().map(project => (
-			<div>
-				<p key={project.key}>{project.username}</p>
-				<p key={project.key}>{project.projectTitle}</p> {/* <-- unique, can be used as identifier */}
-				<p key={project.key}>{project.projectDescription}</p>
-				<p key={project.key}>{project.helpNeeded}</p>
-				{/* <p key={project.key}>{project.id}</p> */}
-				<NavLink className="btn btn-primary btn-lg" to={"/openproject/" + project.id}> {/* <-- REF. from OpenProject.js */}
-							Open project
-				</NavLink>
-				<hr />
-			</div>
+			<tr>
+				<td key={project.key}>{project.username}</td>
+				<td key={project.key}>{project.projectTitle}</td>
+				<td key={project.key}>{project.projectDescription}</td>
+				<td key={project.key}>{project.helpNeeded}</td>
+				{/* <td key={project.key}>{project.id}</td> */}
+				<td>
+					<NavLink
+						className="btn-large waves-effect waves-light"
+						to={"/openproject/" + project.id}
+					>
+						{" "}
+						{/* <-- REF. from OpenProject.js */}
+						Open project
+					</NavLink>
+				</td>
+			</tr>
 		));
-
 
 		return (
 			<div className="Home">
@@ -96,21 +100,43 @@ class Home extends Component {
 					</div>
 				</header>
 				<div className="row">
-					<div className="border col m6">
-						<hr />
-						Left panel with filters etc.
-						<hr />
-						{/*where our content(views) will load into*/}
-						<NavLink className="btn btn-primary btn-lg" to="/addproject">
-							Add project
-						</NavLink>
-						<hr />
+					<div className="bordered col s12 m6">
+						<table className="bordered centered responsive-table">
+							<thead>
+								<tr>
+									<th> Left panel with filters etc.</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										{/*where our content(views) will load into*/}
+										<NavLink
+											className="btn-large waves-effect waves-light"
+											to="/addproject"
+										>
+											Add project
+										</NavLink>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 
 					{/* The way of adding project into user's feed should be automatic 
 				and be done in a different way(I think through class states) */}
-					<div className="border col m6">
-						{proj}
+					<div className="col s12 m6">
+						<table className="bordered centered highlighted responsive-table">
+							<thead>
+								<tr>
+									<th>Username</th>
+									<th>Project Title</th>
+									<th>Project Description</th>
+									<th>Help Needed</th>
+								</tr>
+							</thead>
+							<tbody>{proj}</tbody>
+						</table>
 					</div>
 				</div>
 			</div>

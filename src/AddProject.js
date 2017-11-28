@@ -65,11 +65,11 @@ class AddProject extends Component {
 	render() {
 		return (
 			<div className="AddProject">
-				<header>
-					<div className="title">
+				<div className="header-back z-depth-1">
+					<div className="page-header">
 						<h1>Add Project</h1>
 					</div>
-				</header>
+				</div>
 				<div className="container grey darken-4">
 					<section className="add-item grey darken-4">
 						<form onSubmit={this.handleSubmit}>
