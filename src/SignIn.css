@@ -2,6 +2,11 @@
     /* border: thin red solid; */
 }
 
+.SignIn {
+    margin-top: -64px;
+    min-height: 100vh;
+}
+
 .hide {
     display: none;
     visibility: hidden;
@@ -26,7 +31,7 @@ input[type="password"] {
 
 .login>button {
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 10px auto;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -34,8 +39,8 @@ input[type="password"] {
 
 .login {
     background: white;
-    width: 90%;
-    max-width: 415px;
+    width: auto;
+    /* max-width: 415px; */
     margin: 20px auto;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -47,57 +52,21 @@ input[type="password"] {
 
 #btnLogIn,
 #btnSignUp {
-    margin: 8px 5%;
-    float: left;
-    width: 40%;
+    vertical-align: middle;
+    width: auto;
+    margin: 5px auto 20px;
+}
+
+#btnSignInGithub,
+#btnSignInGoogle,
+#btnSignInFacebook {
+    width: 85%;
+    margin: 5px auto;
 }
 
 
 /* Float logIn and signUp buttons and add an equal width */
 
-
-/* #btnLogOut, #btnSignInGithub, #btnSignInGoogle, #btnSignInFacebook{
-  margin: 8px 30%;
-  float: left;
-  width: 40%;
-} */
-
-
-/* Add padding to container elements */
-
-.container {
-    padding: 20px;
-}
-
 form {
     background-color: #f2f2f2;
-}
-
-
-/* Clear floats */
-
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-
-/* Change styles for cancel button and signup button on extra small screens */
-
-@media screen and (max-width: 300px) {
-    #btnLogIn,
-    #btnSignUp {
-        margin: 8px 0;
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #btnLogOut,
-    #btnSignInGithub,
-    #btnSignInGoogle {
-        margin: 8px 0;
-        width: 100%;
-    }
 }

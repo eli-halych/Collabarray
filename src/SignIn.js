@@ -134,12 +134,12 @@ class SignIn extends Component {
 		}
 
 		return (
-			<div className="SignIn">
+			<div className="SignIn valign-wrapper">
 				{/* <img src={logo} alt="Collabarray-Logo" /> */}
 
 				<br />
 
-				<div className="login">
+				<div className="login row hoverable z-depth-1">
 					<Toaster
 						ref={element => {
 							this.toaster = element;
@@ -154,84 +154,99 @@ class SignIn extends Component {
 							this.loginForm = form;
 						}}
 						id="js-form"
+						className="col s12"
 					>
-						<label htmlFor="email">
-							<b>Email:</b>
-						</label>
-						<input
-							type="email"
-							id="txtEmail"
-							className="form-control"
-							required
-							ref={input => {
-								this.emailInput = input;
-							}}
-							placeholder="Email"
-						/>
-
-						<br />
-
-						<label htmlFor="password">
-							<b>Password:</b>
-						</label>
-						<input
-							type="password"
-							id="txtPassword"
-							className="form-control"
-							required
-							ref={input => {
-								this.passswordInput = input;
-							}}
-							placeholder="Password"
-						/>
-
-						<div className="clearfix">
-							<button type="submit" id="btnLogIn" className="btn btn-primary">
-								Log in
-							</button>
-							{/* <NavLink to="/signup" id="btnSignUp" className="btn btn-primary">Sign Up</NavLink> */}{" "}
-							{/* <--- Sign up page ill be completed a bit later */}
-							{/* <button type="submit" id="btnSignUp" className="btn btn-secondary">Sign Up</button> */}
+						<div class="input-field col s12">
+							<i class="material-icons prefix">mail_outline</i>
+							<input
+								type="email"
+								id="txtEmail"
+								className="form-control validate"
+								required
+								ref={input => {
+									this.emailInput = input;
+								}}
+							/>
+							<label
+								htmlFor="email"
+								data-error="Email is Invalid"
+								data-success="Valid"
+							>
+								<b>Email:</b>
+							</label>
 						</div>
+						<div class="input-field col s12">
+							<i class="material-icons prefix">lock_outline</i>
+							<input
+								type="password"
+								id="txtPassword"
+								className="form-control validate"
+								required
+								ref={input => {
+									this.passswordInput = input;
+								}}
+							/>{" "}
+							<label
+								htmlFor="password"
+								data-error="Password is Required"
+								data-success="Valid"
+							>
+								<b>Password:</b>
+							</label>
+						</div>
+						<button
+							type="submit"
+							id="btnLogIn"
+							className="waves-effect waves-light btn "
+						>
+							Log in
+							<i className="material-icons right">send</i>
+						</button>
+						{/* <NavLink to="/signup" id="btnSignUp" className="btn btn-primary">Sign Up</NavLink> */}{" "}
+						{/* <--- Sign up page will be completed a bit later */}
+						{/* <button type="submit" id="btnSignUp" className="btn btn-secondary">Sign Up</button> */}
 					</form>
 
-					<div className="clearfix">
-						<a
+					<div className="">
+						<button
 							type="submit"
 							id="btnSignInGithub"
-							className="btn btn-block btn-social btn-github"
+							className="waves-effect waves-light btn btn-social btn-github"
 							onClick={() => {
 								this.authWithGithub();
 							}}
 						>
 							<span className="fa fa-github" />
 							Sign in with Github
-						</a>
+							<i className="material-icons right">send</i>
+						</button>
 
 						<br />
-						<a
+						<button
 							type="submit"
 							id="btnSignInGoogle"
-							className="btn btn-block btn-social btn-google"
+							className="waves-effect waves-light btn btn-social btn-google"
 							onClick={() => {
 								this.authWithGoogle();
 							}}
 						>
 							<span className="fa fa-google" />
 							Sign in with Google
-						</a>
+							<i className="material-icons right">send</i>
+						</button>
 						<br />
-						<a
+						<button
 							type="submit"
 							id="btnSignInFacebook"
-							className="btn btn-block btn-social btn-facebook"
+							className="waves-effect waves-light btn btn-social btn-facebook"
 							onClick={() => {
 								this.authWithFacebook();
 							}}
 						>
 							<span className="fa fa-facebook" />
 							Sign in with Facebook
-						</a>
+							<i className="material-icons right">send</i>
+						</button>
 					</div>
 				</div>
 			</div>

@@ -34,6 +34,21 @@ class Header extends Component {
 			$(".collapsible").collapsible();
 		});
 	}
+
+	componentDidUpdate() {
+		$(".dropdown-button").dropdown({
+			inDuration: 300,
+			outDuration: 225,
+			constrainWidth: true, // Does not change width of dropdown to that of the activator
+			hover: true, // Activate on hover
+			gutter: 0, // Spacing from edge
+			belowOrigin: true, // Displays dropdown below the button
+			alignment: "left", // Displays dropdown with edge aligned to the left of button
+			stopPropagation: false // Stops event propagation
+		});
+		$(".collapsible").collapsible();
+	}
+
 	render() {
 		return (
 			<div className="Header">
@@ -41,6 +56,9 @@ class Header extends Component {
 				<nav className="z-depth-2">
 					{this.props.authenticated ? (
 						<div className="nav-wrapper grey darken-4">
+							<NavLink to="/home" className="brand-logo center">
+								<img alt="Brand" className="App-logo" src="../../favicon.ico" />
+							</NavLink>
 							<div className="padded hide-on-large-only">
 								<a
 									data-activates="slide-out"
@@ -51,7 +69,7 @@ class Header extends Component {
 							</div>
 							<ul id="slide-out" className="side-nav z-depth-3">
 								<li>
-									<NavLink to="/main">Home</NavLink>
+									<NavLink to="/home">Home</NavLink>
 								</li>
 								<li className="no-padding">
 									<ul className="collapsible" data-collapsible="accordian">
@@ -84,12 +102,10 @@ class Header extends Component {
 									<NavLink to="/logout">Logout</NavLink>
 								</li>
 							</ul>
-							<NavLink to="/main" className="brand-logo center">
-								<img alt="Brand" className="App-logo" src="../../favicon.ico" />
-							</NavLink>
+
 							<ul className="left hide-on-med-and-down">
 								<li>
-									<NavLink to="/main">Home</NavLink>
+									<NavLink to="/home">Home</NavLink>
 								</li>
 								<li>
 									<a className=" dropdown-button " data-activates="dropdown1 ">
@@ -114,7 +130,7 @@ class Header extends Component {
 							</ul>
 							<ul className="right hide-on-med-and-down">
 								<li>
-									<NavLink to="/main">Profile</NavLink>
+									<NavLink to="/home">Profile</NavLink>
 								</li>
 								<li>
 									<NavLink to="/logout">Logout</NavLink>
@@ -123,7 +139,7 @@ class Header extends Component {
 						</div>
 					) : (
 						<div className="nav-wrapper grey darken-4">
-							<NavLink to="/main" className="brand-logo">
+							<NavLink to="/home" className="brand-logo">
 								<img alt="Brand" className="App-logo" src="../../favicon.ico" />
 							</NavLink>
 						</div>
