@@ -72,7 +72,7 @@ class Home extends Component {
 		const Projects = this.state.Projects;
 		//Mapping each project to a variable
 
-		const proj = Projects.reverse().map(project => (
+		const proj = Projects.map(project => (
 			<tr>
 				<td key={project.key}>{project.username}</td>
 				<td key={project.key}>{project.projectTitle}</td>
@@ -90,7 +90,7 @@ class Home extends Component {
 					</NavLink>
 				</td>
 			</tr>
-		));
+		)).reverse();
 
 		return (
 			<div className="Home">

@@ -21,6 +21,7 @@ import "../node_modules/font-awesome/css/font-awesome.min.css";
 import "./OpenProject.css";
 import $ from "jquery";
 import "bootstrap-social";
+import "./OpenProject.css";
 
 //makes materialize-css work since it needs jquery and imports have to go at the top
 window.jQuery = require("jquery");
@@ -32,12 +33,14 @@ class OpenProject extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			ID: "",
 			Posts: [],
 			text: "",
 			username: ""
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleRemove = this.handleRemove.bind(this);
 	}
 
 	componentWillMount() {
@@ -53,6 +56,7 @@ class OpenProject extends Component {
 						// console.log(childSnapshot.val());
 						var item = childSnapshot.val(); /* <-- takes data of each child under eaach key from Posts */
 						item[".key"] = childSnapshot.key;  /* <-- gets each key */
+						item.id = item[".key"];
 						Posts.push(item);  /* <-- pushes into array variable Posts of this function */
 					}.bind(this)
 				);
@@ -95,20 +99,54 @@ class OpenProject extends Component {
 			[e.target.name]: e.target.value
 		});
 	}
+	handleRemove(e) {
+    return app.database().ref("/Posts").child(e).remove();
+}
 
 	
 
 	render() {
 		const Posts = this.state.Posts;
 
-		const post = Posts.map(Posts => (  /* <-- a const containing html the way the comment should be displayed */
+		const post = Posts.map(post => (  /* <-- a const containing html the way the comment should be displayed */
 			<div>
 				<hr />
-				<p key={Posts.key}>{Posts.username}</p>
-				<p key={Posts.key}>{Posts.text}</p>
+				<p key={post.key}>{post.username}</p>
+				<p key={post.key}>{post.text}</p>
+				{/* <div className="comment-section container grey darken-4">
+					<section className="add-item grey darken-4">
+						<form onSubmit={this.handleSubmit}>
+							<input
+								type="text"
+								name="text"
+								placeholder="Comment"
+								onChange={this.handleChange}
+								value={this.state.text}
+							/>
+							<br />
+							<button className="btn waves-effect waves-light">
+								Post
+							</button>
+						</form>
+					</section>
+				</div> */}
+				<button className="btn waves-effect waves-light">
+								Like
+				</button>
+				<button className="btn waves-effect waves-light">
+								Comment
+				</button>
+				<button className="btn waves-effect waves-light">
+								Share
+				</button>
+				<button className="btn waves-effect waves-light" onClick={() => this.handleRemove(post.id)}>
+								Remove
+				</button>
+
 				<hr />
 			</div>
-		));
+		)).reverse();
+		
 
 		return (
 			<div className="OpenProject">
@@ -120,6 +158,9 @@ class OpenProject extends Component {
 						
 					</div>
 				</header>
+				<div >
+					<img className="img col m3" src="https://firebasestorage.googleapis.com/v0/b/collabarray-953db.appspot.com/o/dog.jpg?alt=media&token=9f4e2fa7-9d3c-47cb-a1fb-f7e6608edd4a" /	>
+				</div>
 				<hr />
 				<div className="container grey darken-4">
 					<section className="add-item grey darken-4">
