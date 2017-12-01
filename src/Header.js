@@ -20,7 +20,7 @@ require("materialize-css");
 class Header extends Component {
 	constructor(props) {
 		super(props);
-		$(document).ready(function() {
+		$(document).ready(() => {
 			$(".dropdown-button").dropdown({
 				inDuration: 300,
 				outDuration: 225,
@@ -31,10 +31,16 @@ class Header extends Component {
 				alignment: "left", // Displays dropdown with edge aligned to the left of button
 				stopPropagation: false // Stops event propagation
 			});
+			$(".button-collapse").sideNav({
+				menuWidth: 200, // Default is 300
+				edge: "left", // Choose the horizontal origin
+				closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+				draggable: true // Choose whether you can drag to open on touch screens,
+			});
 			$(".collapsible").collapsible();
 		});
 	}
-	/*makes sure the dropdown works after teh user signs in */
+
 	componentDidUpdate() {
 		$(".dropdown-button").dropdown({
 			inDuration: 300,
@@ -45,6 +51,12 @@ class Header extends Component {
 			belowOrigin: true, // Displays dropdown below the button
 			alignment: "left", // Displays dropdown with edge aligned to the left of button
 			stopPropagation: false // Stops event propagation
+		});
+		$(".button-collapse").sideNav({
+			menuWidth: 200, // Default is 300
+			edge: "left", // Choose the horizontal origin
+			closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+			draggable: true // Choose whether you can drag to open on touch screens,
 		});
 		$(".collapsible").collapsible();
 	}
@@ -75,19 +87,17 @@ class Header extends Component {
 									<ul className="collapsible" data-collapsible="accordian">
 										<li>
 											<a className="collapsible-header">
-												Media<i className="material-icons">arrow_drop_down</i>
+												Project Options<i className="material-icons">
+													arrow_drop_down_circle
+												</i>
 											</a>
 											<div className="collapsible-body">
 												<ul>
 													<li>
-														<NavLink to="/addproject">Add Project</NavLink>
-													</li>
-													<li>
-														<NavLink to="/openproject">Open Projects</NavLink>
-													</li>
-													<li className="divider" />
-													<li>
 														<NavLink to="/viewprojects">View Projects</NavLink>
+													</li>
+													<li>
+														<NavLink to="/addproject">Add Project</NavLink>
 													</li>
 												</ul>
 											</div>
@@ -96,16 +106,18 @@ class Header extends Component {
 								</li>
 								<li className="divider" />
 								<li>
-									<NavLink to="/">Profile</NavLink>
+									<NavLink to="/">
+										Profile
+										<i class="material-icons right">account_circle</i>
+									</NavLink>
 								</li>
 								<li>
-									<NavLink to="/logout">Logout</NavLink>
+									<NavLink to="/logout">
+										Logout
+										<i class="material-icons right">power_settings_new</i>
+									</NavLink>
 								</li>
 							</ul>
-
-							<NavLink to="/home" className="brand-logo center">
-								<img alt="Brand" className="App-logo" src="../../favicon.ico" />
-							</NavLink>
 							<ul className="left hide-on-med-and-down">
 								<li>
 									<NavLink to="/home">Home</NavLink>
@@ -122,10 +134,6 @@ class Header extends Component {
 											<NavLink to="/viewprojects">View Projects</NavLink>
 										</li>
 										<li>
-											<NavLink to="/openproject">Open Projects</NavLink>
-										</li>
-										<li className="divider" />
-										<li>
 											<NavLink to="/addproject">Add Project</NavLink>
 										</li>
 									</ul>
@@ -133,10 +141,16 @@ class Header extends Component {
 							</ul>
 							<ul className="right hide-on-med-and-down">
 								<li>
-									<NavLink to="/home">Profile</NavLink>
+									<NavLink to="/home">
+										Profile
+										<i class="material-icons left">account_circle</i>
+									</NavLink>
 								</li>
 								<li>
-									<NavLink to="/logout">Logout</NavLink>
+									<NavLink to="/logout">
+										Logout
+										<i class="material-icons right">power_settings_new</i>
+									</NavLink>
 								</li>
 							</ul>
 						</div>

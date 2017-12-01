@@ -24,7 +24,34 @@
 }
 
 .content {
+    width: 100%;
     min-height: 100vh;
+    height: 100%;
+    /* background: black; */
+    background: rgb(19, 101, 111);
+    background: -moz-linear-gradient( left, rgba(19, 101, 111, 1) 0%, rgba(42, 204, 200, 1) 100%);
+    background: -webkit-linear-gradient( left, rgba(19, 101, 111, 1) 0%, rgba(42, 204, 200, 1) 100%);
+    background: linear-gradient( to right, rgba(19, 101, 111, 1) 0%, rgba(42, 204, 200, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#13656f", endColorstr="#2accc8", GradientType=1);
+    background-image: url("./img/bg/bgSignIn.png");
+    background-size: cover;
+}
+
+.header-back {
+    width: 100%;
+    background: white;
+}
+
+.page-header {
+    margin-top: 26px;
+    background: white;
+}
+
+#loading {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
 }
 
 @keyframes App-logo-spin {
