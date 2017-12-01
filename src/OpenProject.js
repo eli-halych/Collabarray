@@ -21,6 +21,7 @@ import "../node_modules/font-awesome/css/font-awesome.min.css";
 import "./OpenProject.css";
 import $ from "jquery";
 import "bootstrap-social";
+import "./OpenProject.css";
 
 //makes materialize-css work since it needs jquery and imports have to go at the top
 window.jQuery = require("jquery");
@@ -30,12 +31,14 @@ class OpenProject extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			ID: "",
 			Posts: [],
 			text: "",
 			username: ""
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleRemove = this.handleRemove.bind(this);
 	}
 
 	componentWillMount() {
@@ -102,6 +105,13 @@ class OpenProject extends Component {
 			[e.target.name]: e.target.value
 		});
 	}
+	handleRemove(e) {
+		return app
+			.database()
+			.ref("/Posts")
+			.child(e)
+			.remove();
+	}
 
 	render() {
 		const Posts = this.state.Posts;
@@ -112,6 +122,27 @@ class OpenProject extends Component {
 			<tr>
 				<td key={Posts.key}>{Posts.username}</td>
 				<td key={Posts.key}>{Posts.text}</td>
+				<td>
+					<button className="btn waves-effect waves-light">
+						Like
+						<i class="material-icons">thumb_up</i>
+					</button>
+					<button className="btn waves-effect waves-light">
+						Comment
+						<i class="material-icons">comment</i>
+					</button>
+					<button className="btn waves-effect waves-light">
+						Share
+						<i class="material-icons">share</i>
+					</button>
+					<button
+						className="btn waves-effect waves-light"
+						onClick={() => this.handleRemove(post.id)}
+					>
+						Remove
+						<i class="material-icons">remove_circle_outline</i>
+					</button>
+				</td>
 			</tr>
 		)).reverse();
 
@@ -137,6 +168,12 @@ class OpenProject extends Component {
 							</thead>
 							<tbody>{post}</tbody>
 						</table>
+					</div>
+					<div>
+						<img
+							className="img col m3"
+							src="https://firebasestorage.googleapis.com/v0/b/collabarray-953db.appspot.com/o/dog.jpg?alt=media&token=9f4e2fa7-9d3c-47cb-a1fb-f7e6608edd4a"
+						/>
 					</div>
 					<form onSubmit={this.handleSubmit} id="js-form" className="col s12">
 						<div className="input-field col s12">

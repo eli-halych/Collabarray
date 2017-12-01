@@ -26,3 +26,8 @@ form>button {
     border-radius: 5px;
     padding: 10px;
 }
+
+.img {
+    width: 150px;
+    height: 150px;
+}
