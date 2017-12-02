@@ -16,8 +16,6 @@ import {
 	//githubProvider,
 	//googleProvider
 } from "./firebaseInitApp.js";
-import ViewProjects from "./ViewProjects";
-import OpenProject from "./OpenProject";
 
 import $ from "jquery";
 import "bootstrap-social";
@@ -37,9 +35,17 @@ class Home extends Component {
 			Projects: [],
 			username: ""
 		};
+		$(document).ready(() => {
+			$(".tooltipped").tooltip({ delay: 50 });
+		});
+	}
+	componentDidUpdate() {
+		$(".tooltipped").tooltip({ delay: 50 });
 	}
 
-	componentWillMount() {
+	componentWillMount() {}
+
+	componentDidMount() {
 		//This whole mess of a yolk calls render and displays everything on any change/load of page.
 		//Thats as much as I know about it
 		this.firebaseRef = app.database().ref("/Projects");
@@ -48,15 +54,13 @@ class Home extends Component {
 			function(dataSnapshot) {
 				var Projects = [];
 
-				dataSnapshot.forEach(
-					function(childSnapshot) {
-						var item = childSnapshot.val();
-						item[".key"] = childSnapshot.key;
-						// console.log(childSnapshot.val());
-						item.id = item[".key"];
-						Projects.push(item);
-					}.bind(this)
-				);
+				dataSnapshot.forEach(function(childSnapshot) {
+					var item = childSnapshot.val();
+					item[".key"] = childSnapshot.key;
+					// console.log(childSnapshot.val());
+					item.id = item[".key"];
+					Projects.push(item);
+				});
 				this.setState({
 					Projects: Projects
 				});
@@ -66,6 +70,7 @@ class Home extends Component {
 
 	componentWillUnmount() {
 		this.firebaseRef.off();
+		$(".tooltipped").tooltip("remove");
 	}
 
 	render() {
@@ -81,12 +86,14 @@ class Home extends Component {
 				{/* <td key={project.key}>{project.id}</td> */}
 				<td>
 					<NavLink
-						className="btn-large waves-effect waves-light"
+						className="btn-large waves-effect waves-light tooltipped"
 						to={"/openproject/" + project.id}
+						data-position="bottom"
+						data-tooltip="Open Project"
 					>
 						{" "}
 						{/* <-- REF. from OpenProject.js */}
-						Open project
+						<i className="material-icons">folder_open</i>{" "}
 					</NavLink>
 				</td>
 			</tr>
@@ -94,14 +101,14 @@ class Home extends Component {
 
 		return (
 			<div className="Home">
-				<header>
-					<div className="title">
-						<h1>Home</h1>
+				<div className="header-back z-depth-1">
+					<div className="page-header">
+						<h1>{this.props.title}</h1>
 					</div>
-				</header>
-				<div className="row">
-					<div className="bordered col s12 m6">
-						<table className="bordered centered responsive-table">
+				</div>
+				<div className="container row z-depth-1">
+					<div className="bordered col s12 l6">
+						<table className="bordered centered">
 							<thead>
 								<tr>
 									<th> Left panel with filters etc.</th>
@@ -112,10 +119,12 @@ class Home extends Component {
 									<td>
 										{/*where our content(views) will load into*/}
 										<NavLink
-											className="btn-large waves-effect waves-light"
+											className="btn-large waves-effect waves-light tooltipped"
 											to="/addproject"
+											data-position="bottom"
+											data-tooltip="Add Project"
 										>
-											Add project
+											<i className="material-icons">add</i>
 										</NavLink>
 									</td>
 								</tr>
@@ -125,7 +134,7 @@ class Home extends Component {
 
 					{/* The way of adding project into user's feed should be automatic 
 				and be done in a different way(I think through class states) */}
-					<div className="col s12 m6">
+					<div className="col s12 l6">
 						<table className="bordered centered highlighted responsive-table">
 							<thead>
 								<tr>

@@ -3,4 +3,12 @@ body {
     padding: 0;
     font-family: sans-serif;
     min-height: 100vh;
+    height: 100%;
+    background: rgb(19, 101, 111);
+    background: -moz-linear-gradient( left, rgba(19, 101, 111, 1) 0%, rgba(42, 204, 200, 1) 100%);
+    background: -webkit-linear-gradient( left, rgba(19, 101, 111, 1) 0%, rgba(42, 204, 200, 1) 100%);
+    background: linear-gradient( to right, rgba(19, 101, 111, 1) 0%, rgba(42, 204, 200, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#13656f", endColorstr="#2accc8", GradientType=1);
+    /* background-image: url("./img/bg/bgSignIn.png");
+    background-size: cover; */
 }

@@ -31,13 +31,16 @@ class Logout extends Component {
 			.auth()
 			.signOut()
 			.then(user => {
+				this.setState({ authenticated: false });
 				this.setState({ redirect: true });
-				// this.setState({ authenticated: false });
 			});
+	}
+	componentWillUnmount() {
+		this.setState({ authenticated: false });
 	}
 
 	render() {
-		return this.state.redirect === true ? (
+		return this.state.redirect ? (
 			<Redirect to="/signin" />
 		) : (
 			<div className="logout">

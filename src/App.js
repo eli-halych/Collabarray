@@ -24,7 +24,6 @@ import AddProject from "./AddProject";
 import OpenProject from "./OpenProject";
 import ViewProjects from "./ViewProjects";
 import Logout from "./Logout";
-import Background from "./img/bg/bgSignIn.png";
 
 import { app } from "./firebaseInitApp.js";
 
@@ -34,13 +33,6 @@ import "bootstrap-social";
 //makes materialize-css work since it needs jquery and imports have to go at the top
 window.jQuery = require("jquery");
 require("materialize-css");
-
-const Loading = {
-	textAlign: "center",
-	position: "absolute",
-	top: "25%",
-	left: "50%"
-};
 
 class App extends Component {
 	constructor() {
@@ -55,15 +47,16 @@ class App extends Component {
 		this.removeAuthListener = app.auth().onAuthStateChanged(user => {
 			if (user) {
 				this.setState({
-					authenticated: true,
-					loading: false
+					authenticated: true
 				});
 			} else {
 				this.setState({
-					authenticated: false,
-					loading: false
+					authenticated: false
 				});
 			}
+			this.setState({
+				loading: false
+			});
 		});
 	}
 
@@ -72,18 +65,13 @@ class App extends Component {
 	}
 
 	render() {
-		if (this.state.loading === true) {
+		if (this.state.loading) {
 			return (
-				<div style={Loading}>
+				<div id="loading">
 					<h3>Loading...</h3>
 					<Spinner />
 				</div>
 			);
-		}
-		// changes the background of signin to Background
-		if (window.location.pathname === "/signin") {
-			document.body.style.backgroundImage = "url(" + Background + ")";
-			document.body.style.backgroundSize = "cover";
 		}
 
 		return (
@@ -104,13 +92,25 @@ class App extends Component {
 									)
 								}
 							/>
-							<Route path="/home" component={Home} />
-							<Route path="/signin" component={SignIn} />
-							<Route path="/signup" component={SignUp} />
-							<Route path="/logout" component={Logout} />
-							<Route path="/addproject" component={AddProject} />
-							<Route path="/openproject/:id" component={OpenProject} /> {/* <-- REF. from OpenProject.js */}
-							<Route path="/viewprojects" component={ViewProjects} />
+							<Route path="/home" render={() => <Home title="Home" />} />
+							<Route path="/signin" render={() => <SignIn title="Sign In" />} />
+							<Route path="/signup" render={() => <SignUp title="Sign Up" />} />
+							<Route path="/logout" render={() => <Logout title="Log Out" />} />
+							<Route
+								path="/addproject"
+								render={() => <AddProject title="Add Project" />}
+							/>
+							<Route
+								path="/openproject/:id"
+								render={({ match }) => (
+									<OpenProject title="Project Id: " match={match} />
+								)}
+							/>{" "}
+							{/* <-- REF. from OpenProject.js */}
+							<Route
+								path="/viewprojects"
+								render={() => <ViewProjects title="Project Wall" />}
+							/>
 						</Switch>
 					</div>
 					<Footer />

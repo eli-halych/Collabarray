@@ -31,6 +31,7 @@ class AddProject extends Component {
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
+
 	handleSubmit(e) {
 		e.preventDefault();
 
@@ -38,7 +39,7 @@ class AddProject extends Component {
 		var user = app.auth().currentUser;
 		var email = user.email;
 		for (var i = 0; i < 100; i++) {
-			if (email.charAt(i) == "@") {
+			if (email.charAt(i) === "@") {
 				email = email.substring(0, i);
 			}
 		}
@@ -67,39 +68,61 @@ class AddProject extends Component {
 			<div className="AddProject">
 				<div className="header-back z-depth-1">
 					<div className="page-header">
-						<h1>Add Project</h1>
+						<h1>{this.props.title}</h1>
 					</div>
 				</div>
-				<div className="container grey darken-4">
-					<section className="add-item grey darken-4">
-						<form onSubmit={this.handleSubmit}>
+				<div className="container row hoverable z-depth-1">
+					<form onSubmit={this.handleSubmit} id="js-form" className="col s12">
+						<div className="input-field col s12">
+							<i className="material-icons prefix">title</i>
 							<input
 								type="text"
+								id="projectTitle"
 								name="projectTitle"
-								placeholder="Project Title"
 								onChange={this.handleChange}
 								value={this.state.projectTitle}
+								required
 							/>
+							<label htmlFor="text">
+								<b>Project Title:</b>
+							</label>
+						</div>
+						<div className="input-field col s12">
+							<i className="material-icons prefix">description</i>
 							<input
 								type="text"
+								id="projectDescription"
 								name="projectDescription"
-								placeholder="Project Description"
 								onChange={this.handleChange}
 								value={this.state.projectDescription}
+								required
 							/>
+							<label htmlFor="text">
+								<b>Project Description:</b>
+							</label>
+						</div>
+						<div className="input-field col s12">
+							<i className="material-icons prefix">help_outline</i>
 							<input
 								type="text"
+								id="helpNeeded"
 								name="helpNeeded"
-								placeholder="Help Needed for Project"
 								onChange={this.handleChange}
 								value={this.state.helpNeeded}
+								required
 							/>
-							<br />
-							<button className="btn waves-effect waves-light">
-								Add Project
-							</button>
-						</form>
-					</section>
+							<label htmlFor="text">
+								<b>Help Needed:</b>
+							</label>
+						</div>
+						<button
+							type="submit"
+							className="btn-large waves-effect waves-light"
+						>
+							Add Project
+							<i className="material-icons right">add</i>
+						</button>
+					</form>
 				</div>
 			</div>
 		);

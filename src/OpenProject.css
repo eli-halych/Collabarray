@@ -1,4 +1,33 @@
+/* Full-width input fields */
+
+input[type="text"] {
+    width: 90%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+form>button {
+    padding: 14px 20px;
+    margin: 10px auto;
+    border: none;
+    cursor: pointer;
+    width: auto;
+}
+
+.row {
+    background: white;
+    width: auto;
+    /* max-width: 415px; */
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
 .img {
-  width: 150px;
-  height: 150px;
+    width: 150px;
+    height: 150px;
 }
