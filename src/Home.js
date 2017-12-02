@@ -43,7 +43,7 @@ class Home extends Component {
 		//This whole mess of a yolk calls render and displays everything on any change/load of page.
 		//Thats as much as I know about it
 		this.firebaseRef = app.database().ref("/Projects");
-		this.firebaseRef.limitToLast(3).on(
+		this.firebaseRef.limitToLast(10).on(
 			"value",
 			function(dataSnapshot) {
 				var Projects = [];
