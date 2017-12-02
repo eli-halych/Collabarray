@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 
 import // Redirect,
-	//Router,
-	// Route,
-	//Link,
-	// NavLink
-	//HashRouter,
-	//BrowserRouter
-	// Switch
-	"react-router-dom";
+  //Router,
+  // Route,
+  //Link,
+  // NavLink
+  //HashRouter,
+  //BrowserRouter
+  // Switch
+  "react-router-dom";
 import {
-	app
-	//facebookProvider,
-	//githubProvider,
-	//googleProvider
+  app
+  //facebookProvider,
+  //githubProvider,
+  //googleProvider
 } from "./firebaseInitApp.js";
 import "materialize-css/dist/css/materialize.min.css";
 import "../node_modules/bootstrap-social/bootstrap-social.css";
@@ -32,33 +32,63 @@ require("materialize-css");
 
 
 class Profile extends Component {
-	constructor(props) {
-		super(props);
-		// this.state = {};
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      userFullName: ""
+    };
+  }
 
-	componentWillMount() {
+  componentWillMount() {
+
+    var user = app.auth().currentUser;
+		// console.log(user)
+		var fullName = user.displayName
+		this.state.userFullName = fullName
+
+  }
+
+  componentWillUnmount() {
+    this.firebaseRef.off();
+  }
 
 
 
-	}
-
-	componentWillUnmount() {
-		this.firebaseRef.off();
-	}
-
-	
-
-	render() {
-  
-    
+  render() {
 
 
-		return (
-			<div>
-      </div>
-		);
-	}
+
+
+    return (
+      <div className="Profile">
+
+        <div className="row">
+          <div className="col s5   offset-s1 row container hoverable z-depth-1">
+            <table className="bordered centered highlighted responsive-table">
+              <thead>
+                <tr>
+                  <th>Wall</th>
+                </tr>
+              </thead>
+              <tbody>user's stuff</tbody>
+            </table>
+          </div>
+
+          <div className="col s4 offset-s1 row container hoverable z-depth-1">
+            <table className="bordered centered highlighted responsive-table">
+              <thead>
+                <tr>
+                  <th>{this.state.userFullName}</th>
+                </tr>
+              </thead>
+              <tbody>user's info</tbody>
+            </table>
+          </div>
+        </div>
+
+        </div>
+        );
+  }
 }
 
 export default Profile;

@@ -13,6 +13,13 @@ import "./Header.css";
 import $ from "jquery";
 import "bootstrap-social";
 
+import {
+	app
+	//facebookProvider,
+	//githubProvider,
+	//googleProvider
+} from "./firebaseInitApp.js";
+
 //makes materialize-css work since it needs jquery and imports have to go at the top
 window.jQuery = require("jquery");
 require("materialize-css");
@@ -20,6 +27,10 @@ require("materialize-css");
 class Header extends Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			userId: "",
+			userFullName: ""
+		}
 		$(document).ready(() => {
 			$(".dropdown-button").dropdown({
 				inDuration: 300,
@@ -59,6 +70,22 @@ class Header extends Component {
 			draggable: true // Choose whether you can drag to open on touch screens,
 		});
 		$(".collapsible").collapsible();
+	}
+
+	componentWillMount(){
+		var user = app.auth().currentUser;
+		// console.log(user)
+		var fullName = user.displayName
+		var email = user.email;
+		for (var i = 0; i < 100; i++) {  /* <-- cuts @email.com off */
+			if (email.charAt(i) === "@") {
+				email = email.substring(0, i);
+			}
+		}
+		this.state.userId = email
+		this.state.userFullName = fullName
+
+		// console.log(this.state.userId)
 	}
 
 	render() {
@@ -106,7 +133,9 @@ class Header extends Component {
 								</li>
 								<li className="divider" />
 								<li>
-									<NavLink to="/profile">
+									<NavLink 
+											data-tooltip="Profile"
+											to={"/profile/" + this.state.userId}>
 										Profile
 										<i class="material-icons right">account_circle</i>
 									</NavLink>
@@ -145,7 +174,7 @@ class Header extends Component {
 							</ul>
 							<ul className="right hide-on-med-and-down">
 								<li>
-									<NavLink to="/profile">
+									<NavLink to={"/profile/" + this.state.userId}>
 										Profile
 										<i class="material-icons left">account_circle</i>
 									</NavLink>
