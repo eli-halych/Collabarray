@@ -24,6 +24,7 @@ import AddProject from "./AddProject";
 import OpenProject from "./OpenProject";
 import ViewProjects from "./ViewProjects";
 import Logout from "./Logout";
+import Profile from "./Profile";
 
 import { app } from "./firebaseInitApp.js";
 
@@ -88,8 +89,8 @@ class App extends Component {
 									this.state.authenticated ? (
 										<Redirect to="/home" />
 									) : (
-										<Redirect to="/signin" />
-									)
+											<Redirect to="/signin" />
+										)
 								}
 							/>
 							<Route path="/home" render={() => <Home title="Home" />} />
@@ -110,6 +111,11 @@ class App extends Component {
 							<Route
 								path="/viewprojects"
 								render={() => <ViewProjects title="Project Wall" />}
+							/>
+							<Route
+								path="/profile/:id"
+								render={({ match }) => (
+									<Profile title="Profile" match={match} />)}
 							/>
 						</Switch>
 					</div>

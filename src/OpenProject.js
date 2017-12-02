@@ -22,7 +22,7 @@ import "./OpenProject.css";
 import $ from "jquery";
 import "bootstrap-social";
 import "./OpenProject.css";
-import { position } from "tether";
+// import { position } from "tether";
 
 //makes materialize-css work since it needs jquery and imports have to go at the top
 window.jQuery = require("jquery");
@@ -70,9 +70,10 @@ class OpenProject extends Component {
 						// console.log(childSnapshot.val());
 						var item = childSnapshot.val(); /* <-- takes data of each child under eaach key from Posts */
 						item[".key"] = childSnapshot.key; /* <-- gets each key */
+						item.id = childSnapshot.key;
 						Posts.push(
 							item
-						); /* <-- pushes into array variable Posts of this function */
+						); /* <-- pushes variable Posts into array of this funct  */
 					}
 				);
 				this.setState({
@@ -176,7 +177,7 @@ class OpenProject extends Component {
 		var user = app.auth().currentUser;
 		var email = user.email;
 		for (var i = 0; i < 100; i++) {  /* <-- cuts @email.com off */
-			if (email.charAt(i) == "@") {
+			if (email.charAt(i) === "@") {
 				email = email.substring(0, i);
 			}
 		}
@@ -211,6 +212,7 @@ class OpenProject extends Component {
 				-------- <br />
 			</div>
 		))
+		// NEED TO USE COMMENT. CHECKIDS() SELECTS NEEDED COMMENTS, BUT IDK WHAT'S NEXT SO FAR
 	}
 	checkIds(post, secComment) {
 		return ((post == secComment.postKey) ? (
@@ -297,19 +299,19 @@ class OpenProject extends Component {
 					<div className="page-header">
 						{/* it takes /:id which is set in REF. to App.js and specified in REF. to Home.js. The ID is projectTitle so far */}
 						{/* {<h1>{app.database().ref("/Projects").child(this.props.match.params.id)}</h1> } */}
-						{/* <<<<<<< HEAD */}
-						<h6>Project id: {this.props.match.params.id}</h6>
+						
+						{/* <h6>Project id: {this.props.match.params.id}</h6> */}
 
 					</div>
 				</div>
 				<div >
-					<img className="img col m3" src="https://firebasestorage.googleapis.com/v0/b/collabarray-953db.appspot.com/o/dog.jpg?alt=media&token=9f4e2fa7-9d3c-47cb-a1fb-f7e6608edd4a" />
-					{/* =======
-						<h1>
-							{this.props.title} [{post.title}]
-						</h1>
+					{/* <img className="img col m3" src="https://firebasestorage.googleapis.com/v0/b/collabarray-953db.appspot.com/o/dog.jpg?alt=media&token=9f4e2fa7-9d3c-47cb-a1fb-f7e6608edd4a" /> */}
+
+						<div className="header-back z-depth-1">
+					<div className="page-header">
+						<h1>{this.props.title} [{post.title}]</h1>
 					</div>
->>>>>>> 477656b4327134576e7f805ebed5fc4a36dc6770 */}
+				</div>
 				</div>
 				<div className="container row hoverable z-depth-1">
 					<div className="col s12">
@@ -323,12 +325,12 @@ class OpenProject extends Component {
 							<tbody>{post}</tbody>
 						</table>
 					</div>
-					<div>
+					{/* <div>
 						<img
 							className="img col m3"
 							src="https://firebasestorage.googleapis.com/v0/b/collabarray-953db.appspot.com/o/dog.jpg?alt=media&token=9f4e2fa7-9d3c-47cb-a1fb-f7e6608edd4a"
 						/>
-					</div>
+					</div> */}
 					<form onSubmit={this.handleSubmit} id="js-form" className="col s12">
 						<div className="input-field col s12">
 							<i className="material-icons prefix">comment</i>

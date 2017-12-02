@@ -106,7 +106,7 @@ class Header extends Component {
 								</li>
 								<li className="divider" />
 								<li>
-									<NavLink to="/">
+									<NavLink to="/profile">
 										Profile
 										<i class="material-icons right">account_circle</i>
 									</NavLink>
@@ -128,6 +128,10 @@ class Header extends Component {
 											arrow_drop_down
 										</i>
 									</a>
+
+
+
+									
 									{/* Dropdown Structure */}
 									<ul id="dropdown1" className="dropdown-content">
 										<li>
@@ -141,7 +145,7 @@ class Header extends Component {
 							</ul>
 							<ul className="right hide-on-med-and-down">
 								<li>
-									<NavLink to="/home">
+									<NavLink to="/profile">
 										Profile
 										<i class="material-icons left">account_circle</i>
 									</NavLink>
