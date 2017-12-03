@@ -73,19 +73,33 @@ class Header extends Component {
 	}
 
 	componentWillMount(){
-		var user = app.auth().currentUser;
+
+		// console.log(this.props.authenticated);
+
+		// var user = app.auth().currentUser;
+		// var fullName = user.displayName;
+		// var email = user.email;
+
+		// 
+
+		// var user = app.auth().currentUser;
 		// console.log(user)
-		var fullName = user.displayName
-		var email = user.email;
-		for (var i = 0; i < 100; i++) {  /* <-- cuts @email.com off */
-			if (email.charAt(i) === "@") {
-				email = email.substring(0, i);
-			}
-		}
-		this.state.userId = email
-		this.state.userFullName = fullName
+		// var fullName = user.displayName
+		// var email = user.email;
+		// for (var i = 0; i < 100; i++) {  /* <-- cuts @email.com off */
+		// 	if (email.charAt(i) === "@") {
+		// 		email = email.substring(0, i);
+		// 	}
+		// }
+		// this.state.userId = email
+		// this.state.userFullName = fullName
 
 		// console.log(this.state.userId)
+	}
+
+	componentWillUnmount(){
+		this.state.userId = ""
+		this.state.userFullName = ""
 	}
 
 	render() {
@@ -135,7 +149,7 @@ class Header extends Component {
 								<li>
 									<NavLink 
 											data-tooltip="Profile"
-											to={"/profile/" + this.state.userId}>
+											to={"/profile/" + "userid"}>
 										Profile
 										<i class="material-icons right">account_circle</i>
 									</NavLink>
@@ -174,7 +188,7 @@ class Header extends Component {
 							</ul>
 							<ul className="right hide-on-med-and-down">
 								<li>
-									<NavLink to={"/profile/" + this.state.userId}>
+									<NavLink to={"/profile/" + "userid"}>
 										Profile
 										<i class="material-icons left">account_circle</i>
 									</NavLink>

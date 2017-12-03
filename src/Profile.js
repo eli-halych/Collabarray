@@ -49,7 +49,7 @@ class Profile extends Component {
   }
 
   componentWillUnmount() {
-    this.firebaseRef.off();
+    // this.firebaseRef.off();
   }
 
 
