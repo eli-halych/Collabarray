@@ -86,7 +86,7 @@ class Home extends Component {
 				{/* <td key={project.key}>{project.id}</td> */}
 				<td>
 					<NavLink
-						className="btn-large waves-effect waves-light tooltipped"
+						className="btn-large btn-flat waves-effect waves-light tooltipped"
 						to={"/openproject/" + project.id}
 						data-position="bottom"
 						data-tooltip="Open Project"
@@ -107,38 +107,6 @@ class Home extends Component {
 					</div>
 				</div>
 				<div className="row">
-					<div class="fixed-action-btn left col s12">
-						<a
-							className="btn-floating btn-large red"
-							data-position="bottom"
-							data-tooltip="Filter"
-						>
-							<i class="large material-icons">filter_list</i>
-						</a>
-						<ul>
-							<li>
-								<a class="btn-floating red">
-									<i class="material-icons">insert_chart</i>
-								</a>
-							</li>
-							<li>
-								<a class="btn-floating yellow darken-1">
-									<i class="material-icons">format_quote</i>
-								</a>
-							</li>
-							<li>
-								<a class="btn-floating green">
-									<i class="material-icons">publish</i>
-								</a>
-							</li>
-							<li>
-								<a class="btn-floating blue">
-									<i class="material-icons">attach_file</i>
-								</a>
-							</li>
-						</ul>
-					</div>
-
 					<div className="col s12 m2 container hoverable z-depth-1">
 						<table className="bordered centered highlighted">
 							<thead>

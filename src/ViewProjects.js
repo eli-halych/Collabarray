@@ -102,7 +102,7 @@ class ViewProjects extends React.Component {
 
 		// pretty display for projects :)
 		return (
-			<div>
+			<div className="ViewProject">
 				<div className="header-back z-depth-1">
 					<div className="page-header">
 						<h1>Project Wall</h1>
