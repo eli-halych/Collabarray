@@ -87,7 +87,7 @@ class ViewProjects extends React.Component {
 				{/* <td key={project.key}>{project.id}</td> */}
 				<td>
 					<NavLink
-						className="btn-large waves-effect waves-light tooltipped"
+						className="btn-large btn-flat waves-effect waves-light tooltipped"
 						to={"/openproject/" + project.id}
 						data-position="bottom"
 						data-tooltip="Open Project"
@@ -102,7 +102,7 @@ class ViewProjects extends React.Component {
 
 		// pretty display for projects :)
 		return (
-			<div>
+			<div className="ViewProject">
 				<div className="header-back z-depth-1">
 					<div className="page-header">
 						<h1>Project Wall</h1>

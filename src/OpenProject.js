@@ -135,7 +135,6 @@ class OpenProject extends Component {
 			)
 		}
 	);
-	
 	return comments;
 		
 	}

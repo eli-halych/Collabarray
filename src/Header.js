@@ -19,6 +19,7 @@ import {
 	//githubProvider,
 	//googleProvider
 } from "./firebaseInitApp.js";
+import Logo from "./img/logo/Collabarray-Logo.png";
 
 //makes materialize-css work since it needs jquery and imports have to go at the top
 window.jQuery = require("jquery");
@@ -32,7 +33,9 @@ class Header extends Component {
 			userFullName: ""
 		};
 
+
 		this.getUserData = this.getUserData.bind(this);
+
 
 		$(document).ready(() => {
 			$(".dropdown-button").dropdown({
@@ -75,6 +78,7 @@ class Header extends Component {
 		$(".collapsible").collapsible();
 	}
 
+
 	componentWillMount(){
 
 		(this.props.authenticated) ? (this.getUserData()) : (console.log("You are not signed in"))
@@ -92,6 +96,7 @@ class Header extends Component {
 
 	componentWillUnmount(){}
 
+
 	render() {
 		return (
 			<div className="Header">
@@ -100,7 +105,7 @@ class Header extends Component {
 					{this.props.authenticated ? (
 						<div className="nav-wrapper grey darken-4">
 							<NavLink to="/home" className="brand-logo center">
-								<img alt="Brand" className="App-logo" src="../../favicon.ico" />
+								<img alt="Brand" className="" src={Logo} />
 							</NavLink>
 							<div className="padded hide-on-large-only">
 								<a
@@ -111,14 +116,19 @@ class Header extends Component {
 								</a>
 							</div>
 							<ul id="slide-out" className="side-nav z-depth-3">
+								<a>
+									<i className="material-icons">menu</i>
+								</a>
 								<li>
-									<NavLink to="/home">Home</NavLink>
+									<NavLink to="/home">
+										Home<i className="material-icons left">home</i>
+									</NavLink>
 								</li>
 								<li className="no-padding">
 									<ul className="collapsible" data-collapsible="accordian">
 										<li>
 											<a className="collapsible-header">
-												Project Options<i className="material-icons">
+												Project Options<i className="material-icons right">
 													arrow_drop_down_circle
 												</i>
 											</a>
@@ -147,20 +157,23 @@ class Header extends Component {
 									<NavLink 
 											data-tooltip="Profile"
 											to={"/profile/" + this.state.userId}>
+
 										Profile
-										<i class="material-icons right">account_circle</i>
+										<i className="material-icons left">account_circle</i>
 									</NavLink>
 								</li>
 								<li>
 									<NavLink to="/logout">
 										Logout
-										<i class="material-icons right">power_settings_new</i>
+										<i className="material-icons left">power_settings_new</i>
 									</NavLink>
 								</li>
 							</ul>
 							<ul className="left hide-on-med-and-down">
 								<li>
-									<NavLink to="/home">Home</NavLink>
+									<NavLink to="/home">
+										Home <i className="material-icons left">home</i>
+									</NavLink>
 								</li>
 								<li>
 									<a className=" dropdown-button " data-activates="dropdown1 ">
@@ -169,9 +182,6 @@ class Header extends Component {
 										</i>
 									</a>
 
-
-
-									
 									{/* Dropdown Structure */}
 									<ul id="dropdown1" className="dropdown-content">
 										<li>
@@ -194,13 +204,13 @@ class Header extends Component {
 								<li>
 									<NavLink to={"/profile/" + this.state.userId}>
 										Profile
-										<i class="material-icons left">account_circle</i>
+										<i className="material-icons left">account_circle</i>
 									</NavLink>
 								</li>
 								<li>
 									<NavLink to="/logout">
 										Logout
-										<i class="material-icons right">power_settings_new</i>
+										<i className="material-icons right">power_settings_new</i>
 									</NavLink>
 								</li>
 							</ul>

@@ -86,7 +86,7 @@ class Home extends Component {
 				{/* <td key={project.key}>{project.id}</td> */}
 				<td>
 					<NavLink
-						className="btn-large waves-effect waves-light tooltipped"
+						className="btn-large btn-flat waves-effect waves-light tooltipped"
 						to={"/openproject/" + project.id}
 						data-position="bottom"
 						data-tooltip="Open Project"
@@ -106,27 +106,24 @@ class Home extends Component {
 						<h1>{this.props.title}</h1>
 					</div>
 				</div>
-				<div className="container row z-depth-1">
-					<div className="bordered col s12 l6">
-						<table className="bordered centered">
+				<div className="row">
+					<div className="col s12 m2 container hoverable z-depth-1">
+						<table className="bordered centered highlighted">
 							<thead>
 								<tr>
-									<th> Left panel with filters etc.</th>
+									<NavLink
+										className="btn-large waves-effect waves-light tooltipped"
+										to="/addproject"
+										data-position="bottom"
+										data-tooltip="Filter"
+									>
+										<i className="material-icons">filter_list</i>
+									</NavLink>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>
-										{/*where our content(views) will load into*/}
-										<NavLink
-											className="btn-large waves-effect waves-light tooltipped"
-											to="/addproject"
-											data-position="bottom"
-											data-tooltip="Add Project"
-										>
-											<i className="material-icons">add</i>
-										</NavLink>
-									</td>
+									<div />
 								</tr>
 							</tbody>
 						</table>
@@ -134,13 +131,13 @@ class Home extends Component {
 
 					{/* The way of adding project into user's feed should be automatic 
 				and be done in a different way(I think through class states) */}
-					<div className="col s12 l6">
+					<div className="col s10 offset-s1 m8 offset-m1 container hoverable z-depth-1">
 						<table className="bordered centered highlighted responsive-table">
 							<thead>
 								<tr>
 									<th>Username</th>
 									<th>Project Title</th>
-									<th>Project Description</th>
+									<th>Description</th>
 									<th>Help Needed</th>
 								</tr>
 							</thead>

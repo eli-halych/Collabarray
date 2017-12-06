@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 
 import // Redirect,
-  //Router,
-  // Route,
-  //Link,
-  // NavLink
-  //HashRouter,
-  //BrowserRouter
-  // Switch
-  "react-router-dom";
+//Router,
+// Route,
+//Link,
+// NavLink
+//HashRouter,
+//BrowserRouter
+// Switch
+"react-router-dom";
 import {
-  app
-  //facebookProvider,
-  //githubProvider,
-  //googleProvider
+	app
+	//facebookProvider,
+	//githubProvider,
+	//googleProvider
 } from "./firebaseInitApp.js";
 import "materialize-css/dist/css/materialize.min.css";
 import "../node_modules/bootstrap-social/bootstrap-social.css";
@@ -26,10 +26,6 @@ import { position } from "tether";
 //makes materialize-css work since it needs jquery and imports have to go at the top
 window.jQuery = require("jquery");
 require("materialize-css");
-
-
-
-
 
 class Profile extends Component {
   constructor(props) {
