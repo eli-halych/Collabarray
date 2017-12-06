@@ -106,27 +106,56 @@ class Home extends Component {
 						<h1>{this.props.title}</h1>
 					</div>
 				</div>
-				<div className="container row z-depth-1">
-					<div className="bordered col s12 l6">
-						<table className="bordered centered">
+				<div className="row">
+					<div class="fixed-action-btn left col s12">
+						<a
+							className="btn-floating btn-large red"
+							data-position="bottom"
+							data-tooltip="Filter"
+						>
+							<i class="large material-icons">filter_list</i>
+						</a>
+						<ul>
+							<li>
+								<a class="btn-floating red">
+									<i class="material-icons">insert_chart</i>
+								</a>
+							</li>
+							<li>
+								<a class="btn-floating yellow darken-1">
+									<i class="material-icons">format_quote</i>
+								</a>
+							</li>
+							<li>
+								<a class="btn-floating green">
+									<i class="material-icons">publish</i>
+								</a>
+							</li>
+							<li>
+								<a class="btn-floating blue">
+									<i class="material-icons">attach_file</i>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div className="col s12 m2 container hoverable z-depth-1">
+						<table className="bordered centered highlighted">
 							<thead>
 								<tr>
-									<th> Left panel with filters etc.</th>
+									<NavLink
+										className="btn-large waves-effect waves-light tooltipped"
+										to="/addproject"
+										data-position="bottom"
+										data-tooltip="Filter"
+									>
+										<i className="material-icons">filter_list</i>
+									</NavLink>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>
-										{/*where our content(views) will load into*/}
-										<NavLink
-											className="btn-large waves-effect waves-light tooltipped"
-											to="/addproject"
-											data-position="bottom"
-											data-tooltip="Add Project"
-										>
-											<i className="material-icons">add</i>
-										</NavLink>
-									</td>
+									<div />
 								</tr>
 							</tbody>
 						</table>
@@ -134,13 +163,13 @@ class Home extends Component {
 
 					{/* The way of adding project into user's feed should be automatic 
 				and be done in a different way(I think through class states) */}
-					<div className="col s12 l6">
+					<div className="col s10 offset-s1 m8 offset-m1 container hoverable z-depth-1">
 						<table className="bordered centered highlighted responsive-table">
 							<thead>
 								<tr>
 									<th>Username</th>
 									<th>Project Title</th>
-									<th>Project Description</th>
+									<th>Description</th>
 									<th>Help Needed</th>
 								</tr>
 							</thead>

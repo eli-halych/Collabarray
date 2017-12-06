@@ -1,0 +1,8 @@
+.Profile .container {
+    background: #f2f2f2;
+    width: 75vw;
+    margin: 20px auto;
+    border: thin solid #d4d4d4;
+    border-radius: 5px;
+    padding: 10px;
+}

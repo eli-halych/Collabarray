@@ -1,33 +1,24 @@
-/* Full-width input fields */
-
-input[type="text"] {
-    width: 90%;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.OpenProject form {
+    background-color: #f2f2f2;
 }
 
-form>button {
-    padding: 14px 20px;
+.OpenProject form>button {
     margin: 10px auto;
     border: none;
     cursor: pointer;
     width: auto;
 }
 
-.row {
-    background: white;
-    width: auto;
-    /* max-width: 415px; */
+.OpenProject .row {
+    background: #f2f2f2;
+    width: 75vw;
     margin: 20px auto;
-    border: 1px solid #ddd;
+    border: thin solid #d4d4d4;
     border-radius: 5px;
     padding: 10px;
 }
 
-.img {
+.OpenProject .img {
     width: 150px;
     height: 150px;
 }
