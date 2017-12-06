@@ -22,6 +22,7 @@ import {
 } from "react-router-dom";
 import $ from "jquery";
 import "bootstrap-social";
+import { COLLAPSE } from "@blueprintjs/core/dist/common/classes";
 
 //makes materialize-css work since it needs jquery and imports have to go at the top
 window.jQuery = require("jquery");
@@ -34,6 +35,7 @@ class SignIn extends Component {
 		this.authWithGithub = this.authWithGithub.bind(this);
 		this.authWithGoogle = this.authWithGoogle.bind(this);
 		this.authWithEmailAndPassword = this.authWithEmailAndPassword.bind(this);
+		this.createUserInDatabase = this.createUserInDatabase.bind(this);
 		this.state = {
 			authenticated: false,
 			redirect: false
@@ -41,38 +43,42 @@ class SignIn extends Component {
 	}
 
 	authWithFacebook() {
-		app
-			.auth()
-			.signInWithPopup(facebookProvider)
-			.then((result, error) => {
-				if (error) {
-					this.toaster.show({
-						intent: Intent.DANGER,
-						message: "Unable to sign in with Facebook"
-					});
-				} else {
-					console.log("Authorised with Facebook");
-					this.setState({ redirect: true });
-					this.setState({ authenticated: true });
-				}
-			});
+		// app
+		// 	.auth()
+		// 	.signInWithPopup(facebookProvider)
+		// 	.then((result, error) => {
+		// 		if (error) {
+		// 			this.toaster.show({
+		// 				intent: Intent.DANGER,
+		// 				message: "Unable to sign in with Facebook"
+		// 			});
+		// 		} else {
+		// 			console.log("Authorised with Facebook");
+		// 			this.setState({ redirect: true });
+		// 			this.setState({ authenticated: true });
+		// 		}
+		// 	});
+
+		// NOT WORKING
 	}
 	authWithGithub() {
-		app
-			.auth()
-			.signInWithPopup(githubProvider)
-			.then((result, error) => {
-				if (error) {
-					this.toaster.show({
-						intent: Intent.DANGER,
-						message: "Unable to sign in with GitHub"
-					});
-				} else {
-					console.log("Authorised with GitHub");
-					this.setState({ redirect: true });
-					this.setState({ authenticated: true });
-				}
-			});
+		// app
+		// 	.auth()
+		// 	.signInWithPopup(githubProvider)
+		// 	.then((result, error) => {
+		// 		if (error) {
+		// 			this.toaster.show({
+		// 				intent: Intent.DANGER,
+		// 				message: "Unable to sign in with GitHub"
+		// 			});
+		// 		} else {
+		// 			console.log("Authorised with GitHub");
+		// 			this.setState({ redirect: true });
+		// 			this.setState({ authenticated: true });
+		// 		}
+		// 	});
+
+		//NOT WORKING
 	}
 	authWithGoogle() {
 		app
@@ -88,6 +94,7 @@ class SignIn extends Component {
 					console.log("Authorised with Google");
 					this.setState({ redirect: true });
 					this.setState({ authenticated: true });
+					// this.createUserInDatabase(); // <--- adds users to the database, but should be linked to registration process only, not sign in
 				}
 			});
 	}
@@ -103,7 +110,7 @@ class SignIn extends Component {
 				if (providers.length === 0) {
 					// create account
 					// if does not have an account
-					return app.auth().createUserWithEmailAndPassword(email, password);
+					return app.auth().createUserWithEmailAndPassword(email, password).then( user => this.createUserInDatabase(user) );
 				} else if (providers.indexOf("password") === -1) {
 					// they used facebook, google, github etc. to sign in
 					// did not sign up with email and password
@@ -127,6 +134,33 @@ class SignIn extends Component {
 			.catch(error => {
 				this.toaster.show({ intent: Intent.DANGER, message: error.message });
 			});
+	}
+
+	createUserInDatabase(user){
+		// var user = app.auth().currentUser;
+		var firebaseRef = app.database().ref("/Users");
+
+		var email = user.email;
+		var username = "";
+		for (var i = 0; i < 100; i++) {
+			/* <-- cuts @email.com off */
+			if (email.charAt(i) === "@") {
+				username = email.substring(0, i);
+			}
+		}
+
+		const item = {
+			username: username,
+			email : user.email,
+			fullName: user.displayName
+		}
+
+		firebaseRef.push(item);
+		
+		console.log("createUserInDatabase was successfully called")
+		console.log(item.username)
+		console.log(item.email)
+		console.log(item.fullName)
 	}
 
 	render() {

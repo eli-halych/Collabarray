@@ -37,19 +37,67 @@ class Profile extends Component {
     this.state = {
       userFullName: ""
     };
+
+    this.hideAddName = this.hideAddName.bind(this);
   }
 
   componentWillMount() {
 
     var user = app.auth().currentUser;
-		// console.log(user)
-		var fullName = user.displayName
-		this.state.userFullName = fullName
+    // console.log(user)
+    var fullName = user.displayName
+    this.state.userFullName = fullName
 
   }
 
   componentWillUnmount() {
     // this.firebaseRef.off();
+  }
+
+  displayFullName() {
+    return (this.state.userFullName) ? (this.state.userFullName)
+
+      : (
+
+        <div>
+          <div id="addName" className="addName">
+            <i>Add name</i>
+            <br />
+            <a class="btn-floating waves-effect waves-light red" onClick={() => this.hideAddName()}><i class="material-icons">add</i></a>
+          </div>
+
+
+          <div id="fieldAddName" className="fieldAddName hide">
+            <div className="container grey darken-4">
+              <section className="add-item grey darken-4">
+                <form >
+                  <input
+                    
+                    type="text"
+                    name="textComment"
+                    placeholder="Comment"
+                  />
+                  <br />
+                  <button className="btn waves-effect waves-light">
+                    Add name
+							</button>
+                </form>
+              </section>
+            </div>
+
+            
+          </div>
+        </div>
+
+      )
+  }
+
+  hideAddName() {
+    var addName = document.getElementById("addName");
+    addName.classList.add("hide");
+
+    var fieldAddName = document.getElementById("fieldAddName");
+    fieldAddName.classList.remove("hide");
   }
 
 
@@ -78,7 +126,7 @@ class Profile extends Component {
             <table className="bordered centered highlighted responsive-table">
               <thead>
                 <tr>
-                  <th>{this.state.userFullName}</th>
+                  <th>{this.displayFullName()}</th>
                 </tr>
               </thead>
               <tbody>user's info</tbody>
@@ -86,8 +134,8 @@ class Profile extends Component {
           </div>
         </div>
 
-        </div>
-        );
+      </div>
+    );
   }
 }
 

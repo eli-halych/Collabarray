@@ -30,7 +30,10 @@ class Header extends Component {
 		this.state = {
 			userId: "",
 			userFullName: ""
-		}
+		};
+
+		this.getUserData = this.getUserData.bind(this);
+
 		$(document).ready(() => {
 			$(".dropdown-button").dropdown({
 				inDuration: 300,
@@ -74,33 +77,20 @@ class Header extends Component {
 
 	componentWillMount(){
 
-		// console.log(this.props.authenticated);
+		(this.props.authenticated) ? (this.getUserData()) : (console.log("You are not signed in"))
 
-		// var user = app.auth().currentUser;
-		// var fullName = user.displayName;
-		// var email = user.email;
-
-		// 
-
-		// var user = app.auth().currentUser;
-		// console.log(user)
-		// var fullName = user.displayName
-		// var email = user.email;
-		// for (var i = 0; i < 100; i++) {  /* <-- cuts @email.com off */
-		// 	if (email.charAt(i) === "@") {
-		// 		email = email.substring(0, i);
-		// 	}
-		// }
-		// this.state.userId = email
-		// this.state.userFullName = fullName
-
-		// console.log(this.state.userId)
 	}
 
-	componentWillUnmount(){
-		this.state.userId = ""
-		this.state.userFullName = ""
+	getUserData(){
+		var user = app.auth().currentUser;
+		var fullName = user.displayName
+		var userid = user.uid;
+
+		this.state.userId = userid
+		this.state.userFullName = fullName
 	}
+
+	componentWillUnmount(){}
 
 	render() {
 		return (
@@ -149,7 +139,14 @@ class Header extends Component {
 								<li>
 									<NavLink 
 											data-tooltip="Profile"
-											to={"/profile/" + "userid"}>
+											to={"/home"}>
+										<i class="material-icons right">chat_bubble_outline</i>
+									</NavLink>
+								</li>
+								<li>
+									<NavLink 
+											data-tooltip="Profile"
+											to={"/profile/" + this.state.userId}>
 										Profile
 										<i class="material-icons right">account_circle</i>
 									</NavLink>
@@ -187,8 +184,15 @@ class Header extends Component {
 								</li>
 							</ul>
 							<ul className="right hide-on-med-and-down">
+							<li>
+									<NavLink 
+											data-tooltip="Profile"
+											to={"/home"}>
+										<i class="material-icons right">chat_bubble_outline</i>
+									</NavLink>
+								</li>
 								<li>
-									<NavLink to={"/profile/" + "userid"}>
+									<NavLink to={"/profile/" + this.state.userId}>
 										Profile
 										<i class="material-icons left">account_circle</i>
 									</NavLink>

@@ -22,6 +22,7 @@ import "./OpenProject.css";
 import $ from "jquery";
 import "bootstrap-social";
 import "./OpenProject.css";
+// import { database } from "firebase";
 // import { position } from "tether";
 
 //makes materialize-css work since it needs jquery and imports have to go at the top
@@ -45,20 +46,39 @@ class OpenProject extends Component {
 			textComment: ""
 		};
 		this.handleChange = this.handleChange.bind(this);
-		// this.handleChangeComment = this.handleChangeComment.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleRemovePost = this.handleRemovePost.bind(this);
 		this.handleSubmitComment = this.handleSubmitComment.bind(this);
-		this.outputComments = this.outputComments.bind(this);
-		this.checkIds = this.checkIds.bind(this);
+
+
+		this.subscribe = this.subscribe.bind(this);
+
+
+		this.getPosts = this.getPosts.bind(this);
+		this.showComments = this.showComments.bind(this);
 	}
 
 	componentWillMount() {
 
+		this.getPosts();
+
+	}
+
+	componentWillUnmount() {
+		this.firebaseRef.off();
+	}
 
 
-		this.firebaseRef = app.database().ref("/Projects").child(this.props.match.params.id).child("/Posts"); // <-- looks like it creates a new reference to a child called Posts(not there, so I assume it creates that)
-		this.firebaseRef.limitToLast(10).on( /* <-- display N comments */
+
+	getPosts(){
+		this.firebaseRef = app
+											.database()
+											.ref("/Projects")
+											.child(this.props.match.params.id)
+											.child("/Posts"); // <-- looks like it creates a new reference to a child called Posts(not there, so I assume it creates that)
+		this.firebaseRef
+											.limitToLast(10)
+											.on( /* <-- display N comments */
 			"value",
 			function (dataSnapshot) { /* <-- takes all children from Posts */
 				// console.log(dataSnapshot.val());
@@ -68,7 +88,7 @@ class OpenProject extends Component {
 					function (childSnapshot) { /* <-- takes Posts' children under each key(unique ID like -KzpkdrQEY_DfYAw5hr5) */
 
 						// console.log(childSnapshot.val());
-						var item = childSnapshot.val(); /* <-- takes data of each child under eaach key from Posts */
+						var item = childSnapshot.val(); /* <-- takes data of each child under eaach key from Posts */ // items already contain comments
 						item[".key"] = childSnapshot.key; /* <-- gets each key */
 						item.id = childSnapshot.key;
 						Posts.push(
@@ -76,58 +96,51 @@ class OpenProject extends Component {
 						); /* <-- pushes variable Posts into array of this funct  */
 					}
 				);
+
+
 				this.setState({
 					Posts: Posts /* <-- assigns var Posts to state Post */
 				});
+
+
 			}.bind(this)
-		);
-
-
-		this.firebaseRef = app.database().ref("/Projects").child(this.props.match.params.id).child("/Posts"); // <-- looks like it creates a new reference to a child called Posts(not there, so I assume it creates that)
-		this.firebaseRef.limitToLast(15).on( /* <-- display N comments */
-			"value",
-			function (dataSnapshot) { /* <-- takes all children from Posts */
-				// console.log(dataSnapshot.val());
-				var Comments = []
-				dataSnapshot.forEach( /* <-- for loop */
-					function (childSnapshot) { /* <-- takes Posts' children under each key(unique ID like -KzpkdrQEY_DfYAw5hr5) */
-						// console.log(childSnapshot.key);
-						var postKey = childSnapshot.key;
-
-						this.firebaseRef.child(childSnapshot.key).child("/Comments").limitToLast(3).on(
-							"value",
-
-							function (dataSnapshot) {
-								var SecondaryComments = [];
-
-								dataSnapshot.forEach(
-									function (childSnapshot) {
-										// console.log(childSnapshot.key);
-										var item = childSnapshot.val(); /* <-- takes data of each child under eaach key from Posts */
-										item[".key"] = childSnapshot.key;  /* <-- gets each key */
-										item.id = item[".key"];
-										SecondaryComments.push(item);  /* <-- pushes into array variable Posts of this function */
-									}
-								);
-								Comments.push({ postKey, SecondaryComments });
-								// console.log(SecondaryComments.forEach(function(e){console.log(e.id)}));
-								this.setState({
-									Comments: Comments  /* <-- assigns var Posts to state Post */
-								});
-							}.bind(this)
-
-						)
-					}.bind(this)
-				);
-				// console.log(Comments);
-			}.bind(this)
+		
 		);
 
 	}
+	showComments(post){
 
-	componentWillUnmount() {
-		this.firebaseRef.off();
+		// console.log(post.Comments) //{comment{..}, comment{..}}
+
+		const postRef = app.database().ref("/Projects").child(this.props.match.params.id).child("/Posts").child(post[".key"]);
+		const commentsRef = postRef.child("/Comments");
+		// console.log(commentsRef);
+
+		var comments =[];
+
+		commentsRef.limitToLast(3).on("value",
+		function(dataSnapshot){
+			dataSnapshot.forEach(
+				function(childSnapshot){
+					// console.log(childSnapshot.val());
+					var commentKey = childSnapshot.key;
+					comments.push(
+					<div className="comment-section z-depth-1">
+						<p key={commentKey}>{childSnapshot.val().username}</p>
+						<p key={commentKey}>{childSnapshot.val().textComment}</p>
+						-------- <br />
+					</div>);
+
+				}
+			)
+		}
+	);
+	
+	return comments;
+		
 	}
+
+
 
 	handleSubmit(e) {
 		/* <-- ON SUBMIT */
@@ -159,13 +172,6 @@ class OpenProject extends Component {
 			[e.target.name]: e.target.value
 		});
 	}
-	// handleChangeComment(e) {
-	// 	// console.log("changed");
-	// 	// console.log(e.target.name); // e.target.name is taken from attribute name=""
-	// 	this.setState({
-	// 		[e.target.name]: e.target.value
-	// 	});
-	// }
 	handleRemovePost(e) {
 		// console.log(e);
 		return app.database().ref("/Projects").child(this.props.match.params.id).child("/Posts").child(e).remove();
@@ -191,46 +197,13 @@ class OpenProject extends Component {
 			textComment: ""
 		});
 	}
-	outputComments(post) {
-		// var tmp = [];
-
-		// const Comments = this.state.Comments;
-		// const comment = Comments.map(secComment => (
 
 
-		// 	tmp.push(this.checkIds(postKey, secComment))
 
-		// ))
 
-		// return tmp;
-
-		const Comments = this.state.Comments;
-		const comment = Comments.map(secComment => (
-			<div className="comment-section">
-				<p key={secComment.SecondaryComments.id}>{secComment.SecondaryComments.username}</p>
-				<p key={secComment.SecondaryComments.id}>{secComment.SecondaryComments.textComment}</p>
-				-------- <br />
-			</div>
-		))
-		// NEED TO USE COMMENT. CHECKIDS() SELECTS NEEDED COMMENTS, BUT IDK WHAT'S NEXT SO FAR
-	}
-	checkIds(post, secComment) {
-		return ((post == secComment.postKey) ? (
-			secComment.SecondaryComments.forEach(
-				function (entry) {
-					<div className="comment-section">
-						<p key={entry.id}>{entry.username}</p>
-						<p key={entry.id}>{entry.textComment}</p>
-						-------- <br />
-					</div>
-					// console.log(post);
-				}
-			)
-		)
-			: (
-				console.log()
-			)
-		)
+	subscribe(){
+		var user = app.auth().currentUser;
+		console.log(user.uid);
 	}
 
 	render() {
@@ -242,32 +215,33 @@ class OpenProject extends Component {
 			<tr>
 
 
-				<td key={post.key}>{post.username}</td>
-				<td key={post.key}>{post.text}</td>
+				<td className="z-depth-1" key={post.key}>{post.username}</td>
+				<td className="z-depth-1" key={post.key}>{post.text} <br />
 				<button className="btn waves-effect waves-light">
 					Like
-						<i class="material-icons">thumb_up</i>
+						<i className="material-icons">thumb_up</i>
 				</button>
-				<button className="btn waves-effect waves-light">
+				{/* <button className="btn waves-effect waves-light">
 					Comment
-						<i class="material-icons">comment</i>
-				</button>
+						<i className="material-icons">comment</i>
+				</button> */}
 				<button className="btn waves-effect waves-light">
 					Share
-						<i class="material-icons">share</i>
+						<i className="material-icons">share</i>
 				</button>
 				<button className="btn waves-effect waves-light" onClick={() => this.handleRemovePost(post.id)}>
 					Remove
-						<i class="material-icons">remove_circle_outline</i>
+						<i className="material-icons">remove_circle_outline</i>
 				</button>
+				</td>
 
 
 			
 
-			<div>
-				=====comments here=====
-				{this.outputComments(post)}
-				=======================
+			<div id="comment-section">
+				{/* =====comments here===== */}
+				{this.showComments(post)} <br/>
+				{/* ======================= */}
 			</div>
 
 			<div className="container grey darken-4">
@@ -282,7 +256,7 @@ class OpenProject extends Component {
 						/>
 						<br />
 						<button className="btn waves-effect waves-light">
-							Comment on it
+							Comment
 							</button>
 					</form>
 				</section>
@@ -310,6 +284,10 @@ class OpenProject extends Component {
 						<div className="header-back z-depth-1">
 					<div className="page-header">
 						<h1>{this.props.title} [{post.title}]</h1>
+						<button className="btn-large waves-effect waves-light" onClick={() => this.subscribe()}>
+							Subscribe
+						</button>
+						<hr />
 					</div>
 				</div>
 				</div>
@@ -339,14 +317,14 @@ class OpenProject extends Component {
 								id="text"
 								name="text"
 								onChange={this.handleChange}
-								// value={this.state.text}
+								value={this.state.text}
 								required
 							/>
 							<label htmlFor="text">Comment:</label>
 						</div>
 						<button className="btn-large waves-effect waves-light">
 							Post
-							<i class="material-icons right">chat</i>
+							<i className="material-icons right">chat</i>
 						</button>
 					</form>
 				</div>
