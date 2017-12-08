@@ -19,7 +19,7 @@ import "materialize-css/dist/css/materialize.min.css";
 import "../node_modules/bootstrap-social/bootstrap-social.css";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 import "./OpenProject.css";
-import $ from "jquery";
+// import $ from "jquery";
 import "bootstrap-social";
 import "./OpenProject.css";
 // import { database } from "firebase";
