@@ -80,7 +80,7 @@ class OpenProject extends Component {
 						/* <-- takes Posts' children under each key(unique ID like -KzpkdrQEY_DfYAw5hr5) */
 
 						// console.log(childSnapshot.val());
-						var item = childSnapshot.val(); /* <-- takes data of each child under eaach key from Posts */ // items already contain comments
+						var item = childSnapshot.val(); /* <-- takes data of each child under each key from Posts */ // items already contain comments
 						item[".key"] = childSnapshot.key; /* <-- gets each key */
 						item.id = childSnapshot.key;
 						Posts.push(
@@ -115,9 +115,12 @@ class OpenProject extends Component {
 				var commentKey = childSnapshot.key;
 				comments.push(
 					<div className="comment-section z-depth-1">
-						<p key={commentKey}>{childSnapshot.val().username}</p>
-						<p key={commentKey}>{childSnapshot.val().textComment}</p>
-						-------- <br />
+						<p className="reply white-text" key={commentKey}>
+							{childSnapshot.val().username}
+						</p>
+						<p className="" key={commentKey}>
+							{childSnapshot.val().textComment}
+						</p>
 					</div>
 				);
 			});
@@ -212,7 +215,7 @@ class OpenProject extends Component {
 			post /* <-- a const containing html the way the comment should be displayed */
 		) => (
 			<tr>
-				<td className="z-depth-1" key={post.key}>
+				<td className="User-bg white-text z-depth-1" key={post.key}>
 					{post.username}
 				</td>
 				<td className="z-depth-1" key={post.key}>
@@ -254,9 +257,9 @@ class OpenProject extends Component {
 								onChange={this.handleChange}
 								required
 							/>
-							<label htmlFor="text">Comment:</label>
+							<label htmlFor="text">Reply:</label>
 						</div>
-						<button className="btn waves-effect waves-light">Comment</button>
+						<button className="btn waves-effect waves-light">Reply</button>
 					</form>
 				</div>
 			</tr>
@@ -264,30 +267,20 @@ class OpenProject extends Component {
 
 		return (
 			<div className="OpenProject">
+				{/* <img className="img col m3" src="https://firebasestorage.googleapis.com/v0/b/collabarray-953db.appspot.com/o/dog.jpg?alt=media&token=9f4e2fa7-9d3c-47cb-a1fb-f7e6608edd4a" /> */}
 				<div className="header-back z-depth-1">
 					<div className="page-header">
-						{/* it takes /:id which is set in REF. to App.js and specified in REF. to Home.js. The ID is projectTitle so far */}
-						{/* {<h1>{app.database().ref("/Projects").child(this.props.match.params.id)}</h1> } */}
-
-						{/* <h6>Project id: {this.props.match.params.id}</h6> */}
+						<h1>
+							{this.props.title} [{post.title}]
+						</h1>
 					</div>
-				</div>
-				<div>
-					{/* <img className="img col m3" src="https://firebasestorage.googleapis.com/v0/b/collabarray-953db.appspot.com/o/dog.jpg?alt=media&token=9f4e2fa7-9d3c-47cb-a1fb-f7e6608edd4a" /> */}
-
-					<div className="header-back z-depth-1">
-						<div className="page-header">
-							<h1>
-								{this.props.title} [{post.title}]
-							</h1>
-							<button
-								className="btn-large waves-effect waves-light"
-								onClick={() => this.subscribe()}
-							>
-								Subscribe
-							</button>
-							<br />
-						</div>
+					<div className="subscribe-row">
+						<button
+							className="btn-large waves-effect waves-light"
+							onClick={() => this.subscribe()}
+						>
+							Subscribe
+						</button>
 					</div>
 				</div>
 				<div className="container row hoverable z-depth-1">

@@ -22,3 +22,16 @@
     width: 150px;
     height: 150px;
 }
+
+.OpenProject .reply,
+.OpenProject .User-bg {
+    background-color: #333333;
+}
+
+.OpenProject .subscribe-row {
+    background-color: #222222;
+}
+
+.OpenProject .table-head {
+    background-color: #333333;
+}

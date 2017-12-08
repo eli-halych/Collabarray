@@ -6,3 +6,7 @@
     border-radius: 5px;
     padding: 10px;
 }
+
+.ViewProject .table-head {
+    background-color: #333333;
+}

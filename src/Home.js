@@ -106,39 +106,30 @@ class Home extends Component {
 						<h1>{this.props.title}</h1>
 					</div>
 				</div>
+				{/* Modal Trigger */}
+				<div class="fixed-action-btn click-to-toggle ">
+					<a
+						className="btn-large btn-floating waves-effect waves-light tooltipped modal-trigger"
+						to="/addproject"
+						data-position="left"
+						data-tooltip="Filter"
+						href="#modal1"
+					>
+						<i className="material-icons">filter_list</i>
+					</a>
+				</div>
 				<div className="row">
-					<div className="col s12 m2 container hoverable z-depth-1">
-						<table className="bordered centered highlighted">
-							<thead>
-								<tr>
-									<NavLink
-										className="btn-large waves-effect waves-light tooltipped"
-										to="/addproject"
-										data-position="bottom"
-										data-tooltip="Filter"
-									>
-										<i className="material-icons">filter_list</i>
-									</NavLink>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<div />
-								</tr>
-							</tbody>
-						</table>
-					</div>
-
 					{/* The way of adding project into user's feed should be automatic 
 				and be done in a different way(I think through class states) */}
-					<div className="col s10 offset-s1 m8 offset-m1 container hoverable z-depth-1">
+					<div className="col s10 offset-s1 m10 offset-m1 container-fluid hoverable z-depth-1">
 						<table className="bordered centered highlighted responsive-table">
-							<thead>
+							<thead className="table-head white-text">
 								<tr>
 									<th>Username</th>
 									<th>Project Title</th>
 									<th>Description</th>
 									<th>Help Needed</th>
+									<th />
 								</tr>
 							</thead>
 							<tbody>{proj}</tbody>

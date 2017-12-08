@@ -111,12 +111,13 @@ class ViewProjects extends React.Component {
 				<div className="container row hoverable z-depth-1">
 					<div className="col s12">
 						<table className="bordered centered highlighted responsive-table">
-							<thead>
+							<thead className="table-head white-text">
 								<tr>
 									<th>Username</th>
 									<th>Project Title</th>
 									<th>Project Description</th>
 									<th>Help Needed</th>
+									<th />
 								</tr>
 							</thead>
 							<tbody>{proj}</tbody>
