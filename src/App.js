@@ -25,10 +25,11 @@ import OpenProject from "./OpenProject";
 import ViewProjects from "./ViewProjects";
 import Logout from "./Logout";
 import Profile from "./Profile";
+import Messenger from "./Messenger";
 
 import { app } from "./firebaseInitApp.js";
 
-import $ from "jquery";
+// import $ from "jquery";
 import "bootstrap-social";
 
 //makes materialize-css work since it needs jquery and imports have to go at the top

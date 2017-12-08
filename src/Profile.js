@@ -19,9 +19,9 @@ import "materialize-css/dist/css/materialize.min.css";
 import "../node_modules/bootstrap-social/bootstrap-social.css";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 import "./Profile.css";
-import $ from "jquery";
+// import $ from "jquery";
 import "bootstrap-social";
-import { position } from "tether";
+// import { position } from "tether";
 
 //makes materialize-css work since it needs jquery and imports have to go at the top
 window.jQuery = require("jquery");
@@ -42,7 +42,9 @@ class Profile extends Component {
     var user = app.auth().currentUser;
     // console.log(user)
     var fullName = user.displayName
-    this.state.userFullName = fullName
+    this.setState({
+      userFullName: fullName
+    })
 
   }
 
@@ -59,7 +61,7 @@ class Profile extends Component {
           <div id="addName" className="addName">
             <i>Add name</i>
             <br />
-            <a class="btn-floating waves-effect waves-light red" onClick={() => this.hideAddName()}><i class="material-icons">add</i></a>
+            <a className="btn-floating waves-effect waves-light red" onClick={() => this.hideAddName()}><i className="material-icons">add</i></a>
           </div>
 
 

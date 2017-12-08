@@ -5,8 +5,8 @@ import "./SignIn.css";
 // import firebase from 'firebase';
 import {
 	app,
-	facebookProvider,
-	githubProvider,
+	// facebookProvider,
+	// githubProvider,
 	googleProvider
 } from "./firebaseInitApp.js";
 import { Toaster, Intent } from "@blueprintjs/core";
@@ -20,9 +20,9 @@ import {
 	//BrowserRouter,
 	//Switch
 } from "react-router-dom";
-import $ from "jquery";
+// import $ from "jquery";
 import "bootstrap-social";
-import { COLLAPSE } from "@blueprintjs/core/dist/common/classes";
+// import { COLLAPSE } from "@blueprintjs/core/dist/common/classes";
 
 //makes materialize-css work since it needs jquery and imports have to go at the top
 window.jQuery = require("jquery");

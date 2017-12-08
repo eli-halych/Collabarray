@@ -90,8 +90,10 @@ class Header extends Component {
 		var fullName = user.displayName
 		var userid = user.uid;
 
-		this.state.userId = userid
-		this.state.userFullName = fullName
+		this.setState({
+			userId: userid,
+			userFullName: fullName
+		})
 	}
 
 	componentWillUnmount(){}
@@ -150,7 +152,7 @@ class Header extends Component {
 									<NavLink 
 											data-tooltip="Profile"
 											to={"/home"}>
-										<i class="material-icons right">chat_bubble_outline</i>
+										<i className="material-icons right">chat_bubble_outline</i>
 									</NavLink>
 								</li>
 								<li>
@@ -198,7 +200,7 @@ class Header extends Component {
 									<NavLink 
 											data-tooltip="Profile"
 											to={"/home"}>
-										<i class="material-icons right">chat_bubble_outline</i>
+										<i className="material-icons right">chat_bubble_outline</i>
 									</NavLink>
 								</li>
 								<li>
