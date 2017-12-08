@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Footer.css";
 // import $ from "jquery";
 import "bootstrap-social";
-import "../public/firebase-messaging-sw";
 
 //makes materialize-css work since it needs jquery and imports have to go at the top
 window.jQuery = require("jquery");
