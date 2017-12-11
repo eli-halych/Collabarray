@@ -50,6 +50,8 @@ class OpenProject extends Component {
 
 		this.getPosts = this.getPosts.bind(this);
 		this.showComments = this.showComments.bind(this);
+
+		this.addToTeam = this.addToTeam.bind(this);
 	}
 
 	componentWillMount() {
@@ -182,14 +184,14 @@ class OpenProject extends Component {
 			.child("/Posts")
 			.child(id)
 			.child("/Comments"); /* <-- gets the reference to Posts tree */
-		var user = app.auth().currentUser;
-		var email = user.email;
-		for (var i = 0; i < 100; i++) {
+			var user = app.auth().currentUser;
+			var email = user.email;
+			for (var i = 0; i < 100; i++) {
 			/* <-- cuts @email.com off */
 			if (email.charAt(i) === "@") {
 				email = email.substring(0, i);
 			}
-		}
+			}
 		const item = {
 			/* <-- new item */
 			textComment: this.state.textComment,
@@ -203,9 +205,122 @@ class OpenProject extends Component {
 		});
 	}
 
-	subscribe() {
+	subscribe(e) {
 		var user = app.auth().currentUser;
 		console.log(user.uid);
+	}
+
+	addToTeam (username)
+	{
+
+		var projectRef = app
+			.database()
+			.ref("/Projects")
+			.child(this.props.match.params.id);
+
+			// var projTitle = JSON.stringify(projectRef.val().projectTitle);
+
+			var projTitle = '';
+
+
+		const itemsRef = app
+			.database()
+			.ref("/Projects")
+			.child(this.props.match.params.id)
+			.child("Team");
+
+			//Finding Project Name:
+				projectRef.on(
+				"value",
+				function(dataSnapshot) {
+				dataSnapshot.forEach(function(childSnapshot) {
+				var temp = dataSnapshot.val().projectTitle;
+
+				if(temp)
+				{
+					projTitle=temp;
+				}
+
+				});
+			}
+			);
+
+
+			const userRef = app
+				.database()
+				.ref("/Users");
+
+				userRef.on(
+					"value",
+					function(dataSnapshot) {
+						dataSnapshot.forEach(function(childSnapshot) {
+							var item = JSON.stringify(childSnapshot.val());
+							var len=username.length;
+							var key = childSnapshot.key;
+
+							for(var i=0;i<100;i++)
+							{
+								var temp=item.substring(i,i+len);
+								if(username == temp)
+								{
+									const item = {
+										/* <-- new member being added */
+										Teams: projTitle
+								};
+
+									userRef.child(key).child("/Teams").update(item); /* <-- the item is pushed to Firebase */
+									break;
+								}
+							}
+						});
+
+					}
+				);
+
+
+var check=false;
+
+		itemsRef.on(
+			"value",
+			function(dataSnapshot) {
+
+				dataSnapshot.forEach(function(childSnapshot) {
+					var item = JSON.stringify(childSnapshot.val());
+					var len=username.length;
+					check=false;
+					for(var i=0;i<100;i++)
+					{
+						var temp=item.substring(i,i+len);
+						console.log(temp);
+						if(username == temp)
+						{
+							check=true;
+							break;
+						}
+					}
+				});
+
+			}
+		);
+
+		if(check==false)
+		{
+			const item = {
+				/* <-- new member being added */
+				member: username
+			};
+			// console.log(item.textComment);
+
+			itemsRef.push(item); /* <-- the item is pushed to Firebase */
+		}
+		else {
+			{
+				alert("This team member has already been added");
+			}
+		}
+
+
+
 	}
 
 	render() {
@@ -217,6 +332,13 @@ class OpenProject extends Component {
 			<tr>
 				<td className="User-bg white-text z-depth-1" key={post.key}>
 					{post.username}
+					<br />
+					<button
+						className="btn waves-effect waves-light"
+						onClick={() => this.addToTeam(post.username)}
+					>
+						Add To Team
+					</button>
 				</td>
 				<td className="z-depth-1" key={post.key}>
 					{post.text} <br />
