@@ -23,5 +23,5 @@ to produce something to the public that could possibly make an impact.
 ### Technologies involved: 
 --------------------------------
 Basics: HTML, JavaScript, CSS  
-Front-End: AngularJS, JQuery, ReactJS  
+Front-End: JQuery, ReactJS  
 Back-End: NodeJS, ReactJS with Firebase  
