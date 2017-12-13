@@ -1,0 +1,12 @@
+.Messenger .container {
+    background: #f2f2f2;
+    width: auto;
+    margin: 20px auto;
+    border: thin solid #d4d4d4;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.from-me {
+    color: teal;
+}

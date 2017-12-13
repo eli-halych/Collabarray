@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 
-import // Redirect,
-//Router,
-// Route,
-//Link,
-// NavLink
-//HashRouter,
-//BrowserRouter
-// Switch
-"react-router-dom";
+import {
+	Redirect
+	//Router,
+	// Route,
+	//Link,
+	// NavLink
+	//HashRouter,
+	//BrowserRouter
+	// Switch
+} from "react-router-dom";
 import {
 	app
 	//facebookProvider,
@@ -28,113 +29,122 @@ window.jQuery = require("jquery");
 require("materialize-css");
 
 class Profile extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userFullName: ""
-    };
+	constructor(props) {
+		super(props);
+		this.state = {
+			redirect: false
+		};
+		this.hideAddName = this.hideAddName.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
 
-    this.hideAddName = this.hideAddName.bind(this);
-  }
+	componentWillMount() {
+		var user = app.auth().currentUser;
+		// console.log(user)
+		var fullName = user.displayName;
+		this.setState({
+			userFullName: fullName
+		});
+	}
 
-  componentWillMount() {
+	componentWillUnmount() {
+		// this.firebaseRef.off();
+	}
 
-    var user = app.auth().currentUser;
-    // console.log(user)
-    var fullName = user.displayName
-    this.setState({
-      userFullName: fullName
-    })
+	// adds namne to state username
+	handleSubmit(e) {
+		e.preventDefault();
 
-  }
+		this.setState({
+			[e.target.name]: e.target.value
+		});
+	}
 
-  componentWillUnmount() {
-    // this.firebaseRef.off();
-  }
+	displayFullName() {
+		return this.state.userFullName ? (
+			this.state.userFullName
+		) : this.state.redirect ? (
+			<Redirect to="/profile" />
+		) : (
+			<div>
+				<div id="addName" className="addName">
+					<i>Add name</i>
+					<br />
+					<a
+						className="btn-floating waves-effect waves-light red"
+						onClick={() => this.hideAddName()}
+					>
+						<i className="material-icons">add</i>
+					</a>
+				</div>
 
-  displayFullName() {
-    return (this.state.userFullName) ? (this.state.userFullName)
-
-      : (
-
-        <div>
-          <div id="addName" className="addName">
-            <i>Add name</i>
-            <br />
-            <a className="btn-floating waves-effect waves-light red" onClick={() => this.hideAddName()}><i className="material-icons">add</i></a>
-          </div>
-
-
-          <div id="fieldAddName" className="fieldAddName hide">
-            <div className="container grey darken-4">
-              <section className="add-item grey darken-4">
-                <form >
-                  <input
-                    
-                    type="text"
-                    name="textComment"
-                    placeholder="Comment"
-                  />
-                  <br />
-                  <button className="btn waves-effect waves-light">
-                    Add name
+				<div id="fieldAddName" className="fieldAddName hide">
+					<div className="container grey darken-4">
+						<form onSubmit={this.handleSubmit} id="js-form">
+							<input type="text" name="textComment" />
+							<label htmlFor="text">Enter Name:</label>
+							<br />
+							<button
+								type="submit"
+								name="userFullName"
+								onChange={this.handleChange}
+								onclick={() => this.displayFullName()}
+								className="btn-large waves-effect waves-light"
+							>
+								Add name
 							</button>
-                </form>
-              </section>
-            </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		);
+	}
 
-            
-          </div>
-        </div>
+	hideAddName() {
+		var addName = document.getElementById("addName");
+		addName.classList.add("hide");
 
-      )
-  }
+		var fieldAddName = document.getElementById("fieldAddName");
+		fieldAddName.classList.remove("hide");
+	}
 
-  hideAddName() {
-    var addName = document.getElementById("addName");
-    addName.classList.add("hide");
+	render() {
+		return (
+			<div className="Profile">
+				<div className="row">
+					<div className="col s5 offset-s1 row container hoverable z-depth-1">
+						<table className="bordered centered highlighted responsive-table">
+							<thead>
+								<tr>
+									<th>Wall</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>user's stuff</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 
-    var fieldAddName = document.getElementById("fieldAddName");
-    fieldAddName.classList.remove("hide");
-  }
-
-
-
-  render() {
-
-
-
-
-    return (
-      <div className="Profile">
-
-        <div className="row">
-          <div className="col s5   offset-s1 row container hoverable z-depth-1">
-            <table className="bordered centered highlighted responsive-table">
-              <thead>
-                <tr>
-                  <th>Wall</th>
-                </tr>
-              </thead>
-              <tbody>user's stuff</tbody>
-            </table>
-          </div>
-
-          <div className="col s4 offset-s1 row container hoverable z-depth-1">
-            <table className="bordered centered highlighted responsive-table">
-              <thead>
-                <tr>
-                  <th>{this.displayFullName()}</th>
-                </tr>
-              </thead>
-              <tbody>user's info</tbody>
-            </table>
-          </div>
-        </div>
-
-      </div>
-    );
-  }
+					<div className="col s4 offset-s1 row container hoverable z-depth-1">
+						<table className="bordered centered highlighted responsive-table">
+							<thead>
+								<tr>
+									<th>{this.displayFullName()}</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>user's info</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default Profile;

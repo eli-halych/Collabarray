@@ -1,0 +1,32 @@
+[debug] [2017-12-13T11:00:10.148Z] ----------------------------------------------------------------------
+[debug] [2017-12-13T11:00:10.151Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\gosar\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-12-13T11:00:10.152Z] CLI Version:   3.16.0
+[debug] [2017-12-13T11:00:10.152Z] Platform:      win32
+[debug] [2017-12-13T11:00:10.152Z] Node Version:  v6.11.4
+[debug] [2017-12-13T11:00:10.153Z] Time:          Wed Dec 13 2017 11:00:10 GMT+0000 (GMT Standard Time)
+[debug] [2017-12-13T11:00:10.153Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-13T11:00:10.172Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-13T11:00:10.173Z] > authorizing via signed-in user
+[debug] [2017-12-13T11:00:10.177Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/collabarray-953db  
+  
+ Wed Dec 13 2017 11:00:10 GMT+0000 (GMT Standard Time)
+[debug] [2017-12-13T11:00:11.039Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-13T11:00:11.040Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/collabarray-953db/tokens  
+  
+ Wed Dec 13 2017 11:00:11 GMT+0000 (GMT Standard Time)
+[debug] [2017-12-13T11:00:11.894Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\gosar\Google Drive\Coding_Folder\Websites\Collabarray'...
+[info] 
+[debug] [2017-12-13T11:00:11.900Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/collabarray-953db  
+  
+ Wed Dec 13 2017 11:00:11 GMT+0000 (GMT Standard Time)
+[debug] [2017-12-13T11:00:12.635Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-13T11:00:12.636Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/978577647128/clients/_:getWebAppConfig  
+  
+ Wed Dec 13 2017 11:00:12 GMT+0000 (GMT Standard Time)
+[debug] [2017-12-13T11:00:13.162Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+

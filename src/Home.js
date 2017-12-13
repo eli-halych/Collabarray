@@ -107,7 +107,7 @@ class Home extends Component {
 					</div>
 				</div>
 				{/* Modal Trigger */}
-				<div class="fixed-action-btn click-to-toggle ">
+				<div className="fixed-action-btn click-to-toggle ">
 					<a
 						className="btn-large btn-floating waves-effect waves-light tooltipped modal-trigger"
 						to="/addproject"

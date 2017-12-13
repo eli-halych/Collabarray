@@ -1,0 +1,13 @@
+{
+  "notification": {
+    "title": "FCM Message",
+    "body": "This is an FCM Message",
+  }
+}
+curl --header "Authorization: key=AIzaSyCvV09DtCgNoshpAXot5V0dMLeD-Dfhwp8" --header "Content-Type: application/json" -d '{
+    "to": "cxYIXlJ3XF0:APA91bF8LxXrquNlT9OA2_SJummg_o249udnX02VMlsdMRK4J5HgbJCPUvoSDNNLAObGzlsnxANnvQTJg88TznOp-Fb1t9CMnTbH_mPd-LHgsEdMqhWXJx3-rEguXmqUBTXBZxIBkbF2",
+  "notification": {
+    "title": "FCM Message",
+    "body": "This is an FCM Message"
+  }
+}' "https://fcm.googleapis.com/fcm/send"

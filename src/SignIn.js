@@ -58,7 +58,6 @@ class SignIn extends Component {
 		// 			this.setState({ authenticated: true });
 		// 		}
 		// 	});
-
 		// NOT WORKING
 	}
 	authWithGithub() {
@@ -77,7 +76,6 @@ class SignIn extends Component {
 		// 			this.setState({ authenticated: true });
 		// 		}
 		// 	});
-
 		//NOT WORKING
 	}
 	authWithGoogle() {
@@ -110,7 +108,10 @@ class SignIn extends Component {
 				if (providers.length === 0) {
 					// create account
 					// if does not have an account
-					return app.auth().createUserWithEmailAndPassword(email, password).then( user => this.createUserInDatabase(user) );
+					return app
+						.auth()
+						.createUserWithEmailAndPassword(email, password)
+						.then(user => this.createUserInDatabase(user));
 				} else if (providers.indexOf("password") === -1) {
 					// they used facebook, google, github etc. to sign in
 					// did not sign up with email and password
@@ -136,7 +137,7 @@ class SignIn extends Component {
 			});
 	}
 
-	createUserInDatabase(user){
+	createUserInDatabase(user) {
 		// var user = app.auth().currentUser;
 		var firebaseRef = app.database().ref("/Users");
 
@@ -151,16 +152,16 @@ class SignIn extends Component {
 
 		const item = {
 			username: username,
-			email : user.email,
+			email: user.email,
 			fullName: user.displayName
-		}
+		};
 
 		firebaseRef.push(item);
-		
-		console.log("createUserInDatabase was successfully called")
-		console.log(item.username)
-		console.log(item.email)
-		console.log(item.fullName)
+
+		console.log("createUserInDatabase was successfully called");
+		console.log(item.username);
+		console.log(item.email);
+		console.log(item.fullName);
 	}
 
 	render() {
@@ -174,8 +175,6 @@ class SignIn extends Component {
 					</div>
 				</div>
 				<div className="SignIn valign-wrapper">
-					{/* <img src={logo} alt="Collabarray-Logo" /> */}
-
 					<div className="login row hoverable z-depth-1">
 						<Toaster
 							ref={element => {

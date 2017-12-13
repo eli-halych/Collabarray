@@ -33,9 +33,7 @@ class Header extends Component {
 			userFullName: ""
 		};
 
-
 		this.getUserData = this.getUserData.bind(this);
-
 
 		$(document).ready(() => {
 			$(".dropdown-button").dropdown({
@@ -55,6 +53,7 @@ class Header extends Component {
 				draggable: true // Choose whether you can drag to open on touch screens,
 			});
 			$(".collapsible").collapsible();
+			$(".tooltipped").tooltip({ delay: 50 });
 		});
 	}
 
@@ -76,28 +75,27 @@ class Header extends Component {
 			draggable: true // Choose whether you can drag to open on touch screens,
 		});
 		$(".collapsible").collapsible();
+		$(".tooltipped").tooltip({ delay: 50 });
 	}
 
-
-	componentWillMount(){
-
-		(this.props.authenticated) ? (this.getUserData()) : (console.log("You are not signed in"))
-
+	componentWillMount() {
+		this.props.authenticated
+			? this.getUserData()
+			: console.log("You are not signed in");
 	}
 
-	getUserData(){
+	getUserData() {
 		var user = app.auth().currentUser;
-		var fullName = user.displayName
+		var fullName = user.displayName;
 		var userid = user.uid;
 
 		this.setState({
 			userId: userid,
 			userFullName: fullName
-		})
+		});
 	}
 
-	componentWillUnmount(){}
-
+	componentWillUnmount() {}
 
 	render() {
 		return (
@@ -106,8 +104,17 @@ class Header extends Component {
 				<nav className="z-depth-2">
 					{this.props.authenticated ? (
 						<div className="nav-wrapper grey darken-4">
-							<NavLink to="/home" className="brand-logo center">
-								<img alt="Brand" className="" src={Logo} />
+							<NavLink
+								to="/home"
+								className="hide-on-small-only brand-logo center"
+							>
+								<img alt="Brand" className="l" src={Logo} />
+							</NavLink>
+							<NavLink
+								to="/home"
+								className="hide-on-med-and-up brand-logo center"
+							>
+								<img alt="Brand" className="s" src={Logo} />
 							</NavLink>
 							<div className="padded hide-on-large-only">
 								<a
@@ -126,6 +133,7 @@ class Header extends Component {
 										Home<i className="material-icons left">home</i>
 									</NavLink>
 								</li>
+								{/* for dropdown */}
 								<li className="no-padding">
 									<ul className="collapsible" data-collapsible="accordian">
 										<li>
@@ -149,17 +157,14 @@ class Header extends Component {
 								</li>
 								<li className="divider" />
 								<li>
-									<NavLink 
-											data-tooltip="Profile"
-											to={"/home"}>
-										<i className="material-icons right">chat_bubble_outline</i>
+									<NavLink to={"/messenger"}>
+										Messenger<i className="material-icons left">
+											chat_bubble_outline
+										</i>
 									</NavLink>
 								</li>
 								<li>
-									<NavLink 
-											data-tooltip="Profile"
-											to={"/profile/" + this.state.userId}>
-
+									<NavLink to={"/profile/" + this.state.userId}>
 										Profile
 										<i className="material-icons left">account_circle</i>
 									</NavLink>
@@ -171,6 +176,7 @@ class Header extends Component {
 									</NavLink>
 								</li>
 							</ul>
+
 							<ul className="left hide-on-med-and-down">
 								<li>
 									<NavLink to="/home">
@@ -196,17 +202,24 @@ class Header extends Component {
 								</li>
 							</ul>
 							<ul className="right hide-on-med-and-down">
-							<li>
-									<NavLink 
-											data-tooltip="Profile"
-											to={"/home"}>
-										<i className="material-icons right">chat_bubble_outline</i>
+								<li>
+									<NavLink
+										data-position="bottom"
+										data-tooltip="Messenger"
+										className="tooltipped"
+										to={"/messenger"}
+									>
+										<i className="material-icons">chat_bubble_outline</i>
 									</NavLink>
 								</li>
 								<li>
-									<NavLink to={"/profile/" + this.state.userId}>
-										Profile
-										<i className="material-icons left">account_circle</i>
+									<NavLink
+										data-position="bottom"
+										data-tooltip="Profile"
+										className="tooltipped"
+										to={"/profile/" + this.state.userId}
+									>
+										<i className="material-icons">account_circle</i>
 									</NavLink>
 								</li>
 								<li>
@@ -219,8 +232,17 @@ class Header extends Component {
 						</div>
 					) : (
 						<div className="nav-wrapper grey darken-4">
-							<NavLink to="/home" className="brand-logo">
-								<img alt="Brand" className="App-logo" src="../../favicon.ico" />
+							<NavLink
+								to="/home"
+								className="hide-on-small-only brand-logo center"
+							>
+								<img alt="Brand" className="l" src={Logo} />
+							</NavLink>
+							<NavLink
+								to="/home"
+								className="hide-on-med-and-up brand-logo center"
+							>
+								<img alt="Brand" className="s" src={Logo} />
 							</NavLink>
 						</div>
 					)}

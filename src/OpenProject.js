@@ -184,14 +184,14 @@ class OpenProject extends Component {
 			.child("/Posts")
 			.child(id)
 			.child("/Comments"); /* <-- gets the reference to Posts tree */
-			var user = app.auth().currentUser;
-			var email = user.email;
-			for (var i = 0; i < 100; i++) {
+		var user = app.auth().currentUser;
+		var email = user.email;
+		for (var i = 0; i < 100; i++) {
 			/* <-- cuts @email.com off */
 			if (email.charAt(i) === "@") {
 				email = email.substring(0, i);
 			}
-			}
+		}
 		const item = {
 			/* <-- new item */
 			textComment: this.state.textComment,
@@ -210,101 +210,74 @@ class OpenProject extends Component {
 		console.log(user.uid);
 	}
 
-	addToTeam (username)
-	{
-
+	addToTeam(username) {
 		var projectRef = app
 			.database()
 			.ref("/Projects")
 			.child(this.props.match.params.id);
 
-			// var projTitle = JSON.stringify(projectRef.val().projectTitle);
+		// var projTitle = JSON.stringify(projectRef.val().projectTitle);
 
-			var projTitle = '';
+		var projTitle = "";
 
+		const itemsRef = projectRef.child("Team");
 
-		const itemsRef = app
-			.database()
-			.ref("/Projects")
-			.child(this.props.match.params.id)
-			.child("Team");
-
-			//Finding Project Name:
-				projectRef.on(
-				"value",
-				function(dataSnapshot) {
-				dataSnapshot.forEach(function(childSnapshot) {
+		//Finding Project Name:
+		projectRef.on("value", function(dataSnapshot) {
+			dataSnapshot.forEach(function(childSnapshot) {
 				var temp = dataSnapshot.val().projectTitle;
 
-				if(temp)
-				{
-					projTitle=temp;
+				if (temp) {
+					projTitle = temp;
 				}
+			});
+		});
+		// Finding User Name:
+		const userRef = app.database().ref("/Users");
 
-				});
-			}
-			);
+		userRef.on("value", function(dataSnapshot) {
+			dataSnapshot.forEach(function(childSnapshot) {
+				var item = JSON.stringify(childSnapshot.val());
+				var len = username.length;
+				var key = childSnapshot.key;
 
+				for (var i = 0; i < 100; i++) {
+					var temp = item.substring(i, i + len);
+					if (username === temp) {
+						const item = {
+							/* <-- new member being added */
+							Teams: projTitle
+						};
 
-			const userRef = app
-				.database()
-				.ref("/Users");
-
-				userRef.on(
-					"value",
-					function(dataSnapshot) {
-						dataSnapshot.forEach(function(childSnapshot) {
-							var item = JSON.stringify(childSnapshot.val());
-							var len=username.length;
-							var key = childSnapshot.key;
-
-							for(var i=0;i<100;i++)
-							{
-								var temp=item.substring(i,i+len);
-								if(username == temp)
-								{
-									const item = {
-										/* <-- new member being added */
-										Teams: projTitle
-								};
-
-									userRef.child(key).child("/Teams").update(item); /* <-- the item is pushed to Firebase */
-									break;
-								}
-							}
-						});
-
+						userRef
+							.child(key)
+							.child("/Teams")
+							.update(item); /* <-- the item is pushed to Firebase */
+						break;
 					}
-				);
+				}
+			});
+		});
 
+		var check = false;
 
-var check=false;
-
-		itemsRef.on(
-			"value",
-			function(dataSnapshot) {
-
-				dataSnapshot.forEach(function(childSnapshot) {
-					var item = JSON.stringify(childSnapshot.val());
-					var len=username.length;
-					check=false;
-					for(var i=0;i<100;i++)
-					{
-						var temp=item.substring(i,i+len);
-						console.log(temp);
-						if(username == temp)
-						{
-							check=true;
-							break;
-						}
+		itemsRef.on("value", function(dataSnapshot) {
+			dataSnapshot.forEach(function(childSnapshot) {
+				var item = JSON.stringify(childSnapshot.val());
+				var len = username.length;
+				check = false;
+				for (var i = 0; i < 100; i++) {
+					var temp = item.substring(i, i + len);
+					console.log(temp);
+					if (username === temp) {
+						check = true;
+						break;
 					}
-				});
+				}
+			});
+		});
 
-			}
-		);
-
-		if(check==false)
-		{
+		if (check === false) {
 			const item = {
 				/* <-- new member being added */
 				member: username
@@ -312,15 +285,9 @@ var check=false;
 			// console.log(item.textComment);
 
 			itemsRef.push(item); /* <-- the item is pushed to Firebase */
+		} else {
+			alert("This team member has already been added");
 		}
-		else {
-			{
-				alert("This team member has already been added");
-			}
-		}
-
-
-
 	}
 
 	render() {

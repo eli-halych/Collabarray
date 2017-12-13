@@ -6,7 +6,14 @@
     background-color: transparent !important;
 }
 
-.brand-logo img {
+.brand-logo img.s {
+    margin-top: 0.5em;
+    max-height: 52px;
+    height: auto;
+    width: 75%;
+}
+
+.brand-logo img.l {
     margin-top: 5px;
     height: 52px;
     width: auto;

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import "materialize-css/dist/css/materialize.min.css";
 import "./styles.css";
-import { Spinner } from "@blueprintjs/core";
+// import { Spinner } from "@blueprintjs/core";
 // import firebase from 'firebase';
 import {
 	BrowserRouter,
@@ -14,19 +14,17 @@ import {
 	Route,
 	Switch
 } from "react-router-dom";
-
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./Home";
+import Messenger from "./Messenger";
 import AddProject from "./AddProject";
 import OpenProject from "./OpenProject";
 import ViewProjects from "./ViewProjects";
 import Logout from "./Logout";
 import Profile from "./Profile";
-import Messenger from "./Messenger";
-
 import { app } from "./firebaseInitApp.js";
 
 // import $ from "jquery";
@@ -36,12 +34,65 @@ import "bootstrap-social";
 window.jQuery = require("jquery");
 require("materialize-css");
 
+class Loader extends Component {
+	render() {
+		const loadStyle = {
+			position: "fixed" /* or absolute */,
+			top: "50%",
+			left: "50%"
+		};
+		return (
+			<div>
+			<h3>Loading...</h3>
+			<div style={loadStyle} className="preloader-wrapper big active">
+				<div className="spinner-layer spinner-teal">
+					<div className="circle-clipper left">
+						<div className="circle" />
+					</div>
+					<div className="gap-patch">
+						<div className="circle" />
+					</div>
+					<div className="circle-clipper right">
+						<div className="circle" />
+					</div>
+				</div>
+
+				<div className="spinner-layer spinner-black">
+					<div className="circle-clipper left">
+						<div className="circle" />
+					</div>
+					<div className="gap-patch">
+						<div className="circle" />
+					</div>
+					<div className="circle-clipper right">
+						<div className="circle" />
+					</div>
+				</div>
+
+				<div className="spinner-layer spinner-white">
+					<div className="circle-clipper left">
+						<div className="circle" />
+					</div>
+					<div className="gap-patch">
+						<div className="circle" />
+					</div>
+					<div className="circle-clipper right">
+						<div className="circle" />
+					</div>
+				</div>
+			</div>
+		</div>
+		);
+	}
+}
+
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
 			authenticated: false,
-			loading: true
+			loading: true,
+			userFullName: ""
 		};
 	}
 
@@ -70,8 +121,8 @@ class App extends Component {
 		if (this.state.loading) {
 			return (
 				<div id="loading">
-					<h3>Loading...</h3>
-					<Spinner />
+					
+					<Loader />
 				</div>
 			);
 		}
@@ -95,6 +146,15 @@ class App extends Component {
 								}
 							/>
 							<Route path="/home" render={() => <Home title="Home" />} />
+							<Route
+								path="/messenger"
+								render={() => (
+									<Messenger
+										username={this.state.userFullName}
+										title="Messenger"
+									/>
+								)}
+							/>
 							<Route path="/signin" render={() => <SignIn title="Sign In" />} />
 							<Route path="/signup" render={() => <SignUp title="Sign Up" />} />
 							<Route path="/logout" render={() => <Logout title="Log Out" />} />
@@ -116,7 +176,11 @@ class App extends Component {
 							<Route
 								path="/profile/:id"
 								render={({ match }) => (
-									<Profile title="Profile" match={match} />
+									<Profile
+										username={this.state.userFullName}
+										title="Profile"
+										match={match}
+									/>
 								)}
 							/>
 						</Switch>
