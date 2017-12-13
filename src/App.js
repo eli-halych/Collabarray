@@ -38,50 +38,50 @@ class Loader extends Component {
 	render() {
 		const loadStyle = {
 			position: "fixed" /* or absolute */,
-			top: "50%",
-			left: "50%"
+			top: "45%",
+			left: "45%"
 		};
 		return (
-			<div>
-			<h3>Loading...</h3>
-			<div style={loadStyle} className="preloader-wrapper big active">
-				<div className="spinner-layer spinner-teal">
-					<div className="circle-clipper left">
-						<div className="circle" />
+			<div style={loadStyle}>
+				<h3>Loading...</h3>
+				<div className="preloader-wrapper big active">
+					<div className="spinner-layer spinner-teal">
+						<div className="circle-clipper left">
+							<div className="circle" />
+						</div>
+						<div className="gap-patch">
+							<div className="circle" />
+						</div>
+						<div className="circle-clipper right">
+							<div className="circle" />
+						</div>
 					</div>
-					<div className="gap-patch">
-						<div className="circle" />
-					</div>
-					<div className="circle-clipper right">
-						<div className="circle" />
-					</div>
-				</div>
 
-				<div className="spinner-layer spinner-black">
-					<div className="circle-clipper left">
-						<div className="circle" />
+					<div className="spinner-layer spinner-black">
+						<div className="circle-clipper left">
+							<div className="circle" />
+						</div>
+						<div className="gap-patch">
+							<div className="circle" />
+						</div>
+						<div className="circle-clipper right">
+							<div className="circle" />
+						</div>
 					</div>
-					<div className="gap-patch">
-						<div className="circle" />
-					</div>
-					<div className="circle-clipper right">
-						<div className="circle" />
-					</div>
-				</div>
 
-				<div className="spinner-layer spinner-white">
-					<div className="circle-clipper left">
-						<div className="circle" />
-					</div>
-					<div className="gap-patch">
-						<div className="circle" />
-					</div>
-					<div className="circle-clipper right">
-						<div className="circle" />
+					<div className="spinner-layer spinner-white">
+						<div className="circle-clipper left">
+							<div className="circle" />
+						</div>
+						<div className="gap-patch">
+							<div className="circle" />
+						</div>
+						<div className="circle-clipper right">
+							<div className="circle" />
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 		);
 	}
 }
@@ -121,7 +121,6 @@ class App extends Component {
 		if (this.state.loading) {
 			return (
 				<div id="loading">
-					
 					<Loader />
 				</div>
 			);
